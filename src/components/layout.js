@@ -6,6 +6,7 @@ import { GlobalStyles } from "../styles/globalStyles"
 import Header from "./header"
 import { useDarkMode } from "../styles/useDarkMode"
 import Navbar from "./navbar"
+import Footer from "./Footer"
 import ParticlesBg from "./ParticlesBg"
 
 const LayoutComponent = styled.div`
@@ -29,11 +30,7 @@ const Layout = ({ location, title, children }) => {
         </Header>
         <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </LayoutComponent>
     </ThemeProvider>
   )

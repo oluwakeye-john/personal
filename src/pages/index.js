@@ -5,6 +5,9 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Landing from "../components/landing"
+import StyledLine from "../components/StyledLine"
+import Skill from "../components/Skills"
+import Projects from "../components/projects"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -12,14 +15,13 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      {/* <Bio /> */}
-      {/* Hello */}
+      <SEO title="Home" />
       <Landing />
-      <br />
-      <br />
-      <br />
-      <br />
+      <StyledLine />
+      <Skill />
+      <StyledLine />
+      <Projects />
+      <StyledLine />
     </Layout>
   )
 }

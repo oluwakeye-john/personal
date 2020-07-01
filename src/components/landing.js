@@ -2,9 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
+import TypeWriter from "./typewriter"
+import Button from "./Button"
+import { Link } from "gatsby"
 
 const LandingContainer = styled.div`
-  margin-top: 3rem;
+  margin: 3rem 0;
   display: flex;
   justify-content: center;
 
@@ -41,7 +44,7 @@ const Landing = () => {
       avatar: file(absolutePath: { regex: "/john2.jpeg/" }) {
         childImageSharp {
           fixed(width: 350, height: 350) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
@@ -57,13 +60,20 @@ const Landing = () => {
         />
       </LandingImage>
       <LandingText>
-        <h1>Hello 👋 </h1>
+        <h1>
+          👋 <TypeWriter text="Hi There!" />
+        </h1>
         <p>
           Hi, I'm Marc, a happily married, 30-something-year-old full-stack web
-          developer 💻 with a strong educational background in software
-          engineering. I am doing freelance work 🚀 based in Luxembourg 🇱🇺, but
-          I do work remotely for international clients.
+          developer 💻I am doing freelance work 🚀 based in Luxembourg 🇱🇺, but I
+          do work remotely for international clients.
         </p>
+        <div style={{ textAlign: "center", margin: "2rem 0" }}>
+          <Link to="/contact">
+            <Button>Hire Me</Button>
+          </Link>
+          <Button>Download CV</Button>
+        </div>
       </LandingText>
     </LandingContainer>
   )

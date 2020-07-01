@@ -26,7 +26,7 @@ const HeaderComponent = styled(StyledText)`
   }
 
   @media (max-width: 500px) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 `
 
