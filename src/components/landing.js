@@ -64,15 +64,17 @@ const Landing = () => {
           👋 <TypeWriter text="Hi There!" />
         </h1>
         <p>
-          Hi, I'm Marc, a happily married, 30-something-year-old full-stack web
-          developer 💻I am doing freelance work 🚀 based in Luxembourg 🇱🇺, but I
-          do work remotely for international clients.
+          Hi, I'm John, a full-stack web developer 💻 based in Ibadan, Nigeria.
+          I am doing freelance work 🚀 based in Luxembourg 🇱🇺, but I do work
+          remotely for international clients.
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>
           <Link to="/contact">
             <Button>Hire Me</Button>
           </Link>
-          <Button>Download CV</Button>
+          <Link to="/contact">
+            <Button>Download CV</Button>
+          </Link>
         </div>
       </LandingText>
     </LandingContainer>

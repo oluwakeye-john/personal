@@ -52,45 +52,47 @@ const ProjectButton = styled(Button)`
   margin: 0 5px;
 `
 
+const projects = [
+  {
+    name: "Chat App",
+    description: "A real-time chat app built with nodejs, socketio.",
+    live: "",
+    code: "",
+  },
+  {
+    name: "Viz Movies",
+    description:
+      "A movie website, similar to netflix, without the download button",
+    live: "",
+    code: "",
+  },
+  {
+    name: "Video App",
+    description:
+      "A video chat application built with webRTC, socket.io and nodejs",
+    live: "",
+    code: "",
+  },
+]
+
 const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectsHeading>🚀 Projects</ProjectsHeading>
 
       <ProjectList>
-        <ProjectItem>
-          <ProjectItemHeading>Chat App</ProjectItemHeading>
-          <p>A real-time chat app built with nodejs, socketio and webRTC</p>
-          <ProjectButton as="a" href="#">
-            View Site
-          </ProjectButton>
-          <ProjectButton as="a" href="#">
-            View Code
-          </ProjectButton>
-        </ProjectItem>
-        <ProjectItem>
-          <ProjectItemHeading>Portfolio</ProjectItemHeading>
-          <p>
-            This present portfolio you are on, built with gatsby and styled
-            components
-          </p>
-          <ProjectButton as="a" href="#">
-            View Site
-          </ProjectButton>
-          <ProjectButton as="a" href="#">
-            View Code
-          </ProjectButton>
-        </ProjectItem>
-        <ProjectItem>
-          <ProjectItemHeading>Hello world</ProjectItemHeading>
-          <p>Lorem Ipsum</p>
-          <ProjectButton as="a" href="#">
-            View Site
-          </ProjectButton>
-          <ProjectButton as="a" href="#">
-            View Code
-          </ProjectButton>
-        </ProjectItem>
+        {projects.map((project, index) => (
+          <ProjectItem key={index}>
+            <ProjectItemHeading>{project.name}</ProjectItemHeading>
+            <p>{project.description}</p>
+            <ProjectButton as="a" href="#">
+              View Site
+            </ProjectButton>
+            <ProjectButton as="a" href="#">
+              View Code
+            </ProjectButton>
+          </ProjectItem>
+        ))}
       </ProjectList>
     </ProjectsContainer>
   )

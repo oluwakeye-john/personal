@@ -26,7 +26,7 @@ const NavbarContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  @media (max-width: 768px) {
+  @media (max-width: 500px) {
     justify-content: space-between;
   }
 `
@@ -34,7 +34,7 @@ const NavbarContainer = styled.div`
 const NavbarItem = styled(Link)`
   color: black;
   padding-right: 30px;
-  @media (max-width: 768px) {
+  @media (max-width: 500px) {
     padding-right: 0;
   }
   font-weight: 700;

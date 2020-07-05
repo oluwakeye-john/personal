@@ -1,8 +1,8 @@
 ---
-title: Hello World
+title: The Boys
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-featuredImage: "./just2.jpg"
+description: "Season 2 f The Boys has been released. Here's a list of what to expect from the fantastic superhero show."
+featuredImage: "./boys.jpg"
 ---
 
 This is my first post on my new fake blog! How exciting!

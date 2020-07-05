@@ -4,11 +4,11 @@ import StyledText from "./StyledText"
 import { Link } from "gatsby"
 
 const TopHeader = styled.div`
-  padding: 3rem 0;
+  margin: 3rem 0;
   line-height: 1.2;
   @media (max-width: 768px) {
-    padding-top: 0.5rem;
-    padding-bottom: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.8rem;
   }
 `
 
