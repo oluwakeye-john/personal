@@ -12,9 +12,13 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 750px;
         margin: 0 auto;
         min-height: 100vh;
-        line-height: 1.6;
+        line-height: 1.8;
     }
     a{
-        text-decoration: none
+        text-decoration: none;
+        color: ${({ theme }) => theme.link};
+    }
+    * {
+        box-sizing: border-box;
     }
 `

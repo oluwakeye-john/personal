@@ -24,7 +24,7 @@ const Item = styled.div`
 
 const ItemImage = styled(Img)`
   border-radius: 50%;
-  transition: 0.2s;
+  transition: 0.3s;
   z-index: 2;
   &:hover {
     transform: translateY(-40px);
@@ -82,12 +82,13 @@ const Skill = () => {
   `)
   return (
     <SkillContainer>
-      <SkillHeading>🛠 Tech Stacks</SkillHeading>
+      <SkillHeading>🛠 My Skills</SkillHeading>
       <SkillList>
         <Item>
           <ItemImage
             fixed={data.react.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for react"
           />
           <ItemLabel>React</ItemLabel>
         </Item>
@@ -95,6 +96,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.html.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for HTML"
           />
           <ItemLabel>HTML</ItemLabel>
         </Item>
@@ -102,6 +104,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.nodejs.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for Node JS"
           />
           <ItemLabel>Node JS</ItemLabel>
         </Item>
@@ -109,6 +112,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.gatsby.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for Gatsby"
           />
           <ItemLabel>Gatsby JS</ItemLabel>
         </Item>
@@ -116,6 +120,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.javascript.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for JavaScript"
           />
           <ItemLabel>JavaScript</ItemLabel>
         </Item>
@@ -123,6 +128,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.css.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for CSS"
           />
           <ItemLabel>CSS</ItemLabel>
         </Item>
@@ -130,6 +136,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.mongo.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for mongo db"
           />
           <ItemLabel>Mongo DB</ItemLabel>
         </Item>
@@ -137,6 +144,7 @@ const Skill = () => {
           <ItemImage
             fixed={data.express.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
+            alt="Logo for express js"
           />
           <ItemLabel>Express JS</ItemLabel>
         </Item>

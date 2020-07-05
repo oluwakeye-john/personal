@@ -8,13 +8,20 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
+
+const BioImage = styled(Image)`
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/john2.jpeg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 350, height: 350) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -36,13 +43,18 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div>
-      <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+      <BioImage
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author.name}
+        style={{
+          width: "50px",
+          height: "50px",
+        }}
+      />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        Written by <strong>{author.name}</strong>
+        <br />
+        <a href={`https://twitter.com/${social.twitter}`}>Follow on Twitter</a>
       </p>
     </div>
   )

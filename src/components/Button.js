@@ -8,7 +8,7 @@ const Button = styled.button`
   color: ${({ theme }) => theme.buttonText};
   background-color: transparent;
   font-size: 1rem;
-  transition: 0.2s;
+  transition: 0.3s;
   margin-right: 0.8rem;
 
   &:hover {

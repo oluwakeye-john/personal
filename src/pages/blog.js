@@ -1,9 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BlogCard from "../components/BlogCard"
+import styled from "styled-components"
+
+const BlogList = styled.div`
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  padding: 10px;
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -12,31 +21,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      {/* <Bio /> */}
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link to={`/blog${node.fields.slug}`}>{title}</Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
-      <br />
-      <br />
-      <br />
-      <br />
+      <BlogList>
+        {posts.map(({ node }) => {
+          return <BlogCard node={node} key={node.fields.slug} />
+        })}
+      </BlogList>
     </Layout>
   )
 }
@@ -57,10 +46,18 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            featuredImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

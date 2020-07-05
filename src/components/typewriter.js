@@ -1,23 +1,4 @@
-import React, { useState, useEffect, Component } from "react"
-
-// const TypeWriter = ({ text }) => {
-//   const [shown, setShown] = useState("")
-
-//   let interval
-//   let count = 0
-//   useEffect(() => {
-//     setInterval(() => {
-//       if (shown !== text) {
-//         console.log(shown + text[count])
-//         setShown(shown + text[count])
-//         count += 1
-//       } else {
-//         clearInterval(interval)
-//       }
-//     }, 1000)
-//   }, [])
-//   return <p>{shown}</p>
-// }
+import React, { Component } from "react"
 
 class TypeWriter extends Component {
   constructor(props) {

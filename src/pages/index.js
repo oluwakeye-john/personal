@@ -1,27 +1,32 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Landing from "../components/landing"
 import StyledLine from "../components/StyledLine"
 import Skill from "../components/Skills"
 import Projects from "../components/projects"
+import styled from "styled-components"
+
+const IndexContainer = styled.div`
+  padding: 2px;
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  // const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
-      <Landing />
-      <StyledLine />
-      <Skill />
-      <StyledLine />
-      <Projects />
-      <StyledLine />
+      <IndexContainer>
+        <Landing />
+        <StyledLine />
+        <Skill />
+        <StyledLine />
+        <Projects />
+      </IndexContainer>
     </Layout>
   )
 }

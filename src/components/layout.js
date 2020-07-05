@@ -8,10 +8,12 @@ import { useDarkMode } from "../styles/useDarkMode"
 import Navbar from "./navbar"
 import Footer from "./Footer"
 import ParticlesBg from "./ParticlesBg"
+import StyledLine from "./StyledLine"
 
 const LayoutComponent = styled.div`
+  min-height: 100vh;
   @media (max-width: 768px) {
-    padding: 0 10px;
+    padding: 0 15px;
   }
   @media (min-width: 768px) {
     padding: 0 0.25rem;
@@ -30,6 +32,7 @@ const Layout = ({ location, title, children }) => {
         </Header>
         <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
         <main>{children}</main>
+        <StyledLine />
         <Footer />
       </LayoutComponent>
     </ThemeProvider>

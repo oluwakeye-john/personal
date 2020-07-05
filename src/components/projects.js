@@ -10,34 +10,46 @@ const ProjectsHeading = styled.h1`
   text-align: center;
   margin: 0;
   padding: 0;
+  margin-bottom: 2rem;
 `
 
 const ProjectList = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const ProjectItem = styled.div`
-  padding: 20px;
+  padding: 2.5rem 10px;
   border: 1px solid #ccc;
-  flex-basis: 1;
-  width: 280px;
-  margin: 1rem;
+  width: 43%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  margin-bottom: 2rem;
   text-align: center;
   border-radius: 10px;
-  transition: 0.2s;
+  transition: 0.3s;
+  background-color: ${({ theme }) => theme.cardBg};
 
   &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 5px ${({ theme }) => theme.buttonBorder};
+    transform: scale(1.02);
+    box-shadow: ${({ theme }) => theme.cardShadow};
   }
 `
+
+const ProjectItemHeading = styled.h3`
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+`
+
 const ProjectButton = styled(Button)`
-  padding: 0.2rem 1.1rem;
+  padding: 0.2rem 1rem;
   margin: 0 5px;
-  border-radius: 5px;
-  border: 2px solid ${({ theme }) => theme.buttonBorder};
 `
 
 const Projects = () => {
@@ -47,7 +59,7 @@ const Projects = () => {
 
       <ProjectList>
         <ProjectItem>
-          <h3>Chat App</h3>
+          <ProjectItemHeading>Chat App</ProjectItemHeading>
           <p>A real-time chat app built with nodejs, socketio and webRTC</p>
           <ProjectButton as="a" href="#">
             View Site
@@ -57,7 +69,7 @@ const Projects = () => {
           </ProjectButton>
         </ProjectItem>
         <ProjectItem>
-          <h3>Portfolio</h3>
+          <ProjectItemHeading>Portfolio</ProjectItemHeading>
           <p>
             This present portfolio you are on, built with gatsby and styled
             components
@@ -70,7 +82,7 @@ const Projects = () => {
           </ProjectButton>
         </ProjectItem>
         <ProjectItem>
-          <h3>Hello world</h3>
+          <ProjectItemHeading>Hello world</ProjectItemHeading>
           <p>Lorem Ipsum</p>
           <ProjectButton as="a" href="#">
             View Site

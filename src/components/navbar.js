@@ -22,17 +22,28 @@ const items = [
   },
 ]
 
+const NavbarContainer = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+`
+
 const NavbarItem = styled(Link)`
-  display: inline;
   color: black;
-  padding-right: 20px;
+  padding-right: 30px;
+  @media (max-width: 768px) {
+    padding-right: 0;
+  }
   font-weight: 700;
   color: ${({ theme }) => theme.navbarLink};
 `
 
-const ActiveNavbarItem = ({ children }) => (
+const ActiveNavbarItem = ({ to, children }) => (
   <StyledText>
-    <NavbarItem>{children}</NavbarItem>
+    <NavbarItem to={to}>{children}</NavbarItem>
   </StyledText>
 )
 
@@ -45,7 +56,7 @@ const ToggleButton = styled.button`
 const Navbar = ({ location, toggleTheme, theme }) => {
   console.log(location.pathname)
   return (
-    <div>
+    <NavbarContainer>
       {items.map((item, key) => {
         return item.url === location.pathname ? (
           <ActiveNavbarItem to={item.url} key={key}>
@@ -60,7 +71,7 @@ const Navbar = ({ location, toggleTheme, theme }) => {
       <ToggleButton onClick={toggleTheme}>
         {theme === "light" ? "🌙" : "☀️"}
       </ToggleButton>
-    </div>
+    </NavbarContainer>
   )
 }
 
