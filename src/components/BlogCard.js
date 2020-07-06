@@ -2,22 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
-const Card = styled.div`
-  background-color: ${({ theme }) => theme.cardBg};
-  border-radius: 10px;
-  box-shadow: ${({ theme }) => theme.cardShadow};
-  transition: 0.2s;
-  &:hover {
-    transform: scale(1.03);
-  }
-  width: 43%;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-  margin-bottom: 2rem;
-  cursor: default;
-`
+import Card from "./Card"
 
 const CardImage = styled(Img)`
   object-fit: cover;

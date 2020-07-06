@@ -4,64 +4,19 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
+import {
+  Input,
+  InputGroup,
+  InputBox,
+  InputLabel,
+  TextArea,
+} from "../components/InputBox"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
   max-width: 750px;
   width: 100%;
   padding: 1px;
-`
-
-const InputGroup = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`
-
-const Input = styled.div`
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-  width: 47%;
-  position: relative;
-  margin-bottom: 2rem;
-`
-
-const InputBox = styled.input`
-  padding: 10px;
-  width: 100%;
-  &:focus {
-    outline: 0;
-  }
-  &:focus + label {
-    transform: translateY(-20px);
-  }
-  &:not(:placeholder-shown) + label {
-    transform: translateY(-20px);
-  }
-  border-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.buttonBorder};
-  background-color: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.textNormal};
-`
-
-const InputLabel = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 4px 10px;
-  transition: 0.2s;
-  pointer-events: none;
-  background-color: ${({ theme }) => theme.bg};
-`
-
-const TextArea = styled(Input)`
-  width: 100%;
 `
 
 const ButtonWrapper = styled.div`

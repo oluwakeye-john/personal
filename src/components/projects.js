@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Button from "./Button"
+import Card from "./Card"
 
 const ProjectsContainer = styled.div`
   margin: 3rem 0;
@@ -22,23 +23,9 @@ const ProjectList = styled.div`
   }
 `
 
-const ProjectItem = styled.div`
+const ProjectItem = styled(Card)`
   padding: 2.5rem 10px;
-  box-shadow: ${({ theme }) => theme.cardShadow};
-  width: 43%;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-  margin-bottom: 2rem;
   text-align: center;
-  border-radius: 10px;
-  transition: 0.3s;
-  background-color: ${({ theme }) => theme.cardBg};
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: ${({ theme }) => theme.cardShadow};
-  }
 `
 
 const ProjectItemHeading = styled.h3`
