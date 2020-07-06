@@ -33,9 +33,9 @@ const NavbarContainer = styled.div`
 
 const NavbarItem = styled(Link)`
   color: black;
-  padding-right: 30px;
+  margin-right: 30px;
   @media (max-width: 500px) {
-    padding-right: 0;
+    margin-right: 0;
   }
   font-weight: 700;
   color: ${({ theme }) => theme.navbarLink};

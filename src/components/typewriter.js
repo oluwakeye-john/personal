@@ -12,13 +12,11 @@ class TypeWriter extends Component {
   }
 
   handle = () => {
-    // const text = this.state.text
     let interval = setInterval(() => {
       const text = this.state.text
       const { shown, count } = this.state
       if (text.length !== shown.length) {
         const { shown, count } = this.state
-        // console.log(shown + text[count])
         this.setState({
           shown: shown + text[count],
           count: count + 1,

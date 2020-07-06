@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>Built with ❤️ by Oluwakeye John</p>
+      <p>{`</>`} with ❤️ by Oluwakeye John</p>
       <p>© {new Date().getFullYear()}</p>
     </FooterContainer>
   )

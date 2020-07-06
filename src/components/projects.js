@@ -24,7 +24,7 @@ const ProjectList = styled.div`
 
 const ProjectItem = styled.div`
   padding: 2.5rem 10px;
-  border: 1px solid #ccc;
+  box-shadow: ${({ theme }) => theme.cardShadow};
   width: 43%;
   @media (max-width: 768px) {
     width: 100%;

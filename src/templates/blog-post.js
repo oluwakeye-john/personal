@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import StyledLine from "../components/StyledLine"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -16,6 +17,10 @@ const BlogContainer = styled.div`
   a {
     text-decoration: underline;
   }
+`
+
+const BlogPostHeading = styled.h1`
+  margin-bottom: 0;
 `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -33,25 +38,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <BlogContainer>
         <header>
-          <h1>{post.frontmatter.title}</h1>
+          <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         </header>
         <p>
-          <span>{post.frontmatter.date}</span>
-          <span style={{ textAlign: "right" }}>
+          <small>
+            {post.frontmatter.date}
             {` `}-{` `}
-            <span>{ttr} min read</span>
-          </span>
+            {ttr} min read
+          </small>
         </p>
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
           ></FeaturedImage>
         )}
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <section
+          style={{ marginBottom: "3rem" }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        {/* <StyledLine /> */}
+        <Bio />
       </BlogContainer>
 
       <div>

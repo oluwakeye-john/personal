@@ -73,7 +73,7 @@ const Landing = () => {
             <Button>Hire Me</Button>
           </Link>
           <Link to="/contact">
-            <Button>Download CV</Button>
+            <Button>View CV</Button>
           </Link>
         </div>
       </LandingText>

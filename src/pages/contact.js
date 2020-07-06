@@ -73,7 +73,13 @@ const ContactHeading = styled.h1`
   margin: 0;
   text-align: center;
   font-family: arial;
+  margin-bottom: 1rem;
+`
+
+const ContactText = styled.p`
   margin-bottom: 2rem;
+  /* text-align: center; */
+  opacity: 0.8;
 `
 
 const Contact = ({ data, location }) => {
@@ -85,6 +91,10 @@ const Contact = ({ data, location }) => {
       <ContactContainer>
         <form>
           <ContactHeading>Contact Me</ContactHeading>
+          <ContactText>
+            Contact me for job offers, collaborations, to feature in or review
+            my blog and, ... anything
+          </ContactText>
           <InputGroup>
             <Input>
               <InputBox type="text" placeholder=" " required />

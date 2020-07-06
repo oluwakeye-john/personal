@@ -23,7 +23,7 @@ const Item = styled.div`
 `
 
 const ItemImage = styled(Img)`
-  border-radius: 50%;
+  border-radius: 20px;
   transition: 0.3s;
   z-index: 2;
   &:hover {
@@ -42,6 +42,10 @@ const ItemLabel = styled.label`
   width: 100px;
   text-align: center;
   font-weight: bold;
+`
+
+const SkillInfo = styled.p`
+  text-align: center;
 `
 
 const Skill = () => {
@@ -83,6 +87,7 @@ const Skill = () => {
   return (
     <SkillContainer>
       <SkillHeading>🛠 My Skills</SkillHeading>
+      <SkillInfo>Click/Hover to show name</SkillInfo>
       <SkillList>
         <Item>
           <ItemImage
