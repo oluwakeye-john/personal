@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "./Button"
-import Card from "./Card"
+import Button from "../Button"
+import Card from "../Card"
 
 const ProjectsContainer = styled.div`
   margin: 3rem 0;

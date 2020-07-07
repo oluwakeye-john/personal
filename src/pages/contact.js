@@ -26,7 +26,7 @@ const ButtonWrapper = styled.div`
 const ContactHeading = styled.h1`
   padding: 0;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   font-family: arial;
   margin-bottom: 1rem;
 `

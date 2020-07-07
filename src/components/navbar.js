@@ -29,6 +29,7 @@ const NavbarContainer = styled.div`
   @media (max-width: 500px) {
     justify-content: space-between;
   }
+  margin-bottom: 3rem;
 `
 
 const NavbarItem = styled(Link)`
@@ -54,7 +55,6 @@ const ToggleButton = styled.button`
 `
 
 const Navbar = ({ location, toggleTheme, theme }) => {
-  console.log(location.pathname)
   return (
     <NavbarContainer>
       {items.map((item, key) => {

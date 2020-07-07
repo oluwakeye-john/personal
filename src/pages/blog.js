@@ -7,7 +7,6 @@ import BlogCard from "../components/BlogCard"
 import styled from "styled-components"
 
 const BlogList = styled.div`
-  margin-top: 3rem;
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;

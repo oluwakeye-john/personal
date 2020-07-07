@@ -6,11 +6,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import StyledLine from "../components/StyledLine"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
-  max-height: 300px;
+  max-height: 350px;
 `
 
 const BlogContainer = styled.div`
@@ -21,6 +20,10 @@ const BlogContainer = styled.div`
 
 const BlogPostHeading = styled.h1`
   margin-bottom: 0;
+`
+
+const BlogSection = styled.section`
+  color: ${({ theme }) => theme.blogTextNormal};
 `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -41,18 +44,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         </header>
         <p>
-          <small>
+          <span>
             {post.frontmatter.date}
             {` `}-{` `}
             {ttr} min read
-          </small>
+          </span>
         </p>
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
           ></FeaturedImage>
         )}
-        <section
+        <BlogSection
           style={{ marginBottom: "3rem" }}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />

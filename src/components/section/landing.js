@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
-import TypeWriter from "./typewriter"
-import Button from "./Button"
+import TypeWriter from "../typewriter"
+import Button from "../Button"
 import { Link } from "gatsby"
 
 const LandingContainer = styled.div`
-  margin: 3rem 0;
+  margin-bottom: 3rem;
   display: flex;
   justify-content: center;
 

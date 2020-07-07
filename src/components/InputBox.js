@@ -33,7 +33,7 @@ export const InputBox = styled.input`
     transform: translateY(-20px);
   }
   border-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.buttonBorder};
+  border: 2px solid ${({ theme }) => theme.buttonBorder};
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.textNormal};
 `
