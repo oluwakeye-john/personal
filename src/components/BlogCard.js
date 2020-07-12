@@ -36,7 +36,7 @@ const BlogCard = ({ node }) => {
         <div style={{ fontStyle: "italic" }}>
           <small>{node.frontmatter.date}</small>
           <span style={{ textAlign: "right" }}>
-            {` `}-{` `}
+            {` `}•{` `}
             <small>{ttr} min read</small>
           </span>
         </div>

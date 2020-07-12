@@ -24,6 +24,14 @@ const BlogPostHeading = styled.h1`
 
 const BlogSection = styled.section`
   color: ${({ theme }) => theme.blogTextNormal};
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${({ theme }) => theme.textNormal};
+  }
 `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -41,12 +49,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <BlogContainer>
         <header>
-          <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
+          <BlogPostHeading>🍛{post.frontmatter.title}</BlogPostHeading>
         </header>
         <p>
           <span>
             {post.frontmatter.date}
-            {` `}-{` `}
+            {` `}•{` `}
             {ttr} min read
           </span>
         </p>

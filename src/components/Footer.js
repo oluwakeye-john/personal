@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import SocialButtons from "./SocialButtons"
 
 const FooterContainer = styled.footer`
   text-align: center;
@@ -9,10 +10,12 @@ const FooterContainer = styled.footer`
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>{`</>`} with ❤️ by Oluwakeye John</p>
+      <p>{`</>`} with 💖 by Oluwakeye John</p>
       <p>© {new Date().getFullYear()}</p>
+      <SocialButtons />
     </FooterContainer>
   )
 }
+// ❤️
 
 export default Footer

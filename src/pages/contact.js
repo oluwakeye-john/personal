@@ -47,8 +47,8 @@ const Contact = ({ data, location }) => {
         <form>
           <ContactHeading>Contact Me</ContactHeading>
           <ContactText>
-            Contact me for job offers, collaborations, to feature in or review
-            my blog and, ... anything
+            Contact me job offers, collaboration and hmm ... Just anything.
+            Robots aren't welcome, BTW.
           </ContactText>
           <InputGroup>
             <Input>
@@ -65,7 +65,7 @@ const Contact = ({ data, location }) => {
             <InputLabel>Message</InputLabel>
           </TextArea>
           <ButtonWrapper>
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Send message</Button>
           </ButtonWrapper>
         </form>
       </ContactContainer>

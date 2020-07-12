@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
 import TypeWriter from "../typewriter"
+import Wave from "../wave"
 import Button from "../Button"
 import { Link } from "gatsby"
 
@@ -43,7 +44,7 @@ const Landing = () => {
     query LandingQuery {
       avatar: file(absolutePath: { regex: "/john2.jpeg/" }) {
         childImageSharp {
-          fixed(width: 350, height: 350) {
+          fixed(width: 450, height: 450) {
             ...GatsbyImageSharpFixed_tracedSVG
           }
         }
@@ -61,20 +62,21 @@ const Landing = () => {
       </LandingImage>
       <LandingText>
         <h1>
-          👋 <TypeWriter text="Hi There!" />
+          <Wave>👋</Wave>
+          <TypeWriter text="Hi There!" />
         </h1>
         <p>
-          Hi, I'm John, a full-stack web developer 💻 based in Ibadan, Nigeria.
-          I am doing freelance work 🚀 based in Luxembourg 🇱🇺, but I do work
-          remotely for international clients.
+          Hi, I'm John, a Full Stack web developer 💻 based in Ibadan, Nigeria.
+          I specialize in JavaScript and i also code Python🚀
+          <Link to="/about"> Read More</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>
           <Link to="/contact">
             <Button>Hire Me</Button>
           </Link>
-          <Link to="/contact">
+          <a href="/resume.pdf">
             <Button>View CV</Button>
-          </Link>
+          </a>
         </div>
       </LandingText>
     </LandingContainer>

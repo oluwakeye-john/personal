@@ -47,10 +47,9 @@ const projects = [
     code: "",
   },
   {
-    name: "Viz Movies",
-    description:
-      "A movie website, similar to netflix, without the download button",
-    live: "",
+    name: "Eaveswall",
+    description: "Eaveswall is a univeristy blogging platform.",
+    live: "https://eaveswall.com",
     code: "",
   },
   {
@@ -72,12 +71,12 @@ const Projects = () => {
           <ProjectItem key={index}>
             <ProjectItemHeading>{project.name}</ProjectItemHeading>
             <p>{project.description}</p>
-            <ProjectButton as="a" href="#">
+            <ProjectButton as="a" href={project.live}>
               View Site
             </ProjectButton>
-            <ProjectButton as="a" href="#">
+            {/* <ProjectButton as="a" href="#">
               View Code
-            </ProjectButton>
+            </ProjectButton> */}
           </ProjectItem>
         ))}
       </ProjectList>

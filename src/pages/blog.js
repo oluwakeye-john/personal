@@ -19,7 +19,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Blog" />
       <BlogList>
         {posts.map(({ node }) => {
           return <BlogCard node={node} key={node.fields.slug} />

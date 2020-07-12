@@ -22,7 +22,7 @@ export const dark = {
   cardBg: "#1A1A1A",
   cardShadow: "0",
   link: "#1da1f2",
-  blogTextNormal: "rgba(255, 255, 255, 0.6)",
+  blogTextNormal: "rgba(255, 255, 255, 0.7)",
 }
 
 //1da1f2
