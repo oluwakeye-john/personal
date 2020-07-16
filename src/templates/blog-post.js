@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -42,7 +43,7 @@ const BlogSection = styled.section`
 const BlogDetails = styled.p``
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const featuredImage = post.frontmatter.featuredImage
@@ -70,10 +71,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             fluid={featuredImage.childImageSharp.fluid}
           ></FeaturedImage>
         )}
-        <BlogSection
-          style={{ marginBottom: "3rem" }}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <BlogSection style={{ marginBottom: "3rem" }}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </BlogSection>
         {/* <StyledLine /> */}
         <Bio />
       </BlogContainer>
@@ -107,10 +107,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       timeToRead
       frontmatter {
         title
