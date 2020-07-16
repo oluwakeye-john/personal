@@ -13,7 +13,6 @@ const CardImage = styled(Img)`
 
 const CardTitle = styled.h2`
   color: ${({ theme }) => theme.textNormal};
-  /* font-family: arial; */
 `
 
 const BlogCard = ({ node }) => {
@@ -33,7 +32,7 @@ const BlogCard = ({ node }) => {
             {title}
           </Link>
         </CardTitle>
-        <div style={{ fontStyle: "italic" }}>
+        <div>
           <small>{node.frontmatter.date}</small>
           <span style={{ textAlign: "right" }}>
             {` `}•{` `}
