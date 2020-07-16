@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import SocialButtons from "./SocialButtons"
+import SocialButtons from "../components/SocialButtons"
 
 const FooterContainer = styled.footer`
   text-align: center;

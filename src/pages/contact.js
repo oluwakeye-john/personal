@@ -40,11 +40,15 @@ const ContactText = styled.p`
 const Contact = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Contact Me" />
       <ContactContainer>
-        <form>
+        <form onSubmit={handleSubmit}>
           <ContactHeading>Contact Me</ContactHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.

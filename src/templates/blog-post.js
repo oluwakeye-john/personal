@@ -40,7 +40,9 @@ const BlogSection = styled.section`
   }
 `
 
-const BlogDetails = styled.p``
+const BlogDetails = styled.p`
+  color: ${({ theme }) => theme.lightText};
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
@@ -58,13 +60,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
-          <span>
-            {post.frontmatter.date}
-            {` `}•{` `}
-            {ttr} min read
-            {` `}•{` `}
-            By Oluwakeye John
-          </span>
+          {post.frontmatter.date}
+          {` `}•{` `}
+          {ttr} min read
+          {` `}•{` `}
+          By Oluwakeye John
         </BlogDetails>
         {featuredImage && (
           <FeaturedImage

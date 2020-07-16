@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../Button"
-import Card from "../Card"
+import Button from "../components/Button"
+import Card from "../components/Card"
 
 const ProjectsContainer = styled.div`
   margin: 3rem 0;
@@ -71,7 +71,7 @@ const Projects = () => {
           <ProjectItem key={index}>
             <ProjectItemHeading>{project.name}</ProjectItemHeading>
             <p>{project.description}</p>
-            <ProjectButton as="a" href={project.live}>
+            <ProjectButton as="a" href={project.live} target="_blank">
               View Site
             </ProjectButton>
             {/* <ProjectButton as="a" href="#">

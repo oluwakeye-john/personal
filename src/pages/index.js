@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Landing from "../components/section/landing"
+import Landing from "../section/landing"
 import StyledLine from "../components/StyledLine"
-import Skill from "../components/section/Skills"
-import Projects from "../components/section/projects"
+import Skill from "../section/Skills"
+import Projects from "../section/projects"
 import styled from "styled-components"
 
 const IndexContainer = styled.div`

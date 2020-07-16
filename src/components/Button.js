@@ -15,6 +15,10 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.buttonBorder};
     color: white;
   }
+
+  &:focus {
+    outline: 0;
+  }
 `
 
 export default Button

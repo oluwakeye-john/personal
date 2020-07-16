@@ -9,6 +9,7 @@ export const light = {
   cardShadow: "0 0 20px #ccc",
   link: "rgba(169,3,41,1)",
   blogTextNormal: "#222",
+  lightText: "rgba(0, 0, 0, 0.75)",
 }
 
 export const dark = {
@@ -23,6 +24,7 @@ export const dark = {
   cardShadow: "0",
   link: "rgba(231,56,39,1)",
   blogTextNormal: "rgba(255, 255, 255, 0.7)",
+  lightText: "rgba(255, 255, 255, 0.6)",
 }
 
 //1da1f2

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import StyledText from "./StyledText"
+import StyledText from "../components/StyledText"
 import { Link } from "gatsby"
 
 const TopHeader = styled.div`

@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
-import TypeWriter from "../typewriter"
-import Wave from "../wave"
-import Button from "../Button"
+import TypeWriter from "../components/typewriter"
+import Wave from "../components/wave"
+import Button from "../components/Button"
 import { Link } from "gatsby"
 
 const LandingContainer = styled.div`
@@ -74,7 +74,7 @@ const Landing = () => {
           <Link to="/contact">
             <Button>Hire Me</Button>
           </Link>
-          <a href="/resume.pdf">
+          <a href="/resume.pdf" target="_black">
             <Button>View CV</Button>
           </a>
         </div>

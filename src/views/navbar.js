@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import StyledText from "./StyledText"
+import StyledText from "../components/StyledText"
 
 const items = [
   {
@@ -58,7 +58,15 @@ const Navbar = ({ location, toggleTheme, theme }) => {
   return (
     <NavbarContainer>
       {items.map((item, key) => {
-        return item.url === location.pathname ? (
+        let current = item.url === location.pathname
+
+        // highlight blog navbar link when in one of blog posts
+        current =
+          item.url === "/blog" && location.pathname.includes("/blog")
+            ? true
+            : current
+
+        return current ? (
           <ActiveNavbarItem to={item.url} key={key}>
             {item.name}
           </ActiveNavbarItem>

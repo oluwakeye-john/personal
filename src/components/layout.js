@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 import { light, dark } from "../styles/theme"
 import styled, { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../styles/globalStyles"
-import Header from "./header"
+import Header from "../views/header"
 import { useDarkMode } from "../styles/useDarkMode"
-import Navbar from "./navbar"
-import Footer from "./Footer"
+import Navbar from "../views/navbar"
+import Footer from "../views/Footer"
 import ParticlesBg from "./ParticlesBg"
 import StyledLine from "./StyledLine"
 
@@ -28,7 +28,7 @@ const Layout = ({ location, title, children }) => {
     <ThemeProvider theme={theme === "light" ? light : dark}>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Roboto+Mono&family=Rowdies&display=swap"
           rel="stylesheet"
         ></link>
       </Helmet>
