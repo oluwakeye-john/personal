@@ -43,7 +43,7 @@ const projects = [
   {
     name: "Chat App",
     description: "A real-time chat app built with nodejs, socketio.",
-    live: "",
+    live: "https://oluwakeye-chat.netlify.app",
     code: "",
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     name: "Video App",
     description:
       "A video chat application built with webRTC, socket.io and nodejs",
-    live: "",
+    live: "https://lens-chat.netlify.app",
     code: "",
   },
 ]

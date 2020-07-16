@@ -10,6 +10,7 @@ import Img from "gatsby-image"
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
+  margin: 2rem 0;
 `
 
 const BlogContainer = styled.div`
@@ -20,6 +21,10 @@ const BlogContainer = styled.div`
 
 const BlogPostHeading = styled.h1`
   margin-bottom: 0;
+  font-size: 3rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `
 
 const BlogSection = styled.section`
@@ -33,6 +38,8 @@ const BlogSection = styled.section`
     color: ${({ theme }) => theme.textNormal};
   }
 `
+
+const BlogDetails = styled.p``
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -48,16 +55,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <BlogContainer>
-        <header>
-          <BlogPostHeading>🍛{post.frontmatter.title}</BlogPostHeading>
-        </header>
-        <p>
+        <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
+        <BlogDetails>
           <span>
             {post.frontmatter.date}
             {` `}•{` `}
             {ttr} min read
+            {` `}•{` `}
+            By Oluwakeye John
           </span>
-        </p>
+        </BlogDetails>
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}

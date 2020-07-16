@@ -158,4 +158,5 @@ const Skill = () => {
   )
 }
 
+//background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 100%);
 export default Skill

@@ -18,8 +18,7 @@ const HeaderComponent = styled(StyledText)`
   font-size: 4rem;
   font-weight: 900;
   display: block;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Rowdies", sans-serif;
 
   @media (max-width: 768px) {
     font-size: 3rem;

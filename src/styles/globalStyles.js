@@ -7,8 +7,11 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.textNormal};
         background-color: ${({ theme }) => theme.bg}; 
         transition: 0.3s;
-        font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
-        Cantarell, Fira Sans, sans-serif;
+        ${
+          "" /* font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
+        Cantarell, Fira Sans, sans-serif; */
+        }
+        font-family: 'Open Sans', sans-serif;
         max-width: 750px;
         margin: 0 auto;
         min-height: 100vh;
@@ -18,10 +21,19 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         color: ${({ theme }) => theme.link};
     }
-    * {
+    *, ::after, ::before {
         box-sizing: border-box;
     }
     #gatsby-plugin-page-progress{
         background: linear-gradient(to right, #e48a28 0%, #cc4856 50%, #6e3a6c 100%);
     }
+
+    body::-webkit-scrollbar{
+        width: 0.25rem;
+    }
+
+    body::-webkit-scrollbar-thumb{
+        background: ${({ theme }) => theme.link};
+    }
+
 `

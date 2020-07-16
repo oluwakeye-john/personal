@@ -10,6 +10,8 @@ import Footer from "./Footer"
 import ParticlesBg from "./ParticlesBg"
 import StyledLine from "./StyledLine"
 
+import { Helmet } from "react-helmet"
+
 const LayoutComponent = styled.div`
   min-height: 100vh;
   @media (max-width: 768px) {
@@ -24,6 +26,12 @@ const Layout = ({ location, title, children }) => {
   const [theme, toggleTheme] = useDarkMode()
   return (
     <ThemeProvider theme={theme === "light" ? light : dark}>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&display=swap"
+          rel="stylesheet"
+        ></link>
+      </Helmet>
       <LayoutComponent>
         <GlobalStyles />
         <ParticlesBg />

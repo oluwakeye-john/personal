@@ -3,11 +3,11 @@ export const light = {
   textNormal: "#222",
   textLink: "blue",
   navbarLink: "rgba(0, 0, 0, 0.45)",
-  buttonBorder: "#6e3a6c",
-  buttonText: "#6e3a6c",
+  buttonBorder: "rgba(169,3,41,1)",
+  buttonText: "rgba(169,3,41,1)",
   cardBg: "#fff",
   cardShadow: "0 0 20px #ccc",
-  link: "#6e3a6c",
+  link: "rgba(169,3,41,1)",
   blogTextNormal: "#222",
 }
 
@@ -17,11 +17,11 @@ export const dark = {
   textNormal: "rgba(255, 255, 255, 0.88)",
   textLink: "yellow",
   navbarLink: "rgba(255, 255, 255, 0.5)",
-  buttonBorder: "#1da1f2",
-  buttonText: "#1da1f2",
+  buttonBorder: "rgba(231,56,39,1)",
+  buttonText: "rgba(231,56,39,1)",
   cardBg: "#1A1A1A",
   cardShadow: "0",
-  link: "#1da1f2",
+  link: "rgba(231,56,39,1)",
   blogTextNormal: "rgba(255, 255, 255, 0.7)",
 }
 
