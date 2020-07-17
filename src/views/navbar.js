@@ -30,6 +30,12 @@ const NavbarContainer = styled.div`
     justify-content: space-between;
   }
   margin-bottom: 3rem;
+  /* position: sticky;
+  padding: 1rem 0;
+  left: 0;
+  top: 0;
+  background: ${({ theme }) => theme.bg};
+  z-index: 3; */
 `
 
 const NavbarItem = styled(Link)`

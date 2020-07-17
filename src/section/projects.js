@@ -39,13 +39,17 @@ const ProjectButton = styled(Button)`
   margin: 0 5px;
 `
 
+const ButtonWrapper = styled.div`
+  text-align: center;
+`
+
 const projects = [
-  {
-    name: "Chat App",
-    description: "A real-time chat app built with nodejs, socketio.",
-    live: "https://oluwakeye-chat.netlify.app",
-    code: "",
-  },
+  // {
+  //   name: "Chat App",
+  //   description: "A real-time chat app built with nodejs, socketio.",
+  //   live: "https://oluwakeye-chat.netlify.app",
+  //   code: "",
+  // },
   {
     name: "Eaveswall",
     description: "Eaveswall is a univeristy blogging platform.",
@@ -64,7 +68,7 @@ const projects = [
 const Projects = () => {
   return (
     <ProjectsContainer>
-      <ProjectsHeading>🚀 Projects</ProjectsHeading>
+      <ProjectsHeading>🚀 My Works</ProjectsHeading>
 
       <ProjectList>
         {projects.map((project, index) => (
@@ -80,6 +84,9 @@ const Projects = () => {
           </ProjectItem>
         ))}
       </ProjectList>
+      <ButtonWrapper>
+        <Button>View More</Button>
+      </ButtonWrapper>
     </ProjectsContainer>
   )
 }

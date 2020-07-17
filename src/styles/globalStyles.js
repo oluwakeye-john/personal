@@ -14,6 +14,21 @@ export const GlobalStyles = createGlobalStyle`
         min-height: 100vh;
         line-height: 1.8;
     }
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: ${({ theme }) => theme.textNormal};
+        -webkit-box-shadow: 0 0 0 30px ${({ theme }) =>
+          theme.bg} inset !important;
+    }
+
+    ${
+      "" /* input:-webkit-autofill:focus {
+        border: 2px solid ${({ theme }) => theme.buttonBorder};
+    } */
+    }
+    
     a{
         text-decoration: none;
         color: ${({ theme }) => theme.link};

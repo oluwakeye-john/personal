@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 
 const Button = styled.button`
@@ -20,5 +21,16 @@ const Button = styled.button`
     outline: 0;
   }
 `
+const CenterWrapper = styled.div`
+  text-align: center;
+`
+
+export const CenterButton = ({ children }) => {
+  return (
+    <CenterWrapper>
+      <Button>{children}</Button>
+    </CenterWrapper>
+  )
+}
 
 export default Button

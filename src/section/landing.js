@@ -2,10 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
-import TypeWriter from "../components/typewriter"
-import Wave from "../components/wave"
+import TypeWriter from "../components/animations/typewriter"
+import Wave from "../components/animations/wave"
 import Button from "../components/Button"
 import { Link } from "gatsby"
+
+import Rotate from "../components/animations/rotate"
 
 const LandingContainer = styled.div`
   margin-bottom: 3rem;
@@ -54,12 +56,15 @@ const Landing = () => {
   return (
     <LandingContainer>
       <LandingImage>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt="Oluwakeye John"
-          style={{ width: "150px", height: "150px" }}
-        />
+        <Rotate>
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt="Oluwakeye John"
+            style={{ width: "150px", height: "150px" }}
+          />
+        </Rotate>
       </LandingImage>
+
       <LandingText>
         <h1>
           <Wave>👋</Wave>

@@ -8,6 +8,7 @@ import StyledLine from "../components/StyledLine"
 import Skill from "../section/Skills"
 import Projects from "../section/projects"
 import styled from "styled-components"
+import BlogSection from "../section/blog"
 
 const IndexContainer = styled.div`
   padding: 2px;
@@ -26,6 +27,8 @@ const BlogIndex = ({ data, location }) => {
         <Skill />
         <StyledLine />
         <Projects />
+        <StyledLine />
+        <BlogSection />
       </IndexContainer>
     </Layout>
   )

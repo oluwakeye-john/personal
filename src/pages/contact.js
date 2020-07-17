@@ -11,6 +11,7 @@ import {
   InputLabel,
   TextArea,
 } from "../components/InputBox"
+import SocialButtons from "../components/SocialButtons"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -54,18 +55,26 @@ const Contact = ({ data, location }) => {
             Contact me job offers, collaboration and hmm ... Just anything.
             Robots aren't welcome, BTW.
           </ContactText>
+          <SocialButtons small={true} />
+          <ContactText>Or use the form below</ContactText>
           <InputGroup>
             <Input>
-              <InputBox type="text" placeholder=" " required />
+              <InputBox type="text" placeholder=" " required name="name" />
               <InputLabel>Name</InputLabel>
             </Input>
             <Input>
-              <InputBox type="email" placeholder=" " required />
+              <InputBox type="email" placeholder=" " required name="email" />
               <InputLabel>Email</InputLabel>
             </Input>
           </InputGroup>
           <TextArea>
-            <InputBox as="textarea" rows="8" placeholder=" " required />
+            <InputBox
+              as="textarea"
+              rows="8"
+              placeholder=" "
+              required
+              name="message"
+            />
             <InputLabel>Message</InputLabel>
           </TextArea>
           <ButtonWrapper>

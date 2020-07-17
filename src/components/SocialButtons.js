@@ -9,7 +9,7 @@ const SocialLink = styled(Link)`
   margin: 1rem;
 `
 
-const SocialButtons = () => {
+const SocialButtons = ({ border, small }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -19,26 +19,54 @@ const SocialButtons = () => {
             linkedin
             github
             dev
+            email
           }
         }
       }
     }
   `)
-  const { twitter, linkedin, dev, github } = data.site.siteMetadata.social
+  const {
+    twitter,
+    linkedin,
+    dev,
+    github,
+    email,
+  } = data.site.siteMetadata.social
+
+  const links = [
+    {
+      name: "twitter",
+      icon: "fab fa-twitter",
+      url: `https://twitter.com/${twitter}`,
+    },
+    {
+      name: "github",
+      icon: "fab fa-github",
+      url: `https://github.com/${github}`,
+    },
+    {
+      name: "dev",
+      icon: "fab fa-dev",
+      url: `https://dev.to/${dev}`,
+    },
+    {
+      name: "linkedin",
+      icon: "fab fa-linkedin",
+      url: `https://linkedin.com/${linkedin}`,
+    },
+    {
+      name: "Gmail",
+      icon: "fas fa-envelope",
+      url: `mailto:${email}`,
+    },
+  ]
   return (
-    <div className="fa-2x">
-      <SocialLink href={`https://twitter.com/${twitter}`}>
-        <span className="fab fa-twitter" />
-      </SocialLink>
-      <SocialLink href={`https://dev.to/${dev}`}>
-        <span className="fab fa-dev" />
-      </SocialLink>
-      <SocialLink href={`https://github.com/${github}`}>
-        <span className="fab fa-github" />
-      </SocialLink>
-      <SocialLink href={`https://linkedin.com/${linkedin}`}>
-        <span className="fab fa-linkedin" />
-      </SocialLink>
+    <div className={small ? "" : "fa-2x"}>
+      {links.map((link, index) => (
+        <SocialLink as="a" href={link.url} key={index} target="_blank">
+          <span className={`${link.icon} ${border ? "fa-border" : ""}`} />
+        </SocialLink>
+      ))}
     </div>
   )
 }

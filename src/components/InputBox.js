@@ -36,6 +36,8 @@ export const InputBox = styled.input`
   border: 2px solid ${({ theme }) => theme.buttonBorder};
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.textNormal};
+
+  transition: 0.3s;
 `
 
 export const InputLabel = styled.label`
@@ -43,7 +45,7 @@ export const InputLabel = styled.label`
   top: 0;
   left: 0;
   margin: 4px 10px;
-  transition: 0.2s;
+  transition: 0.3s;
   pointer-events: none;
   background-color: ${({ theme }) => theme.bg};
 `

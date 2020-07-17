@@ -12,6 +12,7 @@ module.exports = {
       dev: `oluwakeyejohn`,
       github: `oluwakeye-john`,
       linkedin: `oluwakeyejohn-1706`,
+      email: `bjohnoluwakeye@gmail.com`,
     },
   },
   plugins: [
