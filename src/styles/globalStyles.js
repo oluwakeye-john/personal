@@ -7,8 +7,8 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.textNormal};
         background-color: ${({ theme }) => theme.bg}; 
         transition: 0.3s;
-        font-family: 'Open Sans', sans-serif; 
-        ${"" /* font-family: 'Roboto', sans-serif; */}
+        ${"" /* font-family: 'Open Sans', sans-serif; */}
+        font-family: 'Roboto', sans-serif;
         max-width: 750px;
         margin: 0 auto;
         min-height: 100vh;
