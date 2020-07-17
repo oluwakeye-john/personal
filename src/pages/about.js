@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-const AboutContainer = styled.div`
+const IntroSection = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -17,6 +17,8 @@ const AboutContainer = styled.div`
     align-items: center;
   }
 `
+
+const AboutContainer = styled.div``
 
 const Image = styled(Img)`
   border-radius: 10px;
@@ -40,17 +42,24 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      {/* <h1>About Me</h1> */}
 
       <AboutContainer>
-        <Image fluid={data.avatar.childImageSharp.fluid} alt="Oluwakeye John" />
-        <AboutText>
-          <h3>Who's this guy?</h3>
-          <p>
-            Hi, I'm John, a Full Stack web developer 💻 based in Ibadan,
-            Nigeria. I specialize in JavaScript and i also code Python🚀
-          </p>
-        </AboutText>
+        <IntroSection>
+          <Image
+            fluid={data.avatar.childImageSharp.fluid}
+            alt="Oluwakeye John"
+          />
+          <AboutText>
+            <h3>Who's this guy?</h3>
+            <p>
+              Hi, I'm John, a Full Stack web developer 💻 based in Ibadan,
+              Nigeria. I specialize in JavaScript and i also code Python🚀
+            </p>
+          </AboutText>
+        </IntroSection>
+
+        <h3>Hobbies</h3>
+        <p>I love programming</p>
       </AboutContainer>
     </Layout>
   )

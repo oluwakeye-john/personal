@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Share from "../components/share"
+import StyledLine from "../components/StyledLine"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -14,11 +16,7 @@ const FeaturedImage = styled(Img)`
   margin: 2rem 0;
 `
 
-const BlogContainer = styled.div`
-  a {
-    text-decoration: underline;
-  }
-`
+const BlogContainer = styled.div``
 
 const BlogPostHeading = styled.h1`
   margin-bottom: 0;
@@ -64,7 +62,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {` `}•{` `}
           {ttr} min read
           {` `}•{` `}
-          By Oluwakeye John
+          <Link to="/about">By Oluwakeye John</Link>
         </BlogDetails>
         {featuredImage && (
           <FeaturedImage
@@ -74,7 +72,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <BlogSection style={{ marginBottom: "3rem" }}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </BlogSection>
-        {/* <StyledLine /> */}
+        <Share />
         <Bio />
       </BlogContainer>
 

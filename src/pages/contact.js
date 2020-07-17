@@ -78,7 +78,9 @@ const Contact = ({ data, location }) => {
             <InputLabel>Message</InputLabel>
           </TextArea>
           <ButtonWrapper>
-            <Button type="submit">Send message</Button>
+            <Button type="submit">
+              <span className="fas fa-paper-plane" /> Send message
+            </Button>
           </ButtonWrapper>
         </form>
       </ContactContainer>

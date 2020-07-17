@@ -68,7 +68,8 @@ const Landing = () => {
       <LandingText>
         <h1>
           <Wave>👋</Wave>
-          <TypeWriter text="Hi There!" />
+          {` `}
+          <TypeWriter />
         </h1>
         <p>
           Hi, I'm John, a Full Stack web developer 💻 based in Ibadan, Nigeria.
