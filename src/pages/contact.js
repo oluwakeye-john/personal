@@ -48,7 +48,9 @@ const Contact = ({ data, location }) => {
             Contact me job offers, collaboration and hmm ... Just anything.
             Robots aren't welcome, BTW.
           </ContactText>
-          <SocialButtons small={true} />
+          <div style={{ textAlign: "center" }}>
+            <SocialButtons darkenOnHover />
+          </div>
           <ContactText>Or use the form below</ContactText>
           <InputGroup>
             <Input>

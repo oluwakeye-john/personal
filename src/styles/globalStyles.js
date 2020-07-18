@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         min-height: 100vh;
         line-height: 1.8;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.2dpx;
     }
     
     input:-webkit-autofill,

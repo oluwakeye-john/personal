@@ -30,7 +30,7 @@ const ShareLogo = styled.span`
 const Share = ({ link }) => {
   return (
     <div>
-      <ShareLogo className="fas fa-share" />
+      <ShareLogo className="fas fa-share-alt" />
       <ShareButton as="a" href="/" className="fab fa-twitter" />
       <ShareButton as="a" href="/" className="fab fa-whatsapp" />
       <ShareButton as="a" href="/" className="fab fa-facebook" />

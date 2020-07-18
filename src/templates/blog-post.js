@@ -8,6 +8,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
+import ColoredTags from "../components/coloredTags"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -23,6 +24,7 @@ const BlogPostHeading = styled.h1`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+  font-family: sans-serif;
 `
 
 const BlogSection = styled.section`
@@ -32,8 +34,12 @@ const BlogSection = styled.section`
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  strong {
     color: ${({ theme }) => theme.textNormal};
+  }
+  a:hover {
+    text-decoration: underline;
   }
 `
 
@@ -47,6 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
   const featuredImage = post.frontmatter.featuredImage
   const ttr = post.timeToRead
+  const tags = post.frontmatter.tags
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -57,12 +64,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
-          <span className="fas fa-calendar" /> {post.frontmatter.date}
+          <span className="far fa-calendar" /> {post.frontmatter.date}
           {` `}•{` `}
-          <span className="fas fa-clock" /> {ttr} min read
+          <span className="far fa-clock" /> {ttr} min read
           {` `}•{` `}
           <Link to="/about">By Oluwakeye John</Link>
         </BlogDetails>
+        {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />}
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
@@ -113,6 +121,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
         featuredImage {
           childImageSharp {
             fluid {

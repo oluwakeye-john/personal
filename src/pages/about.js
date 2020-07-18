@@ -62,9 +62,9 @@ const About = ({ data, location }) => {
           <AboutText>
             <h2>Who's this guy?</h2>
             <p>
-              Hi, I'm John Oluwakeye, a Full Stack web developer{" "}
-              <span aria-hidden>💻</span> based in Ibadan, Nigeria. I specialize
-              in JavaScript and i also code Python
+              Hi, I'm <strong>John Oluwakeye</strong>, a Full Stack web
+              developer <span aria-hidden>💻</span> based in Ibadan, Nigeria. I
+              specialize in JavaScript and i also code Python
               <span aria-hidden>🚀</span>
             </p>
           </AboutText>
@@ -74,7 +74,7 @@ const About = ({ data, location }) => {
         <p>
           I am passionate about web development. I like building fast, intuitive
           and responsive websites. I have worked on a number of projects. You
-          can find some of my projects <Link to="/projects">here</Link>...
+          can find some of my projects <Link to="/projects">here</Link>.
         </p>
         <p>
           I love learning new skills, especially those that make development
@@ -83,7 +83,18 @@ const About = ({ data, location }) => {
         </p>
         <p>
           If you have any web development needs, feel free to{" "}
-          <Link to="/contact">contact</Link> or get to know me a little better.
+          <Link to="/contact">contact</Link> me. You can also find me on{" "}
+          <a
+            href="https://twitter.com/oluwakeyejohn"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Twitter
+          </a>
+        </p>
+        <p>
+          In my free time, I work with electronic boards such as arduino,
+          esp8266 and raspberry pi.
         </p>
       </AboutContainer>
     </Layout>

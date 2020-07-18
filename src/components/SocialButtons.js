@@ -12,10 +12,11 @@ const SocialLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.primary};
+    opacity: ${({ darkenOnHover }) => (darkenOnHover ? "0.8" : "1")};
   }
 `
 
-const SocialButtons = ({ border, small, color }) => {
+const SocialButtons = ({ border, small, color, darkenOnHover }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -48,6 +49,11 @@ const SocialButtons = ({ border, small, color }) => {
       url: `https://twitter.com/${twitter}`,
     },
     {
+      name: "Gmail",
+      icon: "fas fa-envelope",
+      url: `mailto:${email}`,
+    },
+    {
       name: "github",
       icon: "fab fa-github",
       url: `https://github.com/${github}`,
@@ -67,12 +73,8 @@ const SocialButtons = ({ border, small, color }) => {
       icon: "fab fa-codepen",
       url: `https://codepen.io/${codepen}`,
     },
-    {
-      name: "Gmail",
-      icon: "fas fa-envelope",
-      url: `mailto:${email}`,
-    },
   ]
+
   return (
     <div className={small ? "" : "fa-2x"}>
       {links.map((link, index) => (
@@ -81,7 +83,9 @@ const SocialButtons = ({ border, small, color }) => {
           href={link.url}
           key={index}
           target="_blank"
+          rel="noreferrer"
           color={color ? color : ""}
+          darkenOnHover={darkenOnHover}
         >
           <span className={`${link.icon} ${border ? "fa-border" : ""}`} />
         </SocialLink>

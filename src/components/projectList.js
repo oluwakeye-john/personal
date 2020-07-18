@@ -65,7 +65,12 @@ const ProjectList = ({ number }) => {
         <ProjectItem key={index}>
           <ProjectItemHeading>{project.name}</ProjectItemHeading>
           <p>{project.description}</p>
-          <ProjectButton as="a" href={project.live} target="_blank">
+          <ProjectButton
+            as="a"
+            href={project.live}
+            target="_blank"
+            rel="noreferrer"
+          >
             View Site
           </ProjectButton>
         </ProjectItem>

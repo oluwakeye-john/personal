@@ -10,11 +10,8 @@ export const light = {
   cardShadow: "0 0 20px #ccc",
   link: "rgba(169,3,41,1)",
   blogTextNormal: "#222",
-  lightText: "rgba(0, 0, 0, 0.75)",
+  lightText: "rgba(0, 0, 0, 0.7)",
 }
-//rgb(235, 72, 136);
-//rgb(16, 162, 245);
-//rgb(233, 188, 63);
 const primary = "#fb2757"
 export const dark = {
   // bg: "rgb(21, 32, 43)",
@@ -34,4 +31,5 @@ export const dark = {
 // buttonBorder: "rgba(231,56,39,1)",
 // buttonText: "rgba(231,56,39,1)",
 //1da1f2
+//blogTextNormal: "hsla(0,0%,100%,0.7)",
 //de9ed3

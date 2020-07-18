@@ -30,6 +30,7 @@ const BlogList = ({ number }) => {
               date(formatString: "MMMM DD, YYYY")
               title
               description
+              tags
               featuredImage {
                 childImageSharp {
                   fluid {

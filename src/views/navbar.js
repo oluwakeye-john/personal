@@ -52,14 +52,12 @@ const ToggleButton = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;
-  color: ${({ color }) => color};
-  transition: 0.5s;
+  /* color: ${({ color }) => color}; */
+  color: inherit;
+  transition: 1s;
   font-size: 1rem;
 
-  &:focus,
-  &:active {
-    outline: none;
-  }
+  cursor: pointer;
 `
 
 const Navbar = ({ location, toggleTheme, theme }) => {
