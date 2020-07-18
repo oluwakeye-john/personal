@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import SocialButtons from "../components/SocialButtons"
-import Bubble from "../components/animations/bubble"
 
 const FooterContainer = styled.footer`
   text-align: center;
@@ -12,10 +11,14 @@ const Footer = () => {
   return (
     <FooterContainer>
       <p>
-        {`</>`} with <Bubble>💖</Bubble> by Oluwakeye John
+        {`</>`} with{" "}
+        <span role="img" aria-label={"love"}>
+          💖
+        </span>{" "}
+        by Oluwakeye John
       </p>
       <p>© {new Date().getFullYear()}</p>
-      <SocialButtons />
+      <SocialButtons small color="#8A858B" />
     </FooterContainer>
   )
 }

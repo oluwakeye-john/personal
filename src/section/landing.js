@@ -67,13 +67,17 @@ const Landing = () => {
 
       <LandingText>
         <h1>
-          <Wave>👋</Wave>
+          <Wave>
+            <span aria-hidden>👋</span>
+          </Wave>
           {` `}
           <TypeWriter />
         </h1>
         <p>
-          Hi, I'm John, a Full Stack web developer 💻 based in Ibadan, Nigeria.
-          I specialize in JavaScript and i also code Python🚀
+          Hi, I'm John, a Full Stack web developer <span aria-hidden>💻</span>{" "}
+          based in Ibadan, Nigeria. I specialize in JavaScript and i also code
+          Python
+          <span aria-hidden>🚀</span>
           <Link to="/about"> Read More</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>

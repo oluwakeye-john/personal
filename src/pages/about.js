@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,7 +18,17 @@ const IntroSection = styled.div`
   }
 `
 
-const AboutContainer = styled.div``
+const AboutContainer = styled.div`
+  color: ${({ theme }) => theme.blogTextNormal};
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${({ theme }) => theme.textNormal};
+  }
+`
 
 const Image = styled(Img)`
   border-radius: 10px;
@@ -50,16 +60,31 @@ const About = ({ data, location }) => {
             alt="Oluwakeye John"
           />
           <AboutText>
-            <h3>Who's this guy?</h3>
+            <h2>Who's this guy?</h2>
             <p>
-              Hi, I'm John, a Full Stack web developer 💻 based in Ibadan,
-              Nigeria. I specialize in JavaScript and i also code Python🚀
+              Hi, I'm John Oluwakeye, a Full Stack web developer{" "}
+              <span aria-hidden>💻</span> based in Ibadan, Nigeria. I specialize
+              in JavaScript and i also code Python
+              <span aria-hidden>🚀</span>
             </p>
           </AboutText>
         </IntroSection>
 
-        <h3>Hobbies</h3>
-        <p>I love programming</p>
+        <h2>More about me</h2>
+        <p>
+          I am passionate about web development. I like building fast, intuitive
+          and responsive websites. I have worked on a number of projects. You
+          can find some of my projects <Link to="/projects">here</Link>...
+        </p>
+        <p>
+          I love learning new skills, especially those that make development
+          faster and better. I also love teaming with fellow developers to build
+          amazing stuffs.
+        </p>
+        <p>
+          If you have any web development needs, feel free to{" "}
+          <Link to="/contact">contact</Link> or get to know me a little better.
+        </p>
       </AboutContainer>
     </Layout>
   )

@@ -49,8 +49,15 @@ const projects = [
     live: "https://lens-chat.netlify.app",
     code: "",
   },
+  {
+    name: "Chat app",
+    description:
+      "A real time application chat platform built with nodejs and socket io",
+    live: "https://lens-chat.netlify.app",
+    code: "",
+  },
 ]
-
+// 🤐😷🤕🤒🤮🤢🤧🥵🥶😴💤😈👿👹👺💩👻💀☠👽🤖🎃😺😸😹😻😼😽🙀😿😾👐🤲🙌👏🙏🤝👍👎👊✊🤛🤜🤞✌🤘🤟👌🤏👈👉👆👇☝✋🤚🖐🖖👋🤙💪🦾🖕✍🤳💅🦵🦿🦶👄🦷👅👂🦻👃👁👀🧠🦴👤👥🗣👶👧🧒👦👩🧑👨👩‍🦱🧑‍🦱👨‍
 const ProjectList = ({ number }) => {
   return (
     <ProjectListContainer>

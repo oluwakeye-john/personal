@@ -12,6 +12,7 @@ import {
   TextArea,
 } from "../components/InputBox"
 import SocialButtons from "../components/SocialButtons"
+import SectionHeading from "../components/sectionHeading"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -22,14 +23,6 @@ const ContactContainer = styled.div`
 
 const ButtonWrapper = styled.div`
   text-align: center;
-`
-
-const ContactHeading = styled.h1`
-  padding: 0;
-  margin: 0;
-  /* text-align: center; */
-  font-family: arial;
-  margin-bottom: 1rem;
 `
 
 const ContactText = styled.p`
@@ -50,7 +43,7 @@ const Contact = ({ data, location }) => {
       <SEO title="Contact Me" />
       <ContactContainer>
         <form onSubmit={handleSubmit}>
-          <ContactHeading>Contact Me</ContactHeading>
+          <SectionHeading>Contact Me</SectionHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.
             Robots aren't welcome, BTW.

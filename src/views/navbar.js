@@ -30,12 +30,6 @@ const NavbarContainer = styled.div`
     justify-content: space-between;
   }
   margin-bottom: 3rem;
-  /* position: sticky;
-  padding: 1rem 0;
-  left: 0;
-  top: 0;
-  background: ${({ theme }) => theme.bg};
-  z-index: 3; */
 `
 
 const NavbarItem = styled(Link)`
@@ -58,6 +52,14 @@ const ToggleButton = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;
+  color: ${({ color }) => color};
+  transition: 0.5s;
+  font-size: 1rem;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 `
 
 const Navbar = ({ location, toggleTheme, theme }) => {
@@ -82,11 +84,15 @@ const Navbar = ({ location, toggleTheme, theme }) => {
           </NavbarItem>
         )
       })}
-      <ToggleButton onClick={toggleTheme}>
-        {theme === "light" ? "🌙" : "☀️"}
-      </ToggleButton>
+      <ToggleButton
+        onClick={toggleTheme}
+        color={theme === "light" ? "black" : "yellow"}
+        className={
+          theme === "light" ? "fas fa-moon fa-fw " : "fas fa-sun fa-fw "
+        }
+      ></ToggleButton>
     </NavbarContainer>
   )
 }
-
+// {theme === "light" ? "🌙" : "☀️"}
 export default Navbar

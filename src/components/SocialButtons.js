@@ -7,9 +7,15 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const SocialLink = styled(Link)`
   margin: 1rem;
+  color: ${({ color }) => (color ? color : "")};
+  transition: 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
 `
 
-const SocialButtons = ({ border, small }) => {
+const SocialButtons = ({ border, small, color }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -20,6 +26,7 @@ const SocialButtons = ({ border, small }) => {
             github
             dev
             email
+            codepen
           }
         }
       }
@@ -31,6 +38,7 @@ const SocialButtons = ({ border, small }) => {
     dev,
     github,
     email,
+    codepen,
   } = data.site.siteMetadata.social
 
   const links = [
@@ -55,6 +63,11 @@ const SocialButtons = ({ border, small }) => {
       url: `https://linkedin.com/${linkedin}`,
     },
     {
+      name: "codepen",
+      icon: "fab fa-codepen",
+      url: `https://codepen.io/${codepen}`,
+    },
+    {
       name: "Gmail",
       icon: "fas fa-envelope",
       url: `mailto:${email}`,
@@ -63,7 +76,13 @@ const SocialButtons = ({ border, small }) => {
   return (
     <div className={small ? "" : "fa-2x"}>
       {links.map((link, index) => (
-        <SocialLink as="a" href={link.url} key={index} target="_blank">
+        <SocialLink
+          as="a"
+          href={link.url}
+          key={index}
+          target="_blank"
+          color={color ? color : ""}
+        >
           <span className={`${link.icon} ${border ? "fa-border" : ""}`} />
         </SocialLink>
       ))}

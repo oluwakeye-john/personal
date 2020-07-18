@@ -28,9 +28,11 @@ export const InputBox = styled.input`
   }
   &:focus + label {
     transform: translateY(-20px);
+    font-size: small;
   }
   &:not(:placeholder-shown) + label {
     transform: translateY(-20px);
+    font-size: small;
   }
   border-radius: 5px;
   border: 2px solid ${({ theme }) => theme.buttonBorder};

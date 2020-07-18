@@ -13,6 +13,7 @@ module.exports = {
       github: `oluwakeye-john`,
       linkedin: `oluwakeyejohn-1706`,
       email: `bjohnoluwakeye@gmail.com`,
+      codepen: `oluwakeye-john`,
     },
   },
   plugins: [

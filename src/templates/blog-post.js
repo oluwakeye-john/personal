@@ -8,7 +8,6 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
-import StyledLine from "../components/StyledLine"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -58,9 +57,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
-          {post.frontmatter.date}
+          <span className="fas fa-calendar" /> {post.frontmatter.date}
           {` `}•{` `}
-          {ttr} min read
+          <span className="fas fa-clock" /> {ttr} min read
           {` `}•{` `}
           <Link to="/about">By Oluwakeye John</Link>
         </BlogDetails>

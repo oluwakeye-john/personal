@@ -2,13 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import SectionHeading from "../components/sectionHeading"
 
 const SkillContainer = styled.div`
   margin: 3rem 0;
-`
-
-const SkillHeading = styled.h1`
-  text-align: center;
 `
 
 const SkillList = styled.div`
@@ -46,6 +43,17 @@ const ItemLabel = styled.label`
 
 const SkillInfo = styled.p`
   text-align: center;
+
+  @media (max-width: 768px) {
+    &::before {
+      content: "Click ";
+    }
+  }
+  @media (min-width: 768px) {
+    &::before {
+      content: "Hover ";
+    }
+  }
 `
 
 const Skill = () => {
@@ -86,8 +94,10 @@ const Skill = () => {
   `)
   return (
     <SkillContainer>
-      <SkillHeading>🛠 My Skills</SkillHeading>
-      <SkillInfo>Click/Hover to show name</SkillInfo>
+      <SectionHeading>
+        <span aria-hidden>🛠</span> My Skills
+      </SectionHeading>
+      <SkillInfo> to show name</SkillInfo>
       <SkillList>
         <Item>
           <ItemImage

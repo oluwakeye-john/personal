@@ -28,7 +28,11 @@ const CenterWrapper = styled.div`
 export const CenterButton = ({ children }) => {
   return (
     <CenterWrapper>
-      <Button>{children}</Button>
+      <Button>
+        {children}
+        {` `}
+        <span className="fas fa-chevron-right" />
+      </Button>
     </CenterWrapper>
   )
 }

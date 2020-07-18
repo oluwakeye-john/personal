@@ -1,25 +1,21 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 
 import styled from "styled-components"
 import BlogList from "../components/BlogList"
 import { CenterButton } from "../components/Button"
+import SectionHeading from "../components/sectionHeading"
 
 const BlogContainer = styled.div`
   margin: 3rem 0;
 `
 
-const BlogHeading = styled.h1`
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 2rem;
-`
-
 const BlogSection = () => {
   return (
     <BlogContainer>
-      <BlogHeading>✍ Recent Blogs</BlogHeading>
+      <SectionHeading>
+        <span aria-hidden>✍</span> Recent Blogs
+      </SectionHeading>
       <BlogList number={2} />
       <Link to="/blog">
         <CenterButton>View More</CenterButton>

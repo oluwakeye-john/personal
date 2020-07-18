@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-const texts = ["Hi There", "Hello World", "Hey There", "Hola"]
+const texts = ["Hi there", "Hello world", "Hey there", "Hola!"]
 
 let generalInterval, localInterval1, localInterval2
 class TypeWriter extends Component {

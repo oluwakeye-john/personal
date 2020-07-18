@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         min-height: 100vh;
         line-height: 1.8;
+        letter-spacing: 0.3px;
     }
     
     input:-webkit-autofill,
@@ -22,16 +23,11 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-box-shadow: 0 0 0 30px ${({ theme }) =>
           theme.bg} inset !important;
     }
-
-    ${
-      "" /* input:-webkit-autofill:focus {
-        border: 2px solid ${({ theme }) => theme.buttonBorder};
-    } */
-    }
     
     a{
         text-decoration: none;
         color: ${({ theme }) => theme.link};
+        
     }
     *, ::after, ::before {
         box-sizing: border-box;
