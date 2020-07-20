@@ -1,5 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import {
+  FaWhatsapp,
+  FaTwitter,
+  FaFacebook,
+  FaLinkedin,
+  FaShareAlt,
+} from "react-icons/fa"
 
 const ShareButton = styled.div`
   display: inline-block;
@@ -30,11 +37,22 @@ const ShareLogo = styled.span`
 const Share = ({ link }) => {
   return (
     <div>
-      <ShareLogo className="fas fa-share-alt" />
-      <ShareButton as="a" href="/" className="fab fa-twitter" />
-      <ShareButton as="a" href="/" className="fab fa-whatsapp" />
-      <ShareButton as="a" href="/" className="fab fa-facebook" />
-      <ShareButton as="a" href="/" className="fab fa-linkedin" />
+      <ShareLogo>
+        <FaShareAlt />
+      </ShareLogo>
+
+      <ShareButton as="a" href="/">
+        <FaWhatsapp />
+      </ShareButton>
+      <ShareButton as="a" href="/">
+        <FaTwitter />
+      </ShareButton>
+      <ShareButton as="a" href="/">
+        <FaFacebook />
+      </ShareButton>
+      <ShareButton as="a" href="/">
+        <FaLinkedin />
+      </ShareButton>
     </div>
   )
 }

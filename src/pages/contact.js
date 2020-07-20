@@ -14,6 +14,8 @@ import {
 import SocialButtons from "../components/SocialButtons"
 import SectionHeading from "../components/sectionHeading"
 
+import { FaPaperPlane } from "react-icons/fa"
+
 const ContactContainer = styled.div`
   margin: 2rem 0;
   max-width: 750px;
@@ -74,7 +76,7 @@ const Contact = ({ data, location }) => {
           </TextArea>
           <ButtonWrapper>
             <Button type="submit">
-              <span className="fas fa-paper-plane" /> Send message
+              <FaPaperPlane /> Send message
             </Button>
           </ButtonWrapper>
         </form>

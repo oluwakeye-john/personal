@@ -1,7 +1,14 @@
 import React from "react"
-import "@fortawesome/fontawesome-free/css/all.min.css"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import {
+  FaCodepen,
+  FaTwitter,
+  FaDev,
+  FaLinkedin,
+  FaEnvelopeOpen,
+  FaGithub,
+} from "react-icons/fa"
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -45,32 +52,32 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
   const links = [
     {
       name: "twitter",
-      icon: "fab fa-twitter",
+      icon: FaTwitter,
       url: `https://twitter.com/${twitter}`,
     },
     {
       name: "Gmail",
-      icon: "fas fa-envelope",
+      icon: FaEnvelopeOpen,
       url: `mailto:${email}`,
     },
     {
       name: "github",
-      icon: "fab fa-github",
+      icon: FaGithub,
       url: `https://github.com/${github}`,
     },
     {
       name: "dev",
-      icon: "fab fa-dev",
+      icon: FaDev,
       url: `https://dev.to/${dev}`,
     },
     {
       name: "linkedin",
-      icon: "fab fa-linkedin",
+      icon: FaLinkedin,
       url: `https://linkedin.com/${linkedin}`,
     },
     {
       name: "codepen",
-      icon: "fab fa-codepen",
+      icon: FaCodepen,
       url: `https://codepen.io/${codepen}`,
     },
   ]
@@ -87,7 +94,7 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
           color={color ? color : ""}
           darkenOnHover={darkenOnHover}
         >
-          <span className={`${link.icon} ${border ? "fa-border" : ""}`} />
+          <link.icon />
         </SocialLink>
       ))}
     </div>

@@ -41,6 +41,8 @@ const LandingText = styled.div`
   flex: 3;
 `
 
+const texts = ["Oluwakeye John", "Fullstack developer", "Maker"]
+
 const Landing = () => {
   const data = useStaticQuery(graphql`
     query LandingQuery {
@@ -71,7 +73,7 @@ const Landing = () => {
             <span aria-hidden>👋</span>
           </Wave>
           {` `}
-          <TypeWriter />
+          <TypeWriter texts={texts} />
         </h1>
         <p>
           Hi, I'm John, a Full Stack web developer <span aria-hidden>💻</span>{" "}

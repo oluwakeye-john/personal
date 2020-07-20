@@ -10,6 +10,11 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
 import ColoredTags from "../components/coloredTags"
 
+import {
+  FaRegCalendarAlt as Calendar,
+  FaRegClock as Clock,
+} from "react-icons/fa"
+
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
@@ -64,9 +69,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
-          <span className="far fa-calendar" /> {post.frontmatter.date}
+          <Calendar /> {post.frontmatter.date}
           {` `}•{` `}
-          <span className="far fa-clock" /> {ttr} min read
+          <Clock /> {ttr} min read
           {` `}•{` `}
           <Link to="/about">By Oluwakeye John</Link>
         </BlogDetails>

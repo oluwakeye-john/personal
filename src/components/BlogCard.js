@@ -4,6 +4,10 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import Card from "./Card"
 import ColoredTags from "./coloredTags"
+import {
+  FaRegCalendarAlt as Calendar,
+  FaRegClock as Clock,
+} from "react-icons/fa"
 
 const CardImage = styled(Img)`
   object-fit: cover;
@@ -40,11 +44,11 @@ const BlogCard = ({ node }) => {
       <div style={{ padding: "15px" }}>
         <CardExtra>
           <small>
-            <span className="far fa-calendar" /> {node.frontmatter.date}
+            <Calendar /> {node.frontmatter.date}
           </small>
           {` `}•{` `}
           <small>
-            <span className="far fa-clock" /> {ttr} min read
+            <Clock /> {ttr} min read
           </small>
         </CardExtra>
         {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />}

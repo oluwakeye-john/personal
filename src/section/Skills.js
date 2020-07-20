@@ -95,7 +95,7 @@ const Skill = () => {
   return (
     <SkillContainer>
       <SectionHeading>
-        <span aria-hidden>🛠</span> My Skills
+        <span aria-hidden>✨</span> My Skills
       </SectionHeading>
       <SkillInfo> to show name</SkillInfo>
       <SkillList>

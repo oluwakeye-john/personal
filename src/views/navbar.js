@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import StyledText from "../components/StyledText"
+import { FaSun as Sun, FaRegMoon as Moon } from "react-icons/fa"
 
 const items = [
   {
@@ -85,10 +86,9 @@ const Navbar = ({ location, toggleTheme, theme }) => {
       <ToggleButton
         onClick={toggleTheme}
         color={theme === "light" ? "black" : "yellow"}
-        className={
-          theme === "light" ? "fas fa-moon fa-fw " : "fas fa-sun fa-fw "
-        }
-      ></ToggleButton>
+      >
+        {theme === "light" ? <Moon /> : <Sun />}
+      </ToggleButton>
     </NavbarContainer>
   )
 }

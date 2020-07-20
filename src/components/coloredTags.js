@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { FaTags } from "react-icons/fa"
 
 const colors = ["green", "orange", "teal"]
 
@@ -15,7 +16,7 @@ const ColoredTags = ({ tags, icon }) => {
   const splitTag = tags.split(", ")
   return (
     <div style={{ marginTop: ".5rem" }}>
-      {icon && <span className="fas fa-tags" />}
+      {icon && <FaTags />}
       {` `}
       {typeof splitTag === "object" ? (
         splitTag.map((tag, index) => (

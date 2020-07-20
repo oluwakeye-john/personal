@@ -1,85 +1,97 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 
-const texts = ["Hi there", "Hello world", "Hey there", "Hola!"]
+// const texts = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   "React",
+//   "NodeJS",
+//   "GraphQL",
+//   "Styled Components",
+//   "Socket IO",
+// ]
 
-let generalInterval, localInterval1, localInterval2
+const Cursor = styled.span`
+  animation-name: cursor;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+
+  @keyframes cursor {
+    0% {
+      color: transparent;
+    }
+    50% {
+      color: ${({ theme }) => theme.navbarLink};
+    }
+    100% {
+      color: transparent;
+    }
+  }
+`
+
+const period = 2500
+const interval = 100
+
 class TypeWriter extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      text: this.props.texts[0],
+      count: 0,
       shown: "",
-      text: texts[0],
-      prog: 0,
-      tog: 0,
     }
   }
 
-  changeText = () => {
+  rotateText = () => {
+    const count = this.state.count
     this.setState({
-      text: texts[this.state.prog % texts.length],
-      prog: this.state.prog + 1,
+      text: this.props.texts[(count + 1) % this.props.texts.length],
+      count: count + 1,
     })
   }
 
-  writeText = () => {
-    localInterval1 = setInterval(() => {
-      const { shown, text } = this.state
-      if (text.length !== shown.length) {
-        const n = text[shown.length]
-        if (n !== undefined) {
-          this.setState({
-            shown: shown + text[shown.length],
-          })
-        } else {
-          this.setState({
-            shown: "",
-          })
-        }
-      } else {
-        clearInterval(localInterval1)
-      }
-    }, 150)
+  write = () => {
+    const { text, shown } = this.state
+    if (text !== shown) {
+      this.setState({
+        shown: text.substring(0, shown.length + 1),
+      })
+      setTimeout(this.write, interval)
+    } else {
+      setTimeout(this.clear, period)
+    }
   }
 
-  clearText = () => {
-    localInterval2 = setInterval(() => {
-      const { shown } = this.state
-      if (shown.length) {
-        this.setState({
-          shown: shown.slice(0, shown.length - 1),
-        })
-      } else {
-        this.setState({
-          shown: "",
-        })
-        clearInterval(localInterval2)
-        this.writeText()
-      }
-    }, 150)
+  refresh = () => {
+    this.rotateText()
+    this.write()
   }
 
-  handle = () => {
-    this.clearText()
-    this.changeText()
+  clear = () => {
+    const { shown } = this.state
+    if (shown !== "") {
+      this.setState({
+        shown: shown.substring(0, shown.length - 1),
+      })
+      setTimeout(this.clear, interval)
+    } else {
+      this.refresh()
+    }
   }
 
   componentDidMount() {
-    this.handle()
-    generalInterval = setInterval(() => {
-      this.handle()
-    }, 5000)
+    setTimeout(this.write, 1500)
   }
 
-  componentWillUnmount() {
-    clearInterval(generalInterval)
-    clearInterval(localInterval1)
-    clearInterval(localInterval2)
-  }
   render() {
     return (
-      <span>
-        {`${this.state.shown}`} <span style={{ color: "grey" }}>|</span>
-      </span>
+      <>
+        <span>{this.state.shown}</span>
+        <Cursor> |</Cursor>
+      </>
     )
   }
 }

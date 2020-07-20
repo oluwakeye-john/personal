@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { FaChevronRight } from "react-icons/fa"
 
 const Button = styled.button`
   padding: 0.5rem 1.5rem;
@@ -31,7 +32,7 @@ export const CenterButton = ({ children }) => {
       <Button>
         {children}
         {` `}
-        <span className="fas fa-chevron-right" />
+        <FaChevronRight />
       </Button>
     </CenterWrapper>
   )
