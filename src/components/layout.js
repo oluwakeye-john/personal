@@ -34,10 +34,6 @@ const Layout = ({ location, title, children }) => {
           href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&display=swap"
           rel="stylesheet"
         ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap"
-          rel="stylesheet"
-        ></link>
       </Helmet>
       <LayoutComponent>
         <GlobalStyles />

@@ -40,6 +40,7 @@ const ItemImage = styled(Img)`
     border: 0;
     outline: 0;
     opacity: 0.5;
+  }
 `
 
 const ItemLabel = styled.label`

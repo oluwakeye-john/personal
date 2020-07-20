@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { FaChevronUp } from "react-icons/fa"
 import { Link } from "gatsby"
@@ -24,14 +24,19 @@ const ScrollContainer = styled.div`
 const ScrollUp = () => {
   const [isVisible, setIsVisible] = useState(false)
 
-  const scroll = window.addEventListener("scroll", () => {
-    console.log(window.scrollY)
-    if (Number(window.scrollY) > 100) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false)
+  useEffect(() => {
+    const scroll = window.addEventListener("scroll", () => {
+      console.log(window.scrollY)
+      if (Number(window.scrollY) > 100) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    })
+    return () => {
+      window.removeEventListener("scroll", scroll)
     }
-  })
+  }, [])
 
   return (
     <Link to="#">
