@@ -1,17 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-// const texts = [
-//   "HTML",
-//   "CSS",
-//   "JavaScript",
-//   "React",
-//   "NodeJS",
-//   "GraphQL",
-//   "Styled Components",
-//   "Socket IO",
-// ]
-
 const Cursor = styled.span`
   animation-name: cursor;
   animation-iteration-count: infinite;
@@ -34,6 +23,8 @@ const Cursor = styled.span`
 
 const period = 2500
 const interval = 100
+const startUpDelay = 1500
+let timeout
 
 class TypeWriter extends Component {
   constructor(props) {
@@ -59,9 +50,9 @@ class TypeWriter extends Component {
       this.setState({
         shown: text.substring(0, shown.length + 1),
       })
-      setTimeout(this.write, interval)
+      timeout = setTimeout(this.write, interval)
     } else {
-      setTimeout(this.clear, period)
+      timeout = setTimeout(this.clear, period)
     }
   }
 
@@ -76,14 +67,18 @@ class TypeWriter extends Component {
       this.setState({
         shown: shown.substring(0, shown.length - 1),
       })
-      setTimeout(this.clear, interval)
+      timeout = setTimeout(this.clear, interval)
     } else {
       this.refresh()
     }
   }
 
   componentDidMount() {
-    setTimeout(this.write, 1500)
+    timeout = setTimeout(this.write, startUpDelay)
+  }
+
+  componentWillUnmount() {
+    clearTimeout(timeout)
   }
 
   render() {

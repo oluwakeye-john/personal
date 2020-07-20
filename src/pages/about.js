@@ -32,9 +32,10 @@ const AboutContainer = styled.div`
 
 const Image = styled(Img)`
   border-radius: 10px;
+  max-height: 300px;
   width: 35%;
   @media (max-width: 768px) {
-    width: 70%;
+    width: 270px;
   }
 `
 
@@ -69,7 +70,6 @@ const About = ({ data, location }) => {
             </p>
           </AboutText>
         </IntroSection>
-
         <h2>More about me</h2>
         <p>
           I am passionate about web development. I like building fast, intuitive
@@ -96,6 +96,9 @@ const About = ({ data, location }) => {
           In my free time, I work with electronic boards such as arduino,
           esp8266 and raspberry pi.
         </p>
+        <p>
+          Aside tech, i watch movies and TV shows (like every typical person).
+        </p>
       </AboutContainer>
     </Layout>
   )
@@ -110,9 +113,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    avatar: file(absolutePath: { regex: "/john.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/john15.jpg/" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 550, maxHeight: 550) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

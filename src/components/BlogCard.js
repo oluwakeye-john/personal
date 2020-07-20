@@ -46,7 +46,7 @@ const BlogCard = ({ node }) => {
           <small>
             <Calendar /> {node.frontmatter.date}
           </small>
-          {` `}•{` `}
+          {` `}&nbsp;{` `}
           <small>
             <Clock /> {ttr} min read
           </small>

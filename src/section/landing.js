@@ -41,7 +41,7 @@ const LandingText = styled.div`
   flex: 3;
 `
 
-const texts = ["Oluwakeye John", "Fullstack developer", "Maker"]
+const texts = ["Hey", "Hello", "Hi"]
 
 const Landing = () => {
   const data = useStaticQuery(graphql`
@@ -76,9 +76,9 @@ const Landing = () => {
           <TypeWriter texts={texts} />
         </h1>
         <p>
-          Hi, I'm John, a Full Stack web developer <span aria-hidden>💻</span>{" "}
-          based in Ibadan, Nigeria. I specialize in JavaScript and i also code
-          Python
+          Hi, I'm <strong>John</strong>, a Full Stack web developer{" "}
+          <span aria-hidden>💻</span> based in Ibadan, Nigeria. I specialize in
+          JavaScript and i also code Python
           <span aria-hidden>🚀</span>
           <Link to="/about"> Read More</Link>
         </p>

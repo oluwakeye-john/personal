@@ -52,6 +52,12 @@ const BlogDetails = styled.p`
   color: ${({ theme }) => theme.lightText};
 `
 
+const RelatedBlog = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+`
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
@@ -70,9 +76,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
           <Calendar /> {post.frontmatter.date}
-          {` `}•{` `}
+          {` `}&nbsp;{` `}
           <Clock /> {ttr} min read
-          {` `}•{` `}
+          {` `}&nbsp;{` `}
           <Link to="/about">By Oluwakeye John</Link>
         </BlogDetails>
         {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />}
@@ -88,22 +94,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <Bio />
       </BlogContainer>
 
-      <div>
-        <div style={{ display: "inline-block" }}>
+      <RelatedBlog>
+        <div>
           {previous && (
             <Link to={`/blog` + previous.fields.slug} rel="prev">
               ← {previous.frontmatter.title}
             </Link>
           )}
         </div>
-        <div style={{ textAlign: "right" }}>
+        <div>
           {next && (
             <Link to={`/blog` + next.fields.slug} rel="next">
               {next.frontmatter.title} →
             </Link>
           )}
         </div>
-      </div>
+      </RelatedBlog>
     </Layout>
   )
 }

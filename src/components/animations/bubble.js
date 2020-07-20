@@ -2,9 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 const Bub = styled.span`
+  display: inline-block;
   animation-name: bubble;
   animation-timing-function: linear;
-  animation-duration: 1s;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   transform: scale(0);
 

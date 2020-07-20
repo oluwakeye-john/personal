@@ -4,6 +4,17 @@ import { useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import SectionHeading from "../components/sectionHeading"
 
+// const texts = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   "React",
+//   "NodeJS",
+//   "GraphQL",
+//   "Styled Components",
+//   "Socket IO",
+// ]
+
 const SkillContainer = styled.div`
   margin: 3rem 0;
 `
@@ -23,12 +34,12 @@ const ItemImage = styled(Img)`
   border-radius: 20px;
   transition: 0.3s;
   z-index: 2;
+
   &:hover {
     transform: translateY(-40px);
     border: 0;
     outline: 0;
     opacity: 0.5;
-  }
 `
 
 const ItemLabel = styled.label`
