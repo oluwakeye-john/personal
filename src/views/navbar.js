@@ -57,8 +57,14 @@ const ToggleButton = styled.button`
   color: inherit;
   transition: 1s;
   font-size: 1rem;
+  transition: .5s;
+  transform: ${({ light }) => (light ? "rotate(0deg)" : "rotate(180deg)")};
 
   cursor: pointer;
+
+  &:focus{
+    outline: 0;
+  }
 `
 
 const Navbar = ({ location, toggleTheme, theme }) => {
@@ -86,11 +92,12 @@ const Navbar = ({ location, toggleTheme, theme }) => {
       <ToggleButton
         onClick={toggleTheme}
         color={theme === "light" ? "black" : "yellow"}
+        light={theme === "light" ? true : false}
       >
         {theme === "light" ? <Moon /> : <Sun />}
       </ToggleButton>
     </NavbarContainer>
   )
 }
-// {theme === "light" ? "🌙" : "☀️"}
+
 export default Navbar
