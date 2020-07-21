@@ -26,7 +26,7 @@ const Footer = () => {
         by Oluwakeye John
       </p>
       <Quote>
-        How do you comfort a javascript bug? <code>Console</code> it
+        How do you comfort a javascript bug? Console it
         {` `}
         <FaSmile />
       </Quote>

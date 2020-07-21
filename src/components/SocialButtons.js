@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaDev,
   FaLinkedin,
-  FaEnvelopeOpen,
+  FaEnvelope,
   FaGithub,
 } from "react-icons/fa"
 
@@ -57,7 +57,7 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
     },
     {
       name: "Gmail",
-      icon: FaEnvelopeOpen,
+      icon: FaEnvelope,
       url: `mailto:${email}`,
     },
     {

@@ -27,6 +27,10 @@ const HeaderComponent = styled(StyledText)`
   @media (max-width: 500px) {
     font-size: 2.2rem;
   }
+
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
 `
 
 const SubHeaderComponent = styled(HeaderComponent)`

@@ -37,6 +37,8 @@ const Image = styled(Img)`
   @media (max-width: 768px) {
     width: 270px;
   }
+
+  box-shadow: 0 0 5px ${({ theme }) => theme.link};
 `
 
 const AboutText = styled.div`
@@ -61,11 +63,12 @@ const About = ({ data, location }) => {
             alt="Oluwakeye John"
           />
           <AboutText>
-            <h2>Who's this guy?</h2>
+            <h2>Who Am I?</h2>
             <p>
-              I'm a Full Stack developer and I currently reside in Ibadan,
-              Nigeria. My prime expertise is <strong>Javascript</strong> but I
-              also like to work with <strong>Python</strong>.
+              I'm a <strong>Full Stack developer</strong> and I currently reside
+              in Ibadan, Nigeria. My prime expertise is{" "}
+              <strong>Javascript</strong> but I also like to work with{" "}
+              <strong>Python</strong>.
             </p>
           </AboutText>
         </IntroSection>
@@ -110,9 +113,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    avatar: file(absolutePath: { regex: "/john15.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/john0.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 550, maxHeight: 550) {
+        fluid(quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

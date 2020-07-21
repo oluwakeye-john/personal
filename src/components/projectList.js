@@ -34,27 +34,23 @@ const projects = [
     description:
       "A movie website, similar to netflix... Without the download button",
     live: "https://vizmovies.netlify.app",
-    code: "",
   },
   {
     name: "Eaveswall",
     description: "Eaveswall is a univeristy blogging platform.",
     live: "https://eaveswall.com",
-    code: "",
   },
   {
     name: "Video App",
     description:
       "A video chat application built with webRTC, socket.io and nodejs",
     live: "https://lens-chat.netlify.app",
-    code: "",
   },
   {
     name: "Chat app",
     description:
       "A real time application chat platform built with nodejs and socket io",
-    live: "https://lens-chat.netlify.app",
-    code: "",
+    live: "https://oluwakeye-chat.herokuapp.com",
   },
 ]
 // 🤐😷🤕🤒🤮🤢🤧🥵🥶😴💤😈👿👹👺💩👻💀☠👽🤖🎃😺😸😹😻😼😽🙀😿😾👐🤲🙌👏🙏🤝👍👎👊✊🤛🤜🤞✌🤘🤟👌🤏👈👉👆👇☝✋🤚🖐🖖👋🤙💪🦾🖕✍🤳💅🦵🦿🦶👄🦷👅👂🦻👃👁👀🧠🦴👤👥🗣👶👧🧒👦👩🧑👨👩‍🦱🧑‍🦱👨‍
