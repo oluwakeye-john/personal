@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import StyledText from "../components/StyledText"
+import { FaSun as Sun, FaRegMoon as Moon } from "react-icons/fa"
 
 const items = [
   {
@@ -52,6 +53,18 @@ const ToggleButton = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;
+  /* color: ${({ color }) => color}; */
+  color: inherit;
+  transition: 1s;
+  font-size: 1rem;
+  transition: .5s;
+  transform: ${({ light }) => (light ? "rotate(0deg)" : "rotate(180deg)")};
+
+  cursor: pointer;
+
+  &:focus{
+    outline: 0;
+  }
 `
 
 const Navbar = ({ location, toggleTheme, theme }) => {
@@ -76,8 +89,12 @@ const Navbar = ({ location, toggleTheme, theme }) => {
           </NavbarItem>
         )
       })}
-      <ToggleButton onClick={toggleTheme}>
-        {theme === "light" ? "🌙" : "☀️"}
+      <ToggleButton
+        onClick={toggleTheme}
+        color={theme === "light" ? "black" : "yellow"}
+        light={theme === "light" ? true : false}
+      >
+        {theme === "light" ? <Moon /> : <Sun />}
       </ToggleButton>
     </NavbarContainer>
   )

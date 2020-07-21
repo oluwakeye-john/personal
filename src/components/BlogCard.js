@@ -3,6 +3,11 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Card from "./Card"
+import ColoredTags from "./coloredTags"
+import {
+  FaRegCalendarAlt as Calendar,
+  FaRegClock as Clock,
+} from "react-icons/fa"
 
 const CardImage = styled(Img)`
   object-fit: cover;
@@ -13,6 +18,8 @@ const CardImage = styled(Img)`
 
 const CardTitle = styled.h2`
   color: ${({ theme }) => theme.textNormal};
+  font-family: sans-serif;
+  line-height: 1;
 `
 
 const CardExtra = styled.div`
@@ -23,9 +30,9 @@ const BlogCard = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
   const image = node.frontmatter.featuredImage
   const ttr = node.timeToRead
+  const tags = node.frontmatter.tags
 
-  const descRaw = node.frontmatter.description || node.excerpt
-  const desc = descRaw.length > 40 ? descRaw.slice(0, 120) + "..." : descRaw
+  const desc = node.frontmatter.description || node.excerpt
 
   return (
     <Card>
@@ -37,13 +44,15 @@ const BlogCard = ({ node }) => {
       <div style={{ padding: "15px" }}>
         <CardExtra>
           <small>
-            <span className="fas fa-calendar" /> {node.frontmatter.date}
+            <Calendar /> {node.frontmatter.date}
           </small>
-          {` `}•{` `}
+          {` `}&nbsp;{` `}
           <small>
-            <span className="fas fa-clock" /> {ttr} min read
+            <Clock /> {ttr} min read
           </small>
         </CardExtra>
+        {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />}
+
         <CardTitle>
           <Link to={`/blog${node.fields.slug}`} style={{ color: "inherit" }}>
             {title}

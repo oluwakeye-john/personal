@@ -11,6 +11,10 @@ import {
   InputLabel,
   TextArea,
 } from "../components/InputBox"
+import SocialButtons from "../components/SocialButtons"
+import SectionHeading from "../components/sectionHeading"
+
+import { FaPaperPlane } from "react-icons/fa"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -21,14 +25,6 @@ const ContactContainer = styled.div`
 
 const ButtonWrapper = styled.div`
   text-align: center;
-`
-
-const ContactHeading = styled.h1`
-  padding: 0;
-  margin: 0;
-  /* text-align: center; */
-  font-family: arial;
-  margin-bottom: 1rem;
 `
 
 const ContactText = styled.p`
@@ -49,27 +45,39 @@ const Contact = ({ data, location }) => {
       <SEO title="Contact Me" />
       <ContactContainer>
         <form onSubmit={handleSubmit}>
-          <ContactHeading>Contact Me</ContactHeading>
+          <SectionHeading>Contact Me</SectionHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.
             Robots aren't welcome, BTW.
           </ContactText>
+          <div style={{ textAlign: "center" }}>
+            <SocialButtons darkenOnHover />
+          </div>
+          <ContactText>Or use the form below</ContactText>
           <InputGroup>
             <Input>
-              <InputBox type="text" placeholder=" " required />
+              <InputBox type="text" placeholder=" " required name="name" />
               <InputLabel>Name</InputLabel>
             </Input>
             <Input>
-              <InputBox type="email" placeholder=" " required />
+              <InputBox type="email" placeholder=" " required name="email" />
               <InputLabel>Email</InputLabel>
             </Input>
           </InputGroup>
           <TextArea>
-            <InputBox as="textarea" rows="8" placeholder=" " required />
+            <InputBox
+              as="textarea"
+              rows="8"
+              placeholder=" "
+              required
+              name="message"
+            />
             <InputLabel>Message</InputLabel>
           </TextArea>
           <ButtonWrapper>
-            <Button type="submit">Send message</Button>
+            <Button type="submit">
+              <FaPaperPlane /> Send message
+            </Button>
           </ButtonWrapper>
         </form>
       </ContactContainer>

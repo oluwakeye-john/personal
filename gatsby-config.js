@@ -12,6 +12,8 @@ module.exports = {
       dev: `oluwakeyejohn`,
       github: `oluwakeye-john`,
       linkedin: `oluwakeyejohn-1706`,
+      email: `bjohnoluwakeye@gmail.com`,
+      codepen: `oluwakeye-john`,
     },
   },
   plugins: [
@@ -71,8 +73,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Oluwakeye John`,
+        short_name: `John`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

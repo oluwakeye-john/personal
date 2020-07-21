@@ -13,10 +13,21 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         min-height: 100vh;
         line-height: 1.8;
+        letter-spacing: 0.2dpx;
     }
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: ${({ theme }) => theme.textNormal};
+        -webkit-box-shadow: 0 0 0 30px ${({ theme }) =>
+          theme.bg} inset !important;
+    }
+    
     a{
         text-decoration: none;
         color: ${({ theme }) => theme.link};
+        
     }
     *, ::after, ::before {
         box-sizing: border-box;

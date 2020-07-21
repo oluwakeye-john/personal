@@ -1,15 +1,29 @@
 import React from "react"
-import "@fortawesome/fontawesome-free/css/all.min.css"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import {
+  FaCodepen,
+  FaTwitter,
+  FaDev,
+  FaLinkedin,
+  FaEnvelopeOpen,
+  FaGithub,
+} from "react-icons/fa"
 
 import { useStaticQuery, graphql } from "gatsby"
 
 const SocialLink = styled(Link)`
   margin: 1rem;
+  color: ${({ color }) => (color ? color : "")};
+  transition: 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+    opacity: ${({ darkenOnHover }) => (darkenOnHover ? "0.8" : "1")};
+  }
 `
 
-const SocialButtons = () => {
+const SocialButtons = ({ border, small, color, darkenOnHover }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -19,26 +33,70 @@ const SocialButtons = () => {
             linkedin
             github
             dev
+            email
+            codepen
           }
         }
       }
     }
   `)
-  const { twitter, linkedin, dev, github } = data.site.siteMetadata.social
+  const {
+    twitter,
+    linkedin,
+    dev,
+    github,
+    email,
+    codepen,
+  } = data.site.siteMetadata.social
+
+  const links = [
+    {
+      name: "twitter",
+      icon: FaTwitter,
+      url: `https://twitter.com/${twitter}`,
+    },
+    {
+      name: "Gmail",
+      icon: FaEnvelopeOpen,
+      url: `mailto:${email}`,
+    },
+    {
+      name: "github",
+      icon: FaGithub,
+      url: `https://github.com/${github}`,
+    },
+    {
+      name: "dev",
+      icon: FaDev,
+      url: `https://dev.to/${dev}`,
+    },
+    {
+      name: "linkedin",
+      icon: FaLinkedin,
+      url: `https://linkedin.com/${linkedin}`,
+    },
+    {
+      name: "codepen",
+      icon: FaCodepen,
+      url: `https://codepen.io/${codepen}`,
+    },
+  ]
+
   return (
-    <div className="fa-2x">
-      <SocialLink href={`https://twitter.com/${twitter}`}>
-        <span className="fab fa-twitter" />
-      </SocialLink>
-      <SocialLink href={`https://dev.to/${dev}`}>
-        <span className="fab fa-dev" />
-      </SocialLink>
-      <SocialLink href={`https://github.com/${github}`}>
-        <span className="fab fa-github" />
-      </SocialLink>
-      <SocialLink href={`https://linkedin.com/${linkedin}`}>
-        <span className="fab fa-linkedin" />
-      </SocialLink>
+    <div className={small ? "" : "fa-2x"}>
+      {links.map((link, index) => (
+        <SocialLink
+          as="a"
+          href={link.url}
+          key={index}
+          target="_blank"
+          rel="noreferrer"
+          color={color ? color : ""}
+          darkenOnHover={darkenOnHover}
+        >
+          <link.icon />
+        </SocialLink>
+      ))}
     </div>
   )
 }

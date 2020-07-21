@@ -1,4 +1,6 @@
+import React from "react"
 import styled from "styled-components"
+import { FaChevronRight } from "react-icons/fa"
 
 const Button = styled.button`
   padding: 0.5rem 1.5rem;
@@ -20,5 +22,20 @@ const Button = styled.button`
     outline: 0;
   }
 `
+const CenterWrapper = styled.div`
+  text-align: center;
+`
+
+export const CenterButton = ({ children }) => {
+  return (
+    <CenterWrapper>
+      <Button>
+        {children}
+        {` `}
+        <FaChevronRight />
+      </Button>
+    </CenterWrapper>
+  )
+}
 
 export default Button

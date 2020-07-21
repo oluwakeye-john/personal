@@ -10,7 +10,10 @@ import Footer from "../views/Footer"
 import ParticlesBg from "./ParticlesBg"
 import StyledLine from "./StyledLine"
 
+import { IconContext } from "react-icons"
+
 import { Helmet } from "react-helmet"
+import ScrollUp from "./scrollUp"
 
 const LayoutComponent = styled.div`
   min-height: 100vh;
@@ -28,20 +31,32 @@ const Layout = ({ location, title, children }) => {
     <ThemeProvider theme={theme === "light" ? light : dark}>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Roboto+Mono&family=Rowdies&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&display=swap"
           rel="stylesheet"
         ></link>
       </Helmet>
       <LayoutComponent>
         <GlobalStyles />
         <ParticlesBg />
-        <Header>
-          <Link to={`/`}>{title}</Link>
-        </Header>
-        <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
-        <main>{children}</main>
-        <StyledLine />
-        <Footer />
+        <IconContext.Provider
+          value={{
+            style: {
+              verticalAlign: "middle",
+              display: "inline",
+              height: "100%",
+            },
+            size: "1.2em",
+          }}
+        >
+          <Header>
+            <Link to={`/`}>{title}</Link>
+          </Header>
+          <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
+          <main>{children}</main>
+          <StyledLine />
+          <Footer />
+          <ScrollUp aria-hidden={true} />
+        </IconContext.Provider>
       </LayoutComponent>
     </ThemeProvider>
   )

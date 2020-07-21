@@ -1,8 +1,9 @@
 ---
 title: The Boys
 date: "2015-05-01T22:12:03.284Z"
-description: "Season 2 f The Boys has been released. Here's a list of what to expect from the fantastic superhero show."
+description: "Season 2 of The Boys has been released. Here's a list of what to expect from the fantastic superhero show."
 featuredImage: "./boys.jpg"
+tags: superhero, the boys, movies
 ---
 
 This is my first post on my new fake blog! How exciting!
