@@ -41,7 +41,7 @@ const LandingText = styled.div`
   flex: 3;
 `
 
-const texts = ["Hey", "Hello", "Hi"]
+const texts = ["Hi There!", "I'm John", "A Web Developer"]
 
 const Landing = () => {
   const data = useStaticQuery(graphql`
@@ -68,23 +68,22 @@ const Landing = () => {
       </LandingImage>
 
       <LandingText>
-        <h1>
+        <h2 style={{ fontSize: "2rem" }}>
           <Wave>
             <span aria-hidden>👋</span>
           </Wave>
           {` `}
-          <TypeWriter texts={texts} />
-        </h1>
+          <TypeWriter text="Hi There!" />
+        </h2>
         <p>
-          Hi, I'm <strong>John</strong>, a Full Stack web developer{" "}
-          <span aria-hidden>💻</span> based in Ibadan, Nigeria. I specialize in
-          JavaScript and i also code Python
-          <span aria-hidden>🚀</span>
+          Hi, I'm <strong>Oluwakeye John</strong>, a Full Stack web developer{" "}
+          <span aria-hidden>💻</span> based in Nigeria. I specialize in
+          JavaScript and i also code Python.
           <Link to="/about"> Read More</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>
-          <Link to="/contact">
-            <Button>Hire Me</Button>
+          <Link to="/about">
+            <Button>About Me</Button>
           </Link>
           <a href="/resume.pdf" target="_black">
             <Button>View CV</Button>

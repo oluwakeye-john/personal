@@ -16,10 +16,11 @@ const CardImage = styled(Img)`
   max-height: 250px;
 `
 
-const CardTitle = styled.h2`
+const CardTitle = styled.h3`
   color: ${({ theme }) => theme.textNormal};
   font-family: sans-serif;
   line-height: 1;
+  font-size: 1.5rem;
 `
 
 const CardExtra = styled.div`
@@ -38,7 +39,7 @@ const BlogCard = ({ node }) => {
     <Card>
       {image && (
         <Link to={`/blog${node.fields.slug}`}>
-          <CardImage fluid={image.childImageSharp.fluid} />
+          <CardImage fluid={image.childImageSharp.fluid} alt={title} />
         </Link>
       )}
       <div style={{ padding: "15px" }}>

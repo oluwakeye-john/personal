@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <Link to="/">
       <TopHeader>
-        <HeaderComponent>Oluwakeye John</HeaderComponent>
+        <HeaderComponent as="h1">Oluwakeye John</HeaderComponent>
         <SubHeaderComponent>Web Developer</SubHeaderComponent>
       </TopHeader>
     </Link>

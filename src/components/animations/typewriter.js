@@ -22,7 +22,7 @@ const Cursor = styled.span`
 `
 
 const period = 2500
-const interval = 100
+const interval = 50
 const startUpDelay = 1500
 let timeout
 
@@ -30,7 +30,7 @@ class TypeWriter extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: this.props.texts[0],
+      text: this.props.text || this.props.texts[0],
       count: 0,
       shown: "",
     }
@@ -56,6 +56,18 @@ class TypeWriter extends Component {
     }
   }
 
+  writeOnce = () => {
+    const { text, shown } = this.state
+    if (text !== shown) {
+      this.setState({
+        shown: text.substring(0, shown.length + 1),
+      })
+      timeout = setTimeout(this.writeOnce, interval)
+    } else {
+      clearTimeout(timeout)
+    }
+  }
+
   refresh = () => {
     this.rotateText()
     this.write()
@@ -74,7 +86,11 @@ class TypeWriter extends Component {
   }
 
   componentDidMount() {
-    timeout = setTimeout(this.write, startUpDelay)
+    if (this.props.text) {
+      timeout = setTimeout(this.writeOnce, startUpDelay)
+    } else {
+      timeout = setTimeout(this.write, startUpDelay)
+    }
   }
 
   componentWillUnmount() {

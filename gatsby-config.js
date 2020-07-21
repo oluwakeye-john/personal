@@ -5,7 +5,7 @@ module.exports = {
       name: `Oluwakeye John`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Oluwakeye John is a Full Stack Web Developer based in Nigeria | Javascript, React, Node.js and more.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `oluwakeyejohn`,

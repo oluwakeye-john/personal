@@ -85,6 +85,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
+            alt={post.frontmatter.title}
           ></FeaturedImage>
         )}
         <BlogSection style={{ marginBottom: "3rem" }}>

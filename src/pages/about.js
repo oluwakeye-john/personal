@@ -63,17 +63,16 @@ const About = ({ data, location }) => {
           <AboutText>
             <h2>Who's this guy?</h2>
             <p>
-              Hi, I'm <strong>John Oluwakeye</strong>, a Full Stack web
-              developer <span aria-hidden>💻</span> based in Ibadan, Nigeria. I
-              specialize in JavaScript and i also code Python
-              <span aria-hidden>🚀</span>
+              I'm a Full Stack developer and I currently reside in Ibadan,
+              Nigeria. My prime expertise is Javascript but I also like to work
+              with Python.
             </p>
           </AboutText>
         </IntroSection>
         <h2>More about me</h2>
         <p>
           I am passionate about web development. I like building fast, intuitive
-          and responsive websites. I have worked on a number of projects. You
+          and responsive websites. I have worked on a number of projects and you
           can find some of my projects <Link to="/projects">here</Link>.
         </p>
         <p>
