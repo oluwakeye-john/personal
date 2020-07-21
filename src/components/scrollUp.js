@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { FaChevronUp } from "react-icons/fa"
-import { Link } from "gatsby"
 
 const ScrollContainer = styled.div`
   position: fixed;
@@ -15,6 +14,8 @@ const ScrollContainer = styled.div`
   border-radius: 50%;
   z-index: 10;
 
+  cursor: pointer;
+
   transition: transform 0.4s, background-color 0.4s;
 
   transform: ${({ isVisible }) =>
@@ -26,7 +27,6 @@ const ScrollUp = () => {
 
   useEffect(() => {
     const scroll = window.addEventListener("scroll", () => {
-      console.log(window.scrollY)
       if (Number(window.scrollY) > 100) {
         setIsVisible(true)
       } else {
@@ -38,12 +38,14 @@ const ScrollUp = () => {
     }
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
-    <Link to="#">
-      <ScrollContainer isVisible={isVisible}>
-        <FaChevronUp />
-      </ScrollContainer>
-    </Link>
+    <ScrollContainer isVisible={isVisible} onClick={scrollToTop}>
+      <FaChevronUp />
+    </ScrollContainer>
   )
 }
 
