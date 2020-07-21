@@ -64,8 +64,8 @@ const About = ({ data, location }) => {
             <h2>Who's this guy?</h2>
             <p>
               I'm a Full Stack developer and I currently reside in Ibadan,
-              Nigeria. My prime expertise is Javascript but I also like to work
-              with Python.
+              Nigeria. My prime expertise is <strong>Javascript</strong> but I
+              also like to work with <strong>Python</strong>.
             </p>
           </AboutText>
         </IntroSection>
@@ -93,10 +93,8 @@ const About = ({ data, location }) => {
         </p>
         <p>
           In my free time, I work with electronic boards such as arduino,
-          esp8266 and raspberry pi.
-        </p>
-        <p>
-          Aside tech, i watch movies and TV shows (like every typical person).
+          esp8266 and raspberry pi. Aside tech, i watch movies and TV shows
+          (like every typical person).
         </p>
       </AboutContainer>
     </Layout>

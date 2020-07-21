@@ -78,16 +78,16 @@ const Skill = () => {
       }
     }
     query SkillQuery {
-      react: file(relativePath: { eq: "skills/react3.png" }) {
+      react: file(relativePath: { eq: "skills/react.png" }) {
         ...squareImage
       }
-      html: file(relativePath: { eq: "skills/html2.png" }) {
+      html: file(relativePath: { eq: "skills/html.png" }) {
         ...squareImage
       }
       nodejs: file(relativePath: { eq: "skills/nodejs.jpg" }) {
         ...squareImage
       }
-      css: file(relativePath: { eq: "skills/css2.png" }) {
+      css: file(relativePath: { eq: "skills/css.png" }) {
         ...squareImage
       }
       gatsby: file(relativePath: { eq: "skills/gatsbyjs.jpg" }) {
