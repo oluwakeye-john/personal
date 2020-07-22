@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FaChevronRight } from "react-icons/fa"
+import { Link } from "gatsby"
 
 const Button = styled.button`
   padding: 0.5rem 1.5rem;
@@ -26,14 +27,16 @@ const CenterWrapper = styled.div`
   text-align: center;
 `
 
-export const CenterButton = ({ children }) => {
+export const CenterLink = ({ children, to }) => {
   return (
     <CenterWrapper>
-      <Button>
-        {children}
-        {` `}
-        <FaChevronRight />
-      </Button>
+      <Link to={to}>
+        <Button>
+          {children}
+          {` `}
+          <FaChevronRight />
+        </Button>
+      </Link>
     </CenterWrapper>
   )
 }

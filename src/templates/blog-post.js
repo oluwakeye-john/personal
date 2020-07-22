@@ -9,6 +9,7 @@ import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
 import ColoredTags from "../components/coloredTags"
+import StyledLine from "../components/StyledLine"
 
 import {
   FaRegCalendarAlt as Calendar,
@@ -67,18 +68,18 @@ const RelatedBlog = styled.div`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
+  const { siteTitle, siteUrl } = data.site.siteMetadata
   const { previous, next } = pageContext
   const featuredImage = post.frontmatter.featuredImage
   const ttr = post.timeToRead
   const tags = post.frontmatter.tags
 
+  const postUrl = `${siteUrl}/blog/${post.fields.slug}`
+  const description = post.frontmatter.description || post.excerpt
+
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.frontmatter.title} description={description} />
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
@@ -93,12 +94,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
             alt={post.frontmatter.title}
-          ></FeaturedImage>
+          />
         )}
         <BlogSection style={{ marginBottom: "3rem" }}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </BlogSection>
-        <Share />
+        <p>
+          You have a suggestion, or you want to know more about something I
+          mentioned above? Then feel free to <Link to="/contact">contact</Link>{" "}
+          me
+        </p>
+        <StyledLine style={{ marginBottom: "1rem" }} />
+        <Share postUrl={postUrl} desc={description} />
         <Bio />
       </BlogContainer>
 
@@ -129,6 +136,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
@@ -136,6 +144,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

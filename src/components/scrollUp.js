@@ -24,17 +24,22 @@ const ScrollContainer = styled.div`
 
 const ScrollUp = () => {
   const [isVisible, setIsVisible] = useState(false)
+  let scroll
 
   useEffect(() => {
-    const scroll = window.addEventListener("scroll", () => {
-      if (Number(window.scrollY) > 100) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    })
+    if (typeof window !== "undefined") {
+      scroll = window.addEventListener("scroll", () => {
+        if (Number(window.scrollY) > 100) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+        }
+      })
+    }
     return () => {
-      window.removeEventListener("scroll", scroll)
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", scroll)
+      }
     }
   }, [])
 

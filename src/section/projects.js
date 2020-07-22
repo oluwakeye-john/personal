@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { CenterButton } from "../components/Button"
+import { CenterLink } from "../components/Button"
 import ProjectList from "../components/projectList"
-import { Link } from "gatsby"
 import SectionHeading from "../components/sectionHeading"
 
 const ProjectsContainer = styled.div`
@@ -17,9 +16,7 @@ const Projects = () => {
       </SectionHeading>
 
       <ProjectList number={2} />
-      <Link to="/projects">
-        <CenterButton>View More</CenterButton>
-      </Link>
+      <CenterLink to="/projects">View More</CenterLink>
     </ProjectsContainer>
   )
 }

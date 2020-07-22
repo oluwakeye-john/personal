@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -14,7 +14,7 @@ import {
 import SocialButtons from "../components/SocialButtons"
 import SectionHeading from "../components/sectionHeading"
 
-import { FaPaperPlane } from "react-icons/fa"
+import { FaPaperPlane, FaTimes, FaCheck } from "react-icons/fa"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -34,10 +34,42 @@ const ContactText = styled.p`
 `
 
 const Contact = ({ data, location }) => {
+  const [msg, setMsg] = useState({ status: false, text: "" })
   const siteTitle = data.site.siteMetadata.title
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
 
   const handleSubmit = e => {
     e.preventDefault()
+    const name = e.target.name.value
+    const email = e.target.email.value
+    const message = e.target.message.value
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "Contact",
+        name,
+        email,
+        message,
+      }),
+    })
+      .then(resp => {
+        console.log(resp.ok)
+        if (resp.ok) {
+          setMsg({ status: true, text: "Form submmitted" })
+        } else {
+          setMsg({ status: false, text: "Error submitting form" })
+        }
+      })
+      .catch(() => {
+        setMsg({ status: false, text: "Error submitting form" })
+      })
   }
 
   return (
@@ -74,6 +106,7 @@ const Contact = ({ data, location }) => {
             />
             <InputLabel>Message</InputLabel>
           </TextArea>
+          <p style={{ color: msg.status ? "green" : "red" }}>{msg.text}</p>
           <ButtonWrapper>
             <Button type="submit">
               <FaPaperPlane /> Send message

@@ -1,0 +1,67 @@
+---
+title: My New Website (tools and kits)
+date: "2020-07-23"
+description: "I just finished the design of my portfolio website and I am really excited about it. In this article, I will discuss the tech stack I used for it."
+featuredImage: "../assets/website1.jpg"
+tags: Development, Tool Stack
+---
+
+After a long time of procastinating, I've finally been able to make time to create my own personal website. This website involves a relatively
+small tech stack and doesn't cost a dime as it involves no hosting or backend. In this post, I will like to share what the website is built on with you.
+
+Here is a link to the site on Github: [Code](https://github.com/oluwakeye-john/personal). You can grab some codes and use it in yours.
+Also, feel free to raise an issue.
+
+## Tool Stack
+
+### Gatsby
+
+[Gatsby](https://gatsbyjs.org) is a static site generator (SSR) which is used to make blazing fast websites and it is based on React. Gatsby uses server-side rendering to create static websites.
+Build usually take a while, which is based on the number of pages and images. I chose Gatsby for this project because it:
+
+- Has great image optimization
+- East to setup
+- Has a large ecosystem of developers
+- Is blazing fast
+
+### Github
+
+Both the code and the post content are stored on github.
+
+### Styled Components
+
+I used [styled components](https://styled-components.com/) for styling. Styled components allow for true reusable components, locally scoped classes and prevents clashing class names.
+I plan on writing more about styled components in future posts
+
+### MDX
+
+Most developers love markdown. So combining the power of markdown (md) and react JSX for a blog is absolutely incredible. It allows you to embed any react components directly into your blog.
+
+### ImprovMX
+
+[ImprovMX](http://improvmx.com/) serves as my mail forwarder. It forwards mails from \*@keyejohn.com to my personal email account. BTW, It’s free.
+
+### React-icons
+
+[React-icons](https://react-icons.github.io/react-icons/) is a collection of different fonts from different: font-awesome, material design icons, etc. For this project, I used only font awesome though I hope to explore other ones in future.
+
+### PrismJS
+
+[Prism JS](https://prismjs.com/) is a lightweight, extensible syntax highlighter, built with modern web standards in mind. For this website, I used a theme called <a href='#'>prism-tomorrow</a>
+
+### Netlify
+
+This website is hosted on [Netlify](httsp://netlify.com). I enabled continuous deployment, so that the code is automatically updated from Github
+
+## Tradeoffs
+
+Overall, this stack is good. The major problem however is the long build time. This denies the opportunity to see changes to the site immediately. However, the introduction of Gatby's incremental build has reduced this drastically.
+
+## Summary
+
+This stack is in no way perfect. I however went with this because:
+
+- It has great developer experience (DE)
+- It is cheap (comes at no cost)
+- It is very easy to maintain
+

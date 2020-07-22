@@ -34,23 +34,30 @@ const ShareLogo = styled.span`
   margin-bottom: 1rem;
 `
 
-const Share = ({ link }) => {
+const Share = ({ postUrl, desc }) => {
+  const text = `${desc}\n${postUrl}`
+  const intent = {
+    whatsapp: `https://api.whatsapp.com/send?text=${text}`,
+    facebook: `https://facebook.com/sharer/sharer.php?u=${postUrl}`,
+    linkedin: `https://www.linkedin.com/shareArticle?mini=false&url=${postUrl}&summary=${desc}`,
+    twitter: `https://twitter.com/intent/tweet?text=${text}`,
+  }
   return (
     <div>
       <ShareLogo>
         <FaShareAlt />
       </ShareLogo>
 
-      <ShareButton as="a" href="/">
+      <ShareButton as="a" href={intent.whatsapp}>
         <FaWhatsapp />
       </ShareButton>
-      <ShareButton as="a" href="/">
+      <ShareButton as="a" href={intent.twitter}>
         <FaTwitter />
       </ShareButton>
-      <ShareButton as="a" href="/">
+      <ShareButton as="a" href={intent.facebook}>
         <FaFacebook />
       </ShareButton>
-      <ShareButton as="a" href="/">
+      <ShareButton as="a" href={intent.linkedin}>
         <FaLinkedin />
       </ShareButton>
     </div>

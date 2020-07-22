@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
@@ -50,7 +50,7 @@ const Bio = () => {
       <p>
         Written by <strong>{author.name}</strong>
         <br />
-        <a href={`https://twitter.com/${social.twitter}`}>Follow on Twitter</a>
+        <Link to="/contact">Contact Me</Link>
       </p>
     </BioContainer>
   )
