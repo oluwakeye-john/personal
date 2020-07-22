@@ -37,8 +37,6 @@ const Image = styled(Img)`
   @media (max-width: 768px) {
     width: 270px;
   }
-
-  box-shadow: 0 0 5px ${({ theme }) => theme.link};
 `
 
 const AboutText = styled.div`
