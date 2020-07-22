@@ -18,7 +18,8 @@ import {
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 `
 
 const BlogContainer = styled.div``
@@ -45,6 +46,12 @@ const BlogSection = styled.section`
   }
   a:hover {
     text-decoration: underline;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.7rem;
   }
 `
 
@@ -136,7 +143,7 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp {
-            fluid {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -25,6 +25,7 @@
     "gatsby-plugin-styled-components": "^3.3.4",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.3.5",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-prismjs": "^3.5.4",
     "gatsby-remark-responsive-iframe": "^2.4.5",
