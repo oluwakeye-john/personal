@@ -6,7 +6,7 @@ module.exports = {
       summary: `just a guy.`,
     },
     description: `Oluwakeye John is a Full Stack Web Developer based in Nigeria. `,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app`,
+    siteUrl: `https://johnkeye.com`,
     social: {
       twitter: `oluwakeyejohn`,
       dev: `oluwakeyejohn`,
@@ -84,7 +84,7 @@ module.exports = {
         short_name: `John`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `rgb(21, 32, 43)`,
         display: `minimal-ui`,
         icon: `content/assets/icon1.png`,
       },

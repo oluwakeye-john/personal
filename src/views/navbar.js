@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import StyledText from "../components/StyledText"
+import StyledText from "../components/styledText"
 import { FaSun as Sun, FaRegMoon as Moon } from "react-icons/fa"
 
 const items = [
@@ -34,7 +34,6 @@ const NavbarContainer = styled.div`
 `
 
 const NavbarItem = styled(Link)`
-  color: black;
   margin-right: 30px;
   @media (max-width: 500px) {
     margin-right: 0;
@@ -43,9 +42,13 @@ const NavbarItem = styled(Link)`
   color: ${({ theme }) => theme.navbarLink};
 `
 
+const Active = styled(NavbarItem)`
+  color: ${({ theme }) => theme.primary};
+`
+
 const ActiveNavbarItem = ({ to, children }) => (
   <StyledText>
-    <NavbarItem to={to}>{children}</NavbarItem>
+    <Active to={to}>{children}</Active>
   </StyledText>
 )
 

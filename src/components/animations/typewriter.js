@@ -101,7 +101,7 @@ class TypeWriter extends Component {
     return (
       <>
         <span>{this.state.shown}</span>
-        <Cursor> |</Cursor>
+        <Cursor>|</Cursor>
       </>
     )
   }

@@ -9,7 +9,6 @@ import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
 import ColoredTags from "../components/coloredTags"
-import StyledLine from "../components/StyledLine"
 
 import {
   FaRegCalendarAlt as Calendar,
@@ -79,12 +78,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const ttr = post.timeToRead
   const tags = post.frontmatter.tags
 
-  const postUrl = `${siteUrl}/blog/${post.fields.slug}`
+  const postUrl = `${siteUrl}/blog${post.fields.slug}`
   const description = post.frontmatter.description || post.excerpt
+
+  const postImage = featuredImage ? featuredImage.childImageSharp.fluid.src : ""
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={description} />
+      <SEO
+        title={post.frontmatter.title}
+        description={description}
+        image={postImage}
+      />
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>

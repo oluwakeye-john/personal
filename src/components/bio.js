@@ -28,15 +28,12 @@ const Bio = () => {
           author {
             name
           }
-          social {
-            twitter
-          }
         }
       }
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <BioContainer>
       <BioImage

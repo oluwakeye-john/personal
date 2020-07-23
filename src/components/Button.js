@@ -17,6 +17,7 @@ const Button = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.buttonBorder};
     color: white;
+    transform: scale(1.1);
   }
 
   &:focus {

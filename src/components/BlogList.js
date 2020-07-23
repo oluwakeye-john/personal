@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import BlogCard from "../components/BlogCard"
+import BlogCard from "./blogCard"
 import styled from "styled-components"
 
 const List = styled.div`

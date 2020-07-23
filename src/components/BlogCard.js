@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Card from "./Card"
+import Card from "./card"
 import ColoredTags from "./coloredTags"
 import {
   FaRegCalendarAlt as Calendar,

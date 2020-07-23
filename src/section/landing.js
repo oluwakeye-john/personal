@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import { useStaticQuery } from "gatsby"
 import TypeWriter from "../components/animations/typewriter"
 import Wave from "../components/animations/wave"
-import Button from "../components/Button"
+import Button from "../components/button"
 import { Link } from "gatsby"
 
 import Rotate from "../components/animations/rotate"
@@ -41,7 +41,7 @@ const LandingText = styled.div`
   flex: 3;
 `
 
-const texts = ["Hi There!", "Hello world", "Holla!"]
+const texts = ["Hi There!", "Hello world", "Hola!"]
 
 const Landing = () => {
   const data = useStaticQuery(graphql`
@@ -76,7 +76,7 @@ const Landing = () => {
           <TypeWriter texts={texts} />
         </h2>
         <p>
-          Hi, I'm <strong>Oluwakeye John</strong>, a Full Stack web developer{" "}
+          I'm <strong>Oluwakeye John</strong>, a Full Stack web developer{" "}
           <span aria-hidden>💻</span> based in Nigeria. I specialize in
           JavaScript and i also code Python.
           <Link to="/about"> Read More</Link>

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import SocialButtons from "../components/SocialButtons"
+import SocialButtons from "../components/socialButtons"
 import {
   FaRegSmile as FaSmile,
   FaRegHeart as Heart,
@@ -18,14 +18,18 @@ const Quote = styled.p`
   font-size: 1.3rem;
 `
 
+const LoveBubble = styled(Bubble)`
+  color: ${({ theme }) => theme.primary};
+`
+
 const Footer = () => {
   return (
     <FooterContainer>
       <p>
         <FaCode /> with{" "}
-        <Bubble>
-          <Heart color="red" style={{ display: "inline" }} />
-        </Bubble>
+        <LoveBubble>
+          <Heart style={{ display: "inline" }} />
+        </LoveBubble>
         {` `}
         by Oluwakeye John
       </p>

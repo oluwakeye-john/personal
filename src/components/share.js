@@ -35,7 +35,7 @@ const ShareLogo = styled.span`
 `
 
 const Share = ({ postUrl, desc }) => {
-  const text = `${desc}\n${postUrl}`
+  const text = `${desc}\n\${postUrl}`
   const intent = {
     whatsapp: `https://api.whatsapp.com/send?text=${text}`,
     facebook: `https://facebook.com/sharer/sharer.php?u=${postUrl}`,

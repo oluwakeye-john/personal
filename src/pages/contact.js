@@ -3,18 +3,18 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Button from "../components/Button"
+import Button from "../components/button"
 import {
   Input,
   InputGroup,
   InputBox,
   InputLabel,
   TextArea,
-} from "../components/InputBox"
-import SocialButtons from "../components/SocialButtons"
+} from "../components/inputBox"
+import SocialButtons from "../components/socialButtons"
 import SectionHeading from "../components/sectionHeading"
 
-import { FaPaperPlane, FaTimes, FaCheck } from "react-icons/fa"
+import { FaPaperPlane } from "react-icons/fa"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
