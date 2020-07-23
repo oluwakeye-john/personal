@@ -12,7 +12,7 @@ export const light = {
   blogTextNormal: "#222",
   lightText: "rgba(0, 0, 0, 0.7)",
 }
-const primary = "#fb2757"
+const primary = "#C63B56"
 export const dark = {
   // bg: "rgb(21, 32, 43)",
   bg: "#121212",

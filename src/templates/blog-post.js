@@ -64,6 +64,11 @@ const RelatedBlog = styled.div`
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -104,7 +109,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           mentioned above? Then feel free to <Link to="/contact">contact</Link>{" "}
           me
         </p>
-        <StyledLine style={{ marginBottom: "1rem" }} />
+        <div style={{ marginBottom: "2rem" }} />
+        {/* <StyledLine style={{ marginBottom: "1rem" }} /> */}
         <Share postUrl={postUrl} desc={description} />
         <Bio />
       </BlogContainer>

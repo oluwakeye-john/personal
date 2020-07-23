@@ -52,7 +52,7 @@ const Layout = ({ location, title, children }) => {
             <Link to={`/`}>{title}</Link>
           </Header>
           <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
-          <main>{children}</main>
+          <main style={{ marginBottom: "5rem" }}>{children}</main>
           <StyledLine />
           <Footer />
           <ScrollUp aria-hidden={true} />

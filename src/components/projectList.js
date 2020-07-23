@@ -37,13 +37,13 @@ const projects = [
   },
   {
     name: "Eaveswall",
-    description: "Eaveswall is a univeristy blogging platform.",
+    description: "Eaveswall is a univeristy blogging platform. ",
     live: "https://eaveswall.com",
   },
   {
-    name: "Video App",
+    name: "Lens Chat",
     description:
-      "A video chat application built with webRTC, socket.io and nodejs",
+      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
     live: "https://lens-chat.netlify.app",
   },
   {
