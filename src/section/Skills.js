@@ -43,6 +43,10 @@ const ItemImage = styled(Img)`
     outline: 0;
     opacity: 0.5;
   }
+
+  &:hover + label {
+    opacity: 1;
+  }
 `
 
 const ItemLabel = styled.label`
@@ -53,6 +57,7 @@ const ItemLabel = styled.label`
   width: 100px;
   text-align: center;
   font-weight: bold;
+  opacity: 0;
 `
 
 const SkillInfo = styled.p`

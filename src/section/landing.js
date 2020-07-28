@@ -7,8 +7,6 @@ import Wave from "../components/animations/wave"
 import Button from "../components/button"
 import { Link } from "gatsby"
 
-import Rotate from "../components/animations/rotate"
-
 const LandingContainer = styled.div`
   margin-bottom: 3rem;
   display: flex;
@@ -58,13 +56,11 @@ const Landing = () => {
   return (
     <LandingContainer>
       <LandingImage>
-        <Rotate>
-          <Image
-            fixed={data.avatar.childImageSharp.fixed}
-            alt="Oluwakeye John"
-            style={{ width: "150px", height: "150px" }}
-          />
-        </Rotate>
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          alt="Oluwakeye John"
+          style={{ width: "150px", height: "150px" }}
+        />
       </LandingImage>
 
       <LandingText>
