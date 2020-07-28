@@ -116,11 +116,7 @@ const Skill = () => {
       <SectionHeading>
         <span aria-hidden>✨</span> My Skills
       </SectionHeading>
-      <h2>
-        <div style={{ textAlign: "center" }}>
-          {` `} <TypeWriter texts={texts} />
-        </div>
-      </h2>
+
       <SkillList>
         <Item>
           <ItemImage
@@ -187,6 +183,12 @@ const Skill = () => {
           <ItemLabel>Express JS</ItemLabel>
         </Item>
       </SkillList>
+
+      <h2>
+        <div style={{ textAlign: "center" }}>
+          {` `} <TypeWriter texts={texts} />
+        </div>
+      </h2>
     </SkillContainer>
   )
 }

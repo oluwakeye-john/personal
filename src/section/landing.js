@@ -17,6 +17,7 @@ const LandingContainer = styled.div`
   }
   @media (min-width: 768px) {
     flex-flow: row wrap;
+    margin-top: 2rem;
   }
 `
 

@@ -1,7 +1,9 @@
 const darkPrimary = "#FD6363"
+// const darkPrimary = "#1DA1F2"
 const lightPrimary = "rgba(169,3,41,1)"
 
 export const light = {
+  mode: "light",
   bg: "#fff",
   textNormal: "#222",
   textLink: "blue",
@@ -17,6 +19,7 @@ export const light = {
 }
 
 export const dark = {
+  mode: "dark",
   bg: "rgb(21, 32, 43)",
   // bg: "#121212",
   textNormal: "rgba(255, 255, 255, 0.88)",
@@ -31,3 +34,5 @@ export const dark = {
   blogTextNormal: "rgba(255, 255, 255, 0.7)",
   lightText: "rgba(255, 255, 255, 0.6)",
 }
+
+//card 2 rgb(25,39,52)

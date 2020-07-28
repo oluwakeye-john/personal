@@ -6,14 +6,13 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         color: ${({ theme }) => theme.textNormal};
         background-color: ${({ theme }) => theme.bg}; 
-        transition: 1s;
+        transition: background-color 1s, color 1s;
         ${"" /* font-family: 'Open Sans', sans-serif; */}
         font-family: 'Roboto', sans-serif;
-        max-width: 750px;
-        margin: 0 auto;
         min-height: 100vh;
         line-height: 1.8;
         letter-spacing: 0.2dpx;
+        
     }
     
     input:-webkit-autofill,
