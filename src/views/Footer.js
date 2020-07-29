@@ -1,11 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SocialButtons from "../components/socialButtons"
-import {
-  FaRegSmile as FaSmile,
-  FaRegHeart as Heart,
-  FaCode,
-} from "react-icons/fa"
+import { FaRegSmile as FaSmile, FaHeart as Heart, FaCode } from "react-icons/fa"
 import Bubble from "../components/animations/bubble"
 
 const FooterContainer = styled.footer`
@@ -28,7 +24,7 @@ const Footer = () => {
       <p>
         <FaCode /> with{" "}
         <LoveBubble>
-          <Heart style={{ display: "inline" }} />
+          <Heart style={{ display: "inline", color: "red" }} />
         </LoveBubble>
         {` `}
         by Oluwakeye John

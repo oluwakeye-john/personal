@@ -5,25 +5,25 @@ const Bub = styled.span`
   display: inline-block;
   animation-name: bubble;
   animation-timing-function: linear;
-  animation-duration: 1.2s;
+  animation-duration: 1.5s;
   animation-iteration-count: infinite;
   transform: scale(0);
 
   @keyframes bubble {
     0% {
-      transform: scale(1.5);
+      transform: scale(1);
     }
     10% {
-      transform: scale(1);
+      transform: scale(1.4);
     }
     30% {
-      transform: scale(1.7);
-    }
-    50% {
       transform: scale(1);
     }
+    50% {
+      transform: scale(1.2);
+    }
     100% {
-      transform: scale(0);
+      transform: scale(1);
     }
   }
 `

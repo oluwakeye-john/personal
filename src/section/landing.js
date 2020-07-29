@@ -21,6 +21,32 @@ const LandingContainer = styled.div`
   }
 `
 
+const Rot = styled.div`
+  @keyframes rot {
+    0% {
+      /* transform: rotate(0deg); */
+      filter: grayscale(0);
+    }
+    50% {
+      filter: grayscale(200%);
+    }
+    100% {
+      filter: grayscale(0);
+    }
+  }
+
+  /* transition: transform 2s; */
+
+  animation-duration: 3s;
+  animation-name: rot;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* &:hover {
+    transform: rotate(360deg);
+  } */
+`
+
 const LandingImage = styled.div`
   flex-basis: 30%;
   @media (max-width: 768px) {
@@ -57,11 +83,13 @@ const Landing = () => {
   return (
     <LandingContainer>
       <LandingImage>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt="Oluwakeye John"
-          style={{ width: "150px", height: "150px" }}
-        />
+        <Rot>
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt="Oluwakeye John"
+            style={{ width: "150px", height: "150px" }}
+          />
+        </Rot>
       </LandingImage>
 
       <LandingText>

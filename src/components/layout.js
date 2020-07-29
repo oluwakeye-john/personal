@@ -17,6 +17,7 @@ import { Helmet } from "react-helmet"
 import ScrollUp from "./scrollUp"
 
 const LayoutComponent = styled.div`
+  /* transition: filter 0.1s; */
   max-width: 750px;
   margin: 0 auto;
   min-height: 100vh;
@@ -56,7 +57,7 @@ const Layout = ({ location, title, children }) => {
             size: "1.2em",
           }}
         >
-          <main style={{ marginBottom: "5rem" }}>{children}</main>
+          <main style={{ marginBottom: "3rem" }}>{children}</main>
           <StyledLine />
           <Footer />
           <ScrollUp aria-hidden={true} />
