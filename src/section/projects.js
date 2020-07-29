@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { CenterLink } from "../components/Button"
+import { CenterLink } from "../components/button"
 import ProjectList from "../components/projectList"
 import SectionHeading from "../components/sectionHeading"
 

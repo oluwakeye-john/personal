@@ -7,9 +7,9 @@ import Header from "../views/header"
 import { useDarkMode } from "../styles/useDarkMode"
 import Navbar from "../views/navbar"
 import Navigation from "../views/navigation"
-import Footer from "../views/footer"
+import Footer from "../views/Footer"
 import ParticlesBg from "./particlesBg"
-import StyledLine from "./StyledLine"
+import StyledLine from "./styledLine"
 
 import { IconContext } from "react-icons"
 
