@@ -22,7 +22,9 @@ const FeaturedImage = styled(Img)`
   margin-bottom: 4rem;
 `
 
-const BlogContainer = styled.div``
+const BlogContainer = styled.div`
+  margin-top: -2rem;
+`
 
 const BlogPostHeading = styled.h1`
   margin-bottom: 0;

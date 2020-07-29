@@ -6,6 +6,7 @@ import { GlobalStyles } from "../styles/globalStyles"
 import Header from "../views/header"
 import { useDarkMode } from "../styles/useDarkMode"
 import Navbar from "../views/navbar"
+import Navigation from "../views/navigation"
 import Footer from "../views/footer"
 import ParticlesBg from "./particlesBg"
 import StyledLine from "./StyledLine"
@@ -16,6 +17,9 @@ import { Helmet } from "react-helmet"
 import ScrollUp from "./scrollUp"
 
 const LayoutComponent = styled.div`
+  /* transition: filter 0.1s; */
+  max-width: 750px;
+  margin: 0 auto;
   min-height: 100vh;
   @media (max-width: 768px) {
     padding: 0 15px;
@@ -35,6 +39,11 @@ const Layout = ({ location, title, children }) => {
           rel="stylesheet"
         ></link>
       </Helmet>
+      {/* <Header>
+        <Link to={`/`}>{title}</Link>
+      </Header>
+      <Navbar location={location} toggleTheme={toggleTheme} theme={theme} /> */}
+      <Navigation location={location} toggleTheme={toggleTheme} theme={theme} />
       <LayoutComponent>
         <GlobalStyles />
         <ParticlesBg />
@@ -48,11 +57,7 @@ const Layout = ({ location, title, children }) => {
             size: "1.2em",
           }}
         >
-          <Header>
-            <Link to={`/`}>{title}</Link>
-          </Header>
-          <Navbar location={location} toggleTheme={toggleTheme} theme={theme} />
-          <main style={{ marginBottom: "5rem" }}>{children}</main>
+          <main style={{ marginBottom: "3rem" }}>{children}</main>
           <StyledLine />
           <Footer />
           <ScrollUp aria-hidden={true} />

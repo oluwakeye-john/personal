@@ -3,19 +3,18 @@ import styled from "styled-components"
 import { useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import SectionHeading from "../components/sectionHeading"
-import TypeWriter from "../components/animations/typewriter"
 
-const texts = [
-  "Redux",
-  "GraphQL",
-  "Styled Components",
-  "Socket IO",
-  "Django",
-  "Web RTC",
-  "SQL",
-  "Babel",
-  "SASS",
-]
+// const texts = [
+//   "Redux",
+//   "GraphQL",
+//   "Styled Components",
+//   "Socket IO",
+//   "Django",
+//   "Web RTC",
+//   "SQL",
+//   "Babel",
+//   "SASS",
+// ]
 
 const SkillContainer = styled.div`
   margin: 3rem 0;
@@ -116,11 +115,7 @@ const Skill = () => {
       <SectionHeading>
         <span aria-hidden>✨</span> My Skills
       </SectionHeading>
-      <h2>
-        <div style={{ textAlign: "center" }}>
-          {` `} <TypeWriter texts={texts} />
-        </div>
-      </h2>
+
       <SkillList>
         <Item>
           <ItemImage

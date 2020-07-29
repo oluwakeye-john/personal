@@ -17,7 +17,7 @@ export const Input = styled.div`
   }
   width: 47%;
   position: relative;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 `
 
 export const InputBox = styled.input`
@@ -35,7 +35,8 @@ export const InputBox = styled.input`
     font-size: small;
   }
   border-radius: 5px;
-  border: 2px solid ${({ theme }) => theme.buttonBorder};
+  border: 1.5px solid ${({ theme }) => theme.buttonBorder};
+  /* border: 2px solid rgba(0, 0, 0, 0.1); */
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.textNormal};
 
