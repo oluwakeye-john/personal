@@ -20,6 +20,12 @@ const ToggleButton = styled.button`
 
   @media (max-width: 768px) {
     color: ${({ theme }) => theme.sidebarLink};
+
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.3rem;
+    z-index: 13;
   }
 
   transition: 1s;
@@ -40,8 +46,9 @@ const NavigationContainer = styled.div`
       position: ${({ sidebarOpen }) => (sidebarOpen ? "fixed" : "")};
     }
   }
-  background-color: ${({ theme }) =>
-    theme.mode === "light" ? "white" : "inherit"};
+  /* background-color: ${({ theme }) =>
+    theme.mode === "light" ? "white" : "inherit"}; */
+    background: transparent;
   box-shadow: ${({ theme }) =>
     theme.mode === "light" ? "0 0 10px #ccc" : "0"};
 
@@ -85,10 +92,10 @@ const NavbarNav = styled.div`
     left: 0;
     position: fixed;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 80vw;
+    width: 100vw;
     /* background: ${({ theme }) => theme.bg}; */
     background: rgb(25,39,52);
 
@@ -107,9 +114,15 @@ const NavbarNav = styled.div`
 const NavbarItem = styled(Link)`
   margin-right: 2rem;
   color: ${({ theme }) => theme.navbarLink};
+  transition: opacity 0.2s;
 
   @media (max-width: 768px) {
     color: ${({ theme }) => theme.sidebarLink};
+    margin: 2rem;
+  }
+
+  &:hover {
+    opacity: 0.7;
   }
 `
 
@@ -127,13 +140,15 @@ const NavbarToggler = styled.div`
     font-size: 1.3rem;
     z-index: 13;
     transition: 0.3s;
-    transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotate(360deg)" : "")};
+    transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotate(90deg)" : "")};
+    cursor: pointer;
 
-    /* color: ${({ theme }) => theme.navbarLink};
+    /* color: ${({ theme }) => theme.navbarLink}; */
 
     @media (max-width: 768px) {
-      color: ${({ theme }) => theme.sidebarLink};
-    } */
+      color: ${({ theme, sidebarOpen }) =>
+        sidebarOpen ? theme.sidebarLink : "inherit"};
+    }
   }
 `
 
@@ -151,6 +166,10 @@ const items = [
     link: "/about",
   },
   {
+    name: "Projects",
+    link: "/projects",
+  },
+  {
     name: "Contact",
     link: "/contact",
   },
@@ -160,6 +179,10 @@ const Navigation = ({ location, toggleTheme, theme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen)
+  }
+  const handleToggle = () => {
+    setSidebarOpen(false)
+    toggleTheme()
   }
   return (
     <NavigationContainer sidebarOpen={sidebarOpen}>
@@ -177,9 +200,14 @@ const Navigation = ({ location, toggleTheme, theme }) => {
 
       <NavbarNav sidebarOpen={sidebarOpen}>
         {items.map((item, index) => {
+          let loc = location.pathname
+          if (loc.length > 1 && loc.endsWith("/")) {
+            loc = loc.substring(0, loc.length - 1)
+          }
           if (
-            location.pathname === item.link ||
-            (location.pathname.includes("/blog") && item.link === "/blog")
+            loc === item.link ||
+            (loc.includes("/blog") && item.link === "/blog") ||
+            (loc.includes("/tag") && item.link === "/blog")
           ) {
             return (
               <ActiveNavbarItem to={item.link} key={index}>
@@ -195,7 +223,7 @@ const Navigation = ({ location, toggleTheme, theme }) => {
           }
         })}
         <ToggleButton
-          onClick={toggleTheme}
+          onClick={handleToggle}
           color={theme === "light" ? "black" : "yellow"}
           light={theme === "light" ? true : false}
         >

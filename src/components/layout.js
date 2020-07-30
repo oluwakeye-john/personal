@@ -35,7 +35,7 @@ const Layout = ({ location, title, children }) => {
     <ThemeProvider theme={theme === "light" ? light : dark}>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
           rel="stylesheet"
         ></link>
       </Helmet>
@@ -46,7 +46,7 @@ const Layout = ({ location, title, children }) => {
       <Navigation location={location} toggleTheme={toggleTheme} theme={theme} />
       <LayoutComponent>
         <GlobalStyles />
-        <ParticlesBg />
+        {/* <ParticlesBg /> */}
         <IconContext.Provider
           value={{
             style: {

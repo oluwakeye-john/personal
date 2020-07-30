@@ -25,6 +25,7 @@ export const InputBox = styled.input`
   width: 100%;
   &:focus {
     outline: 0;
+    border: 1.5px solid ${({ theme }) => theme.buttonBorder};
   }
   &:focus + label {
     transform: translateY(-20px);
@@ -35,8 +36,13 @@ export const InputBox = styled.input`
     font-size: small;
   }
   border-radius: 5px;
-  border: 1.5px solid ${({ theme }) => theme.buttonBorder};
-  /* border: 2px solid rgba(0, 0, 0, 0.1); */
+
+  border: 1.5px solid
+    ${({ theme }) =>
+      theme.mode === "light"
+        ? "rgba(0, 0, 0, 0.1)"
+        : "rgba(255, 255, 255, 0.1)"};
+
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.textNormal};
 

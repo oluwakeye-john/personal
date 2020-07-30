@@ -83,7 +83,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const postUrl = `${siteUrl}/blog${post.fields.slug}`
   const description = post.frontmatter.description || post.excerpt
 
-  const postImage = featuredImage ? featuredImage.childImageSharp.fluid.src : ""
+  const postImage = featuredImage ? featuredImage.childImageSharp.fluid : ""
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -91,6 +91,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={description}
         image={postImage}
+        pathname={location.pathname}
       />
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>

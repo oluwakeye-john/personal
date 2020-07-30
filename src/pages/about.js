@@ -31,7 +31,7 @@ const AboutContainer = styled.div`
 `
 
 const Image = styled(Img)`
-  border-radius: 10px;
+  /* border-radius: 10px; */
   max-height: 300px;
   width: 35%;
   @media (max-width: 768px) {
@@ -114,7 +114,8 @@ export const pageQuery = graphql`
     avatar: file(absolutePath: { regex: "/john0.jpg/" }) {
       childImageSharp {
         fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
+          # ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }

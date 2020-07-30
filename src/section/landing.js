@@ -38,7 +38,7 @@ const Rot = styled.div`
   /* transition: transform 2s; */
 
   animation-duration: 3s;
-  animation-name: rot;
+  /* animation-name: rot; */
   animation-delay: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
