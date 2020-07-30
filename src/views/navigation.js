@@ -139,8 +139,8 @@ const NavbarToggler = styled.div`
     right: 1rem;
     font-size: 1.3rem;
     z-index: 13;
-    transition: 0.3s;
-    transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotate(90deg)" : "")};
+    transition: 0.4s;
+    transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotateX(180deg)" : "")};
     cursor: pointer;
 
     /* color: ${({ theme }) => theme.navbarLink}; */
