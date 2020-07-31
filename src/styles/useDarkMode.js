@@ -3,6 +3,12 @@ import { useState } from "react"
 const readTheme = () => {
   if (typeof window !== "undefined") {
     const mode = localStorage.getItem("theme")
+    if (mode === undefined || mode === null) {
+      const supportDarkMode =
+        window.matchMedia("(prefers-color-scheme: dark)").matches === true
+
+      return supportDarkMode ? "dark" : "light"
+    }
     return mode ? mode : "light"
   } else {
     return "light"
