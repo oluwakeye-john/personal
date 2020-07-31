@@ -138,8 +138,8 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
+    // height: PropTypes.number.isRequired,
+    // width: PropTypes.number.isRequired,
   }),
 }
 

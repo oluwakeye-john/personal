@@ -215,9 +215,7 @@ const Navigation = ({ location, toggleTheme, theme }) => {
         if (e.target.innerWidth > 768) {
           lockScroll(false)
         } else {
-          if (sidebarOpen) {
-            lockScroll(true)
-          }
+          lockScroll(false)
         }
       })
     }
