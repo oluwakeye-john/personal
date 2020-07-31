@@ -16,7 +16,7 @@ const ShareButton = styled.div`
   background-color: ${({ theme }) => theme.primary};
   text-align: center;
   color: white;
-  margin-right: 1.5rem;
+  /* margin-right: 1.5rem; */
   margin-bottom: 1rem;
   text-decoration: none;
   transition: 0.2s;
@@ -30,8 +30,21 @@ const ShareButton = styled.div`
 `
 
 const ShareLogo = styled.span`
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
   margin-bottom: 1rem;
+`
+
+const ShareList = styled.div`
+  display: flex;
+  justify-content: flex-start;
+
+  & > * {
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 400px) {
+    justify-content: space-around;
+  }
 `
 
 const Share = ({ postUrl, desc }) => {
@@ -43,7 +56,7 @@ const Share = ({ postUrl, desc }) => {
     twitter: `https://twitter.com/intent/tweet?text=${text}`,
   }
   return (
-    <div>
+    <ShareList>
       <ShareLogo>
         <FaShareAlt />
       </ShareLogo>
@@ -60,7 +73,7 @@ const Share = ({ postUrl, desc }) => {
       <ShareButton as="a" href={intent.linkedin}>
         <FaLinkedin />
       </ShareButton>
-    </div>
+    </ShareList>
   )
 }
 

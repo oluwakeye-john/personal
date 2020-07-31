@@ -103,7 +103,7 @@ const Landing = () => {
         <p>
           I'm <strong>Oluwakeye John</strong>, a Full Stack web developer{" "}
           <span aria-hidden>💻</span> based in Nigeria. I specialize in
-          JavaScript and i also code Python.
+          JavaScript and I also code Python.
           <Link to="/about"> Read More</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>
