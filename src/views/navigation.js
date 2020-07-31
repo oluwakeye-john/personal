@@ -125,6 +125,7 @@ const NavbarItem = styled(Link)`
     color: rgba(255, 255, 255, 0.5);
     margin: 2rem;
     font-size: 20px;
+    width: 85%;
   }
 
   &:hover {
