@@ -1,14 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import { light, dark } from "../styles/theme"
 import styled, { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../styles/globalStyles"
-import Header from "../views/header"
 import { useDarkMode } from "../styles/useDarkMode"
-import Navbar from "../views/navbar"
 import Navigation from "../views/navigation"
 import Footer from "../views/Footer"
-import ParticlesBg from "./particlesBg"
+// import ParticlesBg from "./particlesBg"
 import StyledLine from "./styledLine"
 
 import { IconContext } from "react-icons"
@@ -39,10 +36,6 @@ const Layout = ({ location, title, children }) => {
           rel="stylesheet"
         ></link>
       </Helmet>
-      {/* <Header>
-        <Link to={`/`}>{title}</Link>
-      </Header>
-      <Navbar location={location} toggleTheme={toggleTheme} theme={theme} /> */}
       <Navigation location={location} toggleTheme={toggleTheme} theme={theme} />
       <LayoutComponent>
         <GlobalStyles />

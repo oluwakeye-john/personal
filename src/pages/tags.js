@@ -38,7 +38,7 @@ const TagsPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All Tags" />
       <div>
-        <h1>Tags</h1>
+        <h1 style={{ textAlign: "center" }}>Tags</h1>
         <div>
           {group.map(tag => (
             <TagLink to={`/tags/${kebabCase(tag.fieldValue)}/`}>

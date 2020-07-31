@@ -100,7 +100,7 @@ class TypeWriter extends Component {
   render() {
     return (
       <>
-        <span>{this.state.shown}</span>
+        <span>{this.state.shown} </span>
         <Cursor>|</Cursor>
       </>
     )
