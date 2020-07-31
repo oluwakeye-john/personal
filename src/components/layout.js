@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../styles/globalStyles"
 import { useDarkMode } from "../styles/useDarkMode"
 import Navigation from "../views/navigation"
-import Footer from "../views/Footer"
+import Footer from "../views/footer"
 // import ParticlesBg from "./particlesBg"
 import StyledLine from "./styledLine"
 
