@@ -66,6 +66,8 @@ const NavigationContainer = styled.div`
     padding: 0.7rem 1.5rem;
   }
 
+  transition: background 0.2s ;
+
   position: sticky;
   top: 0;
   left: 0;

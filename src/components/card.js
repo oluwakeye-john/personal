@@ -4,7 +4,7 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.cardBg};
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  transition: 0.3s;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
   &:hover {
     transform: scale(1.03);
   }

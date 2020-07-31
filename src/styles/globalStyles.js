@@ -38,12 +38,18 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body::-webkit-scrollbar{
-        width: 0.25rem;
+        width: 8px;
     }
 
     body::-webkit-scrollbar-thumb{
         background: ${({ theme }) => theme.primary};
+        border-radius: 15px;
     }
+
+    body::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 15px;
+}
 
     .theme-light {
         --theme-color-mode: light;
@@ -69,6 +75,10 @@ export const GlobalStyles = createGlobalStyle`
 
     .fixed{
         overflow-y: hidden;
+    }
+
+    .animate{
+        transition: background-color .2s, color .2s;
     }
 
 `

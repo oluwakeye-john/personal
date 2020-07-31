@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { light, dark } from "../styles/theme"
 import styled, { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../styles/globalStyles"
@@ -31,6 +31,10 @@ const Layout = ({ location, title, children }) => {
 
   light.theme = "light"
   dark.theme = "dark"
+
+  useEffect(() => {
+    typeof window !== "undefined" && document.body.classList.add("animate")
+  }, [])
 
   return (
     <ThemeProvider theme={theme === "light" ? light : dark}>
