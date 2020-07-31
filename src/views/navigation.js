@@ -181,15 +181,6 @@ const items = [
   },
 ]
 
-const lockScroll = val => {
-  if (!val) {
-    typeof window !== "undefined" &&
-      window.document.body.classList.remove("fixed")
-  } else {
-    typeof window !== "undefined" && window.document.body.classList.add("fixed")
-  }
-}
-
 const Navigation = ({ location, toggleTheme, theme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const toggleSidebar = () => {

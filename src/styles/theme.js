@@ -1,6 +1,6 @@
-const darkPrimary = "#FD6363"
+// const darkPrimary = "#FD6363"
 // const darkPrimary = "#1DA1F2"
-const lightPrimary = "rgba(169,3,41,1)"
+// const lightPrimary = "rgba(169,3,41,1)"
 
 export const light = {
   mode: "var(--theme-color-mode, light)",

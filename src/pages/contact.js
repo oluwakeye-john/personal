@@ -14,7 +14,7 @@ import {
 import SocialButtons from "../components/socialButtons"
 import SectionHeading from "../components/sectionHeading"
 
-import { FaPaperPlane } from "react-icons/fa"
+import { FaPaperPlane, FaCheckCircle, FaTimesCircle } from "react-icons/fa"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -33,6 +33,10 @@ const ContactText = styled.p`
   opacity: 0.8;
 `
 
+const ContactExtra = styled.p`
+  margin-top: 20px;
+`
+
 const Contact = ({ data, location }) => {
   const [msg, setMsg] = useState({ status: false, text: "" })
   const siteTitle = data.site.siteMetadata.title
@@ -49,6 +53,8 @@ const Contact = ({ data, location }) => {
     const email = e.target.email.value
     const message = e.target.message.value
 
+    e.target.reset()
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -62,13 +68,22 @@ const Contact = ({ data, location }) => {
       .then(resp => {
         console.log(resp.ok)
         if (resp.ok) {
-          setMsg({ status: true, text: "Form submmitted" })
+          setMsg({
+            status: true,
+            text: "Thanks for filling this form. I will get back to you soon",
+          })
         } else {
-          setMsg({ status: false, text: "Error submitting form" })
+          setMsg({
+            status: false,
+            text: "Error submitting form. Please try again",
+          })
         }
       })
       .catch(() => {
-        setMsg({ status: false, text: "Error submitting form" })
+        setMsg({
+          status: false,
+          text: "Error submitting form. Please try again",
+        })
       })
   }
 
@@ -106,11 +121,13 @@ const Contact = ({ data, location }) => {
             />
             <InputLabel>Message</InputLabel>
           </TextArea>
-          <p style={{ color: msg.status ? "green" : "red" }}>{msg.text}</p>
           <ButtonWrapper>
             <Button type="submit">
               <FaPaperPlane /> Send message
             </Button>
+
+            {msg.text && (msg.status ? <FaCheckCircle /> : <FaTimesCircle />)}
+            <ContactExtra>{msg.text}</ContactExtra>
           </ButtonWrapper>
         </form>
       </ContactContainer>

@@ -115,7 +115,7 @@ const Skill = () => {
       <SectionHeading>
         <span aria-hidden>✨</span> My Skills
       </SectionHeading>
-
+      <SkillInfo> to see name</SkillInfo>
       <SkillList>
         <Item>
           <ItemImage

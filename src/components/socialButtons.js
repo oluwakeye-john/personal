@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {
-  FaCodepen,
   FaTwitter,
   FaDev,
   FaLinkedin,
@@ -46,7 +45,6 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
     dev,
     github,
     email,
-    codepen,
   } = data.site.siteMetadata.social
 
   const links = [
@@ -74,11 +72,6 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
       name: "linkedin",
       icon: FaLinkedin,
       url: `https://linkedin.com/${linkedin}`,
-    },
-    {
-      name: "codepen",
-      icon: FaCodepen,
-      url: `https://codepen.io/${codepen}`,
     },
   ]
 
