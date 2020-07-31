@@ -11,7 +11,8 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 
 const TagLink = styled(Link)`
-  margin: 1rem 1rem;
+  display: inline-block;
+  margin: 1rem;
 `
 
 const TagBox = styled.div`

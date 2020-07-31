@@ -13,7 +13,7 @@ const ShareButton = styled.div`
   width: 40px;
   line-height: 40px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.buttonBorder};
+  background-color: ${({ theme }) => theme.primary};
   text-align: center;
   color: white;
   margin-right: 1.5rem;

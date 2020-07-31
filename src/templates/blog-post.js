@@ -58,7 +58,7 @@ const BlogSection = styled.section`
 `
 
 const BlogDetails = styled.p`
-  color: ${({ theme }) => theme.lightText};
+  opacity: 0.8;
 `
 
 const RelatedBlog = styled.div`

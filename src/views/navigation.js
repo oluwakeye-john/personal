@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {
@@ -19,7 +19,7 @@ const ToggleButton = styled.button`
   color: ${({ theme }) => theme.navbarLink};
 
   @media (max-width: 768px) {
-    color: ${({ theme }) => theme.sidebarLink};
+    color: rgba(255, 255, 255, 0.5);
 
     position: absolute;
     top: 1.5rem;
@@ -42,18 +42,18 @@ const NavigationContainer = styled.div`
   width: 100%;
   & + div {
     @media (max-width: 768px) {
-      filter: ${({ sidebarOpen }) => (sidebarOpen ? "blur(1px)" : "")};
-      position: ${({ sidebarOpen }) => (sidebarOpen ? "fixed" : "")};
+      /* filter: ${({ sidebarOpen }) => (sidebarOpen ? "blur(1px)" : "")}; */
+      /* position: ${({ sidebarOpen }) => (sidebarOpen ? "fixed" : "")}; */
     }
   }
-  /* background-color: ${({ theme }) =>
-    theme.mode === "light" ? "white" : "inherit"}; */
-    background: transparent;
-  box-shadow: ${({ theme }) =>
-    theme.mode === "light" ? "0 0 10px #ccc" : "0"};
+
+  /* background: transparent; */
+  background: ${({ theme }) => theme.bg};
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  
 
   margin-bottom: 4rem;
-  padding: 0.7rem 3rem;
+  padding: 0.7rem 5rem;
   font-family: "Rowdies", sans-serif;
 
   display: flex;
@@ -63,10 +63,13 @@ const NavigationContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 1.5rem;
   }
 
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 `
 
 const NavLabel = styled.div`
@@ -93,7 +96,7 @@ const NavbarNav = styled.div`
     position: fixed;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     width: 100vw;
     /* background: ${({ theme }) => theme.bg}; */
@@ -117,8 +120,9 @@ const NavbarItem = styled(Link)`
   transition: opacity 0.2s;
 
   @media (max-width: 768px) {
-    color: ${({ theme }) => theme.sidebarLink};
+    color: rgba(255, 255, 255, 0.5);
     margin: 2rem;
+    font-size: 20px;
   }
 
   &:hover {
@@ -136,7 +140,7 @@ const NavbarToggler = styled.div`
     display: block;
     position: absolute;
     top: 1.5rem;
-    right: 1rem;
+    right: 1.5rem;
     font-size: 1.3rem;
     z-index: 13;
     transition: 0.4s;
@@ -146,8 +150,8 @@ const NavbarToggler = styled.div`
     /* color: ${({ theme }) => theme.navbarLink}; */
 
     @media (max-width: 768px) {
-      color: ${({ theme, sidebarOpen }) =>
-        sidebarOpen ? theme.sidebarLink : "inherit"};
+      color: ${({ sidebarOpen }) =>
+        sidebarOpen ? "rgba(255, 255, 255, 0.5)" : "inherit"};
     }
   }
 `
@@ -175,15 +179,39 @@ const items = [
   },
 ]
 
+const lockScroll = val => {
+  if (!val) {
+    typeof window !== "undefined" &&
+      window.document.body.classList.remove("fixed")
+  } else {
+    typeof window !== "undefined" && window.document.body.classList.add("fixed")
+  }
+}
+
 const Navigation = ({ location, toggleTheme, theme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const toggleSidebar = () => {
+    // lockScroll(!sidebarOpen)
     setSidebarOpen(!sidebarOpen)
   }
   const handleToggle = () => {
+    // lockScroll(!sidebarOpen)
     setSidebarOpen(false)
     toggleTheme()
   }
+
+  const closeOnEscape = e => {
+    if (e.keyCode === 27) {
+      setSidebarOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("keydown", closeOnEscape)
+    }
+  })
+
   return (
     <NavigationContainer sidebarOpen={sidebarOpen}>
       <NavLabel>

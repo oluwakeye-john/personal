@@ -8,7 +8,7 @@ const ScrollContainer = styled.div`
   right: 1rem;
   width: 3rem;
   height: 3rem;
-  background-color: ${({ theme }) => theme.link};
+  background-color: ${({ theme }) => theme.primary};
   text-align: center;
   color: white;
   border-radius: 50%;

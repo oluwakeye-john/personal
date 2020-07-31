@@ -22,7 +22,7 @@ const ColoredTags = ({ tags, icon }) => {
       {` `}
       {typeof tags === "object" ? (
         tags.map((tag, index) => (
-          <Link to={`/tags/${kebabCase(tag)}/`}>
+          <Link to={`/tags/${kebabCase(tag)}/`} key={index}>
             <Tag color={colors[index]}>
               {addHash(tag)}
               {index !== tags.length - 1 && " • "}

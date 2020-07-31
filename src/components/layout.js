@@ -28,6 +28,10 @@ const LayoutComponent = styled.div`
 
 const Layout = ({ location, title, children }) => {
   const [theme, toggleTheme] = useDarkMode()
+
+  light.theme = "light"
+  dark.theme = "dark"
+
   return (
     <ThemeProvider theme={theme === "light" ? light : dark}>
       <Helmet>

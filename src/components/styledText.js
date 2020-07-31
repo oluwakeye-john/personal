@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const StyledText = styled.span`
   /* color: #6e3a6c; */
-  /* color: ${({ theme }) => theme.link}; */
+  /* color: ${({ theme }) => theme.primary}; */
   text-decoration: none;
   /* background: -webkit-linear-gradient(180deg, #ff8a00, #e52e71); */
 

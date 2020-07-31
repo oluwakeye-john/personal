@@ -24,7 +24,7 @@ const CardTitle = styled.h3`
 `
 
 const CardExtra = styled.div`
-  color: ${({ theme }) => theme.lightText};
+  opacity: 0.8;
 `
 
 const BlogCard = ({ node }) => {

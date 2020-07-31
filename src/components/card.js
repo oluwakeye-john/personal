@@ -3,11 +3,10 @@ import styled from "styled-components"
 const Card = styled.div`
   background-color: ${({ theme }) => theme.cardBg};
   border-radius: 10px;
-  box-shadow: ${({ theme }) => theme.cardShadow};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   transition: 0.3s;
   &:hover {
     transform: scale(1.03);
-    box-shadow: ${({ theme }) => theme.cardShadow};
   }
   width: 43%;
   @media (max-width: 768px) {
@@ -18,3 +17,4 @@ const Card = styled.div`
 `
 
 export default Card
+//0 0 20px #ccc

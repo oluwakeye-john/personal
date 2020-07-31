@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         color: ${({ theme }) => theme.textNormal};
         background-color: ${({ theme }) => theme.bg}; 
-        transition: background-color .3s, color .3s;
+        ${"" /* transition: background-color .3s, color .3s; */}
         ${"" /* font-family: 'Open Sans', sans-serif; */}
         font-family: 'Roboto', sans-serif;
         min-height: 100vh;
@@ -25,12 +25,14 @@ export const GlobalStyles = createGlobalStyle`
     
     a{
         text-decoration: none;
-        color: ${({ theme }) => theme.link};
+        color: ${({ theme }) => theme.primary};
         
     }
+
     *, ::after, ::before {
         box-sizing: border-box;
     }
+    
     #gatsby-plugin-page-progress{
         background: linear-gradient(to right, #e48a28 0%, #cc4856 50%, #6e3a6c 100%);
     }
@@ -40,7 +42,33 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body::-webkit-scrollbar-thumb{
-        background: ${({ theme }) => theme.link};
+        background: ${({ theme }) => theme.primary};
+    }
+
+    .theme-light {
+        --theme-color-mode: light;
+        --theme-color-bg: #fff;
+        --theme-color-textNormal: #222;
+        --theme-color-navbarLink: rgba(0, 0, 0, 0.45);
+        --theme-color-primary: rgba(169,3,41,1);
+        --theme-color-cardBg: #fff;
+        --theme-color-blogTextNormal: #222;
+        --theme-color-boxShadow: 0 0 10px #ccc;
+    }
+
+    .theme-dark {
+        --theme-color-mode: dark;
+        --theme-color-bg: rgb(21, 32, 43);
+        --theme-color-textNormal: rgba(255, 255, 255, 0.88);
+        --theme-color-navbarLink: rgba(255, 255, 255, 0.5);
+        --theme-color-primary: #FD6363;
+        --theme-color-cardBg: #243447;
+        --theme-color-blogTextNormal: rgba(255, 255, 255, 0.7);
+        --theme-color-boxShadow: 0;
+    }
+
+    .fixed{
+        overflow-y: hidden;
     }
 
 `
