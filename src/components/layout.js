@@ -61,7 +61,7 @@ const Layout = ({ location, title, children }) => {
           <main style={{ marginBottom: "3rem" }}>{children}</main>
           <StyledLine />
           <Footer />
-          <ScrollUp aria-hidden={true} />
+          {/* <ScrollUp aria-hidden={true} /> */}
         </IconContext.Provider>
       </LayoutComponent>
     </ThemeProvider>

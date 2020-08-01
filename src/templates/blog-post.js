@@ -14,6 +14,7 @@ import {
   FaRegCalendarAlt as Calendar,
   FaRegClock as Clock,
 } from "react-icons/fa"
+import Like from "../components/like"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -139,6 +140,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           )}
         </div>
       </RelatedBlog>
+      <Like />
     </Layout>
   )
 }

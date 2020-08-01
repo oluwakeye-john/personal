@@ -22,7 +22,7 @@ const ToggleButton = styled.button`
     color: rgba(255, 255, 255, 0.5);
 
     position: absolute;
-    top: 1.5rem;
+    top: 2rem;
     left: 1.5rem;
     font-size: 1.3rem;
     z-index: 13;
@@ -124,7 +124,7 @@ const NavbarItem = styled(Link)`
   @media (max-width: 768px) {
     color: rgba(255, 255, 255, 0.5);
     margin: 2rem;
-    font-size: 20px;
+    font-size: 18px;
     width: 85%;
   }
 
@@ -198,7 +198,7 @@ const Navigation = ({ location, toggleTheme, theme }) => {
     setSidebarOpen(!sidebarOpen)
   }
   const handleToggle = () => {
-    lockScroll(!sidebarOpen)
+    lockScroll(false)
     setSidebarOpen(false)
     toggleTheme()
   }
@@ -206,6 +206,7 @@ const Navigation = ({ location, toggleTheme, theme }) => {
   const closeOnEscape = e => {
     if (e.keyCode === 27) {
       setSidebarOpen(false)
+      lockScroll(false)
     }
   }
 
@@ -220,7 +221,10 @@ const Navigation = ({ location, toggleTheme, theme }) => {
         }
       })
     }
-  })
+    return () => {
+      lockScroll(false)
+    }
+  }, [])
 
   return (
     <NavigationContainer sidebarOpen={sidebarOpen}>
@@ -248,13 +252,17 @@ const Navigation = ({ location, toggleTheme, theme }) => {
             (loc.includes("/tag") && item.link === "/blog")
           ) {
             return (
-              <ActiveNavbarItem to={item.link} key={index}>
+              <ActiveNavbarItem
+                to={item.link}
+                key={index}
+                onClick={toggleSidebar}
+              >
                 <StyledText>{item.name}</StyledText>
               </ActiveNavbarItem>
             )
           } else {
             return (
-              <NavbarItem to={item.link} key={index}>
+              <NavbarItem to={item.link} key={index} onClick={toggleSidebar}>
                 {item.name}
               </NavbarItem>
             )

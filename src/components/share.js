@@ -39,7 +39,7 @@ const ShareList = styled.div`
   justify-content: flex-start;
 
   & > * {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
   }
 
   @media (max-width: 400px) {
@@ -48,7 +48,7 @@ const ShareList = styled.div`
 `
 
 const Share = ({ postUrl, desc }) => {
-  const text = `${desc}\n\${postUrl}`
+  const text = `${desc} %0A%0A${postUrl}`
   const intent = {
     whatsapp: `https://api.whatsapp.com/send?text=${text}`,
     facebook: `https://facebook.com/sharer/sharer.php?u=${postUrl}`,

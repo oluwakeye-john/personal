@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-// Utilities
 import kebabCase from "lodash/kebabCase"
-// Components
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -12,23 +10,33 @@ import styled from "styled-components"
 
 const TagLink = styled(Link)`
   display: inline-block;
-  margin: 1rem;
+  margin: 1rem 1.5rem;
+  margin-left: 0;
 `
 
 const TagBox = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.9rem;
   display: inline-block;
   background: ${({ theme }) => theme.cardBg};
-  border-radius: 5px;
+
+  background: ${({ theme }) =>
+    theme.mode.includes("light") ? "#e1e1e1" : theme.cardBg};
+
+  border-radius: 30px;
   border: 1px solid transparent;
 
   font-size: 15px;
 
-  transition: 0.2s;
+  transition: 0.3s;
+
+  color: ${({ theme }) =>
+    theme.mode.includes("light") ? theme.textNormal : theme.primary};
 
   &:hover {
     background: transparent;
-    border: 1px solid ${({ theme }) => theme.cardBg};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.mode.includes("light") ? "#e1e1e1" : theme.cardBg};
   }
 `
 
@@ -42,8 +50,11 @@ const TagsPage = ({ data, location }) => {
         <h1 style={{ textAlign: "center" }}>Tags</h1>
         <div>
           {group.map(tag => (
-            <TagLink to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              <TagBox key={tag.fieldValue}>
+            <TagLink
+              to={`/tags/${kebabCase(tag.fieldValue)}/`}
+              key={tag.fieldValue}
+            >
+              <TagBox>
                 {tag.fieldValue} ({tag.totalCount})
               </TagBox>
             </TagLink>

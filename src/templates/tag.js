@@ -10,14 +10,39 @@ import SEO from "../components/seo"
 import BlogCard from "../components/blogCard"
 import styled from "styled-components"
 
+import { FaTags } from "react-icons/fa"
+
 const List = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
 `
 
+const TagList = styled.ul`
+  list-style-type: circle;
+  margin: 0;
+`
+
 const TagTitle = styled.h1`
   text-align: center;
+  margin: 2rem 0;
+`
+
+const AllTags = styled.div`
+  margin-top: 3rem;
+  margin-left: 2rem;
+`
+
+const TabItem = styled.li`
+  margin-bottom: 1rem;
+  padding-right: 10px;
+`
+
+const PostTitle = styled.h2`
+  color: ${({ theme }) => theme.primary};
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const Tags = ({ pageContext, data, location }) => {
@@ -31,16 +56,23 @@ const Tags = ({ pageContext, data, location }) => {
     <Layout location={location}>
       <SEO title={tagHeader} />
       <TagTitle>{tagHeader}</TagTitle>
-      <List>
-        {edges.map(({ node }) => {
-          return <BlogCard node={node} key={node.fields.slug} />
+      <TagList>
+        {edges.map(({ node }, index) => {
+          return (
+            <TabItem key={index}>
+              <Link to={`/blog${node.fields.slug}`}>
+                <PostTitle>{node.frontmatter.title}</PostTitle>
+              </Link>
+              <p>{node.frontmatter.description}</p>
+            </TabItem>
+          )
         })}
-      </List>
-      {/*       
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
+      </TagList>
+      <Link to="/tags">
+        <AllTags>
+          <FaTags /> All tags
+        </AllTags>
+      </Link>
     </Layout>
   )
 }
