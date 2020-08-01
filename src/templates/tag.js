@@ -34,7 +34,7 @@ const AllTags = styled.div`
 `
 
 const TabItem = styled.li`
-  margin-bottom: 1rem;
+  margin: 1.5rem 0;
   padding-right: 10px;
 `
 

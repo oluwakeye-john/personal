@@ -19,7 +19,6 @@ export default function HTML(props) {
             __html: `(function() {
                 try {
                   var mode = localStorage.getItem('theme');
-                  console.log(mode)
                   var supportDarkMode =
                     window.matchMedia('(prefers-color-scheme: dark)').matches === true;
                   if (!mode && supportDarkMode)

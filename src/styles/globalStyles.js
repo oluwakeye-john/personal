@@ -81,4 +81,8 @@ export const GlobalStyles = createGlobalStyle`
         transition: background-color .2s, color .2s;
     }
 
+    .smooth-scroll {
+        scroll-behavior: smooth;
+    }
+
 `

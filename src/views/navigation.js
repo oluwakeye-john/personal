@@ -210,19 +210,23 @@ const Navigation = ({ location, toggleTheme, theme }) => {
     }
   }
 
+  const unlockOnScroll = e => {
+    if (e.target.innerWidth > 768) {
+      lockScroll(false)
+    } else {
+      lockScroll(false)
+    }
+  }
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("keydown", closeOnEscape)
-      window.addEventListener("resize", e => {
-        if (e.target.innerWidth > 768) {
-          lockScroll(false)
-        } else {
-          lockScroll(false)
-        }
-      })
+      window.addEventListener("resize", unlockOnScroll)
     }
     return () => {
       lockScroll(false)
+      window.removeEventListener("keydown", closeOnEscape)
+      window.removeEventListener("resize", unlockOnScroll)
     }
   }, [])
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -14,7 +14,6 @@ import {
   FaRegCalendarAlt as Calendar,
   FaRegClock as Clock,
 } from "react-icons/fa"
-import Like from "../components/like"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -86,6 +85,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const postImage = featuredImage ? featuredImage.childImageSharp.fluid : ""
 
+  useEffect(() => {
+    document.querySelector("html").classList.add("smooth-scroll")
+    return () => {
+      document.querySelector("html").classList.remove("smooth-scroll")
+    }
+  }, [])
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -140,7 +146,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           )}
         </div>
       </RelatedBlog>
-      <Like />
     </Layout>
   )
 }

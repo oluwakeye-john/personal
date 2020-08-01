@@ -17,7 +17,7 @@ const LayoutComponent = styled.div`
   /* transition: filter 0.1s; */
   max-width: 750px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 80vh;
   @media (max-width: 768px) {
     padding: 0 15px;
   }
@@ -61,7 +61,7 @@ const Layout = ({ location, title, children }) => {
           <main style={{ marginBottom: "3rem" }}>{children}</main>
           <StyledLine />
           <Footer />
-          {/* <ScrollUp aria-hidden={true} /> */}
+          <ScrollUp aria-hidden={true} />
         </IconContext.Provider>
       </LayoutComponent>
     </ThemeProvider>
