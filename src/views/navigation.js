@@ -150,8 +150,6 @@ const NavbarToggler = styled.div`
     transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotateX(180deg)" : "")};
     cursor: pointer;
 
-    /* color: ${({ theme }) => theme.navbarLink}; */
-
     @media (max-width: 768px) {
       color: ${({ sidebarOpen }) =>
         sidebarOpen ? "rgba(255, 255, 255, 0.5)" : "inherit"};

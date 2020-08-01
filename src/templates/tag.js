@@ -7,16 +7,9 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import BlogCard from "../components/blogCard"
 import styled from "styled-components"
 
 import { FaTags } from "react-icons/fa"
-
-const List = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: row wrap;
-`
 
 const TagList = styled.ul`
   list-style-type: circle;
@@ -25,7 +18,8 @@ const TagList = styled.ul`
 
 const TagTitle = styled.h1`
   text-align: center;
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 `
 
 const AllTags = styled.div`
