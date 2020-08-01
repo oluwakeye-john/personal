@@ -208,6 +208,11 @@ const Navigation = ({ location, toggleTheme, theme }) => {
     }
   }
 
+  const closeSidebar = () => {
+    setSidebarOpen(false)
+    lockScroll(false)
+  }
+
   const unlockOnScroll = e => {
     if (e.target.innerWidth > 768) {
       lockScroll(false)
@@ -257,14 +262,14 @@ const Navigation = ({ location, toggleTheme, theme }) => {
               <ActiveNavbarItem
                 to={item.link}
                 key={index}
-                onClick={toggleSidebar}
+                onClick={closeSidebar}
               >
                 <StyledText>{item.name}</StyledText>
               </ActiveNavbarItem>
             )
           } else {
             return (
-              <NavbarItem to={item.link} key={index} onClick={toggleSidebar}>
+              <NavbarItem to={item.link} key={index} onClick={closeSidebar}>
                 {item.name}
               </NavbarItem>
             )
