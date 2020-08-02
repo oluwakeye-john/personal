@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {
@@ -9,9 +9,6 @@ import {
   FaCode,
 } from "react-icons/fa"
 import StyledText from "../components/styledText"
-
-import { useContext } from "react"
-import { ThemeContext } from "styled-components"
 
 const ToggleButton = styled.button`
   padding: 0;
@@ -192,7 +189,7 @@ const lockScroll = val => {
   }
 }
 
-const Navigation = ({ location, toggleTheme, theme }) => {
+const Navigation = ({ location, toggleTheme, theme, themeContent }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const toggleSidebar = () => {
     lockScroll(!sidebarOpen)
@@ -224,7 +221,10 @@ const Navigation = ({ location, toggleTheme, theme }) => {
     }
   }
 
+  const modeToggleRef = useRef()
+
   useEffect(() => {
+    // modeToggleRef.current.innerHTML = <Moon />
     if (typeof window !== "undefined") {
       window.addEventListener("keydown", closeOnEscape)
       window.addEventListener("resize", unlockOnScroll)
@@ -234,13 +234,9 @@ const Navigation = ({ location, toggleTheme, theme }) => {
       window.removeEventListener("keydown", closeOnEscape)
       window.removeEventListener("resize", unlockOnScroll)
     }
-  }, [])
+  }, [themeContent])
 
   const cssTheme = typeof window !== "undefined"
-
-  const themeContext = useContext(ThemeContext)
-
-  console.log("hel", themeContext)
 
   return (
     <NavigationContainer sidebarOpen={sidebarOpen}>
@@ -288,9 +284,14 @@ const Navigation = ({ location, toggleTheme, theme }) => {
           onClick={handleToggle}
           color={theme === "light" ? "black" : "yellow"}
           light={theme === "light" ? true : false}
+          ref={modeToggleRef}
         >
-          {/* {theme === "light" ? <Moon /> : <Sun />} */}
-          {cssTheme && themeContext.mode.includes("light") ? <Moon /> : <Sun />}
+          {cssTheme &&
+          window.document.body.classList.contains("theme-light") ? (
+            <Moon />
+          ) : (
+            <Sun />
+          )}
         </ToggleButton>
       </NavbarNav>
     </NavigationContainer>
