@@ -44,7 +44,12 @@ const Layout = ({ location, title, children }) => {
           rel="stylesheet"
         ></link>
       </Helmet>
-      <Navigation location={location} toggleTheme={toggleTheme} theme={theme} />
+      <Navigation
+        location={location}
+        toggleTheme={toggleTheme}
+        theme={theme}
+        themeContent={theme === "light" ? light : dark}
+      />
       <LayoutComponent>
         <GlobalStyles />
         {/* <ParticlesBg /> */}

@@ -10,6 +10,9 @@ import {
 } from "react-icons/fa"
 import StyledText from "../components/styledText"
 
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
+
 const ToggleButton = styled.button`
   padding: 0;
   border: none;
@@ -233,6 +236,12 @@ const Navigation = ({ location, toggleTheme, theme }) => {
     }
   }, [])
 
+  const cssTheme = typeof window !== "undefined"
+
+  const themeContext = useContext(ThemeContext)
+
+  console.log("hel", themeContext)
+
   return (
     <NavigationContainer sidebarOpen={sidebarOpen}>
       <NavLabel>
@@ -280,7 +289,8 @@ const Navigation = ({ location, toggleTheme, theme }) => {
           color={theme === "light" ? "black" : "yellow"}
           light={theme === "light" ? true : false}
         >
-          {theme === "light" ? <Moon /> : <Sun />}
+          {/* {theme === "light" ? <Moon /> : <Sun />} */}
+          {cssTheme && themeContext.mode.includes("light") ? <Moon /> : <Sun />}
         </ToggleButton>
       </NavbarNav>
     </NavigationContainer>
