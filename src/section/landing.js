@@ -66,7 +66,7 @@ const LandingText = styled.div`
   flex: 3;
 `
 
-const texts = ["Hi There!", "Hello world", "Hola!"]
+const texts = ["Hey There!", "Hello world", "Hola!"]
 
 const Landing = () => {
   const data = useStaticQuery(graphql`
@@ -101,9 +101,9 @@ const Landing = () => {
           <TypeWriter texts={texts} />
         </h2>
         <p>
-          I'm <strong>Oluwakeye John</strong>, a Full Stack web developer{" "}
-          <span aria-hidden>💻</span> based in Nigeria. I specialize in
-          JavaScript and I also code Python.
+          Heyy... I'm <strong>Oluwakeye John</strong>, a Full Stack web
+          developer <span aria-hidden>💻</span> based in Nigeria. I specialize
+          in JavaScript and I also code Python.
           <Link to="/about"> Read More</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>

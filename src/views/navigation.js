@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {
@@ -221,10 +221,7 @@ const Navigation = ({ location, toggleTheme, theme, themeContent }) => {
     }
   }
 
-  const modeToggleRef = useRef()
-
   useEffect(() => {
-    // modeToggleRef.current.innerHTML = <Moon />
     if (typeof window !== "undefined") {
       window.addEventListener("keydown", closeOnEscape)
       window.addEventListener("resize", unlockOnScroll)
@@ -284,7 +281,6 @@ const Navigation = ({ location, toggleTheme, theme, themeContent }) => {
           onClick={handleToggle}
           color={theme === "light" ? "black" : "yellow"}
           light={theme === "light" ? true : false}
-          ref={modeToggleRef}
         >
           {cssTheme &&
           window.document.body.classList.contains("theme-light") ? (
