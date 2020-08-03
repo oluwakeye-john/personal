@@ -88,6 +88,10 @@ const SEO = ({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `author`,
+          content: "Oluwakeye John",
+        },
       ]
         .concat(
           metaImage
