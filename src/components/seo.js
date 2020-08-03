@@ -100,14 +100,14 @@ const SEO = ({
                   property: "twitter:image",
                   content: image,
                 },
-                // {
-                //   property: "og:image:width",
-                //   content: metaImage.width,
-                // },
-                // {
-                //   property: "og:image:height",
-                //   content: metaImage.height,
-                // },
+                {
+                  property: "og:image:width",
+                  content: metaImage.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: metaImage.height,
+                },
                 {
                   name: "twitter:card",
                   content: "summary_large_image",
