@@ -120,11 +120,11 @@ const SEO = ({
                 },
                 {
                   property: "twitter:image",
-                  content: `https://johnkeye.com/favicon-32x32.png`,
+                  content: `https://johnkeye.com/icons/icon-512x512.png`,
                 },
                 {
                   property: "og:image",
-                  content: `https://johnkeye.com/favicon-32x32.png`,
+                  content: `https://johnkeye.com/icons/icon-512x512.png`,
                 },
               ]
         )
