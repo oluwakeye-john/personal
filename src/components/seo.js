@@ -40,7 +40,7 @@ const SEO = ({
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
+      : `${site.siteMetadata.siteUrl}/favicon-32x32.png`
 
   return (
     <Helmet
@@ -117,6 +117,14 @@ const SEO = ({
                 {
                   name: "twitter:card",
                   content: "summary",
+                },
+                {
+                  property: "twitter:image",
+                  content: `https://johnkeye.com/favicon-32x32.png`,
+                },
+                {
+                  property: "og:image",
+                  content: `https://johnkeye.com/favicon-32x32.png`,
                 },
               ]
         )
