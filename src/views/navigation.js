@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {
-  FaSun as Sun,
-  FaRegMoon as Moon,
   FaBars,
   FaTimes,
   FaCode,
+  FaRegLightbulb,
+  FaLightbulb,
 } from "react-icons/fa"
 import StyledText from "../components/styledText"
 
-const ToggleButton = styled.button`
+const ToggleButton = styled.div`
   padding: 0;
   border: none;
   background-color: transparent;
@@ -284,9 +284,9 @@ const Navigation = ({ location, toggleTheme, theme, themeContent }) => {
         >
           {cssTheme &&
           window.document.body.classList.contains("theme-light") ? (
-            <Moon />
+            <FaRegLightbulb />
           ) : (
-            <Sun />
+            <FaLightbulb />
           )}
         </ToggleButton>
       </NavbarNav>

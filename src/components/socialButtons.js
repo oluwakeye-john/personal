@@ -87,7 +87,7 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
           color={color ? color : ""}
           darkenOnHover={darkenOnHover}
         >
-          <link.icon />
+          <link.icon title={link.name} />
         </SocialLink>
       ))}
     </div>
