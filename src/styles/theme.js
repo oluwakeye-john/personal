@@ -19,7 +19,7 @@ export const dark = {
   bg: "var(--theme-color-bg, rgb(21, 32, 43))",
   textNormal: "var(--theme-color-textNormal, rgba(255, 255, 255, 0.88))",
   navbarLink: "var(--theme-color-navbarLink, rgba(255, 255, 255, 0.5))",
-  primary: "var(--theme-color-primary, #FD6D6D)",
+  primary: "var(--theme-color-primary, #FD6363)",
   cardBg: "var(--theme-color-cardBg, #243447)",
   blogTextNormal: "var(--theme-color-blogTextNormal, rgba(255, 255, 255, 0.7))",
   theme: "dark",

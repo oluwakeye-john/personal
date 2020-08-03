@@ -67,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
         --theme-color-bg: rgb(21, 32, 43);
         --theme-color-textNormal: rgba(255, 255, 255, 0.88);
         --theme-color-navbarLink: rgba(255, 255, 255, 0.5);
-        --theme-color-primary: #FD6D6D;
+        --theme-color-primary: #FD6363;
         --theme-color-cardBg: #243447;
         --theme-color-blogTextNormal: rgba(255, 255, 255, 0.7);
         --theme-color-boxShadow: 0;
@@ -86,5 +86,3 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 `
-
-//FD6363
