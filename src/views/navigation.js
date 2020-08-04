@@ -31,7 +31,7 @@ const ToggleButton = styled.div`
   transition: 1s;
   font-size: 1rem;
   transition: 0.5s;
-  transform: ${({ light }) => (light ? "rotate(0deg)" : "rotate(180deg)")};
+  transform: ${({ light }) => (light ? "rotate(0deg)" : "rotate(360deg)")};
   cursor: pointer;
   &:focus {
     outline: 0;
