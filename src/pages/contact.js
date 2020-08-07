@@ -67,17 +67,10 @@ const Contact = ({ data, location }) => {
     })
       .then(resp => {
         console.log(resp.ok)
-        if (resp.ok) {
-          setMsg({
-            status: true,
-            text: "Thanks for filling this form. I will get back to you soon",
-          })
-        } else {
-          setMsg({
-            status: false,
-            text: "Error submitting form. Please try again",
-          })
-        }
+        setMsg({
+          status: true,
+          text: "Thanks for filling this form. I will get back to you soon",
+        })
       })
       .catch(() => {
         setMsg({
@@ -91,7 +84,7 @@ const Contact = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Contact Me" />
       <ContactContainer>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-netlify="true">
           <SectionHeading>Contact Me</SectionHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.

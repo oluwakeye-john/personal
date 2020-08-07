@@ -47,10 +47,21 @@ const projects = [
     live: "https://lens-chat.netlify.app",
   },
   {
+    name: "Ecommerce App",
+    description: "An ecommerce website built with gatsby and snipcart.",
+    live: "https://oluwakeye-ecommerce.netlify.app",
+  },
+  {
     name: "Chat app",
     description:
       "A real time application chat platform built with nodejs and socket io",
     live: "https://oluwakeye-chat.herokuapp.com",
+  },
+  {
+    name: "Scheme",
+    description:
+      "Scheme is a basic todo webapp which can be completely used offline. Built with react",
+    live: "https://oluwakeye-todo.netlify.app",
   },
 ]
 // 🤐😷🤕🤒🤮🤢🤧🥵🥶😴💤😈👿👹👺💩👻💀☠👽🤖🎃😺😸😹😻😼😽🙀😿😾👐🤲🙌👏🙏🤝👍👎👊✊🤛🤜🤞✌🤘🤟👌🤏👈👉👆👇☝✋🤚🖐🖖👋🤙💪🦾🖕✍🤳💅🦵🦿🦶👄🦷👅👂🦻👃👁👀🧠🦴👤👥🗣👶👧🧒👦👩🧑👨👩‍🦱🧑‍🦱👨‍

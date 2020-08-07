@@ -9,11 +9,13 @@ import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Share from "../components/share"
 import ColoredTags from "../components/coloredTags"
+import StyledLine from "../components/styledLine"
 
 import {
   FaRegCalendarAlt as Calendar,
   FaRegClock as Clock,
 } from "react-icons/fa"
+import Newsletter from "../components/newsletter"
 
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
@@ -119,13 +121,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <BlogSection style={{ marginBottom: "3rem" }}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </BlogSection>
-        <p>
+        <p style={{ display: "none" }}>
           You have a suggestion, or you want to know more about something I
           mentioned above? Then feel free to <Link to="/contact">contact</Link>{" "}
           me
         </p>
         <div style={{ marginBottom: "2rem" }} />
-        {/* <StyledLine style={{ marginBottom: "1rem" }} /> */}
+        <StyledLine style={{ marginBottom: "1rem" }} />
         <Share postUrl={postUrl} desc={description} />
         <Bio />
       </BlogContainer>
@@ -146,6 +148,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           )}
         </div>
       </RelatedBlog>
+
+      <Newsletter />
     </Layout>
   )
 }
