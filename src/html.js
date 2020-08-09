@@ -23,7 +23,9 @@ export default function HTML(props) {
                     window.matchMedia('(prefers-color-scheme: dark)').matches === true;
                   if (!mode && supportDarkMode)
                     document.body.classList.add('theme-dark');
-                  if (!mode) return;
+                  if (!mode) {
+                    document.body.classList.add('theme-light');
+                  };
                   document.body.classList.add('theme-' + mode);
                 } catch (e) {
                   console.log(e)
