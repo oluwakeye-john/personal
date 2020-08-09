@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
+import Button from "../components/button"
+
 const IntroSection = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -68,6 +70,15 @@ const About = ({ data, location }) => {
               <strong>Javascript</strong> but I also like to work with{" "}
               <strong>Python</strong>.
             </p>
+            <div style={{ textAlign: "center", margin: "2rem 0" }}>
+              <Link to="/contact">
+                <Button>Contact me</Button>
+              </Link>
+
+              <a href="/resume.pdf" target="_black">
+                <Button>View CV</Button>
+              </a>
+            </div>
           </AboutText>
         </IntroSection>
         <h2>More about me</h2>

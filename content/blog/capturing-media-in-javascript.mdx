@@ -1,0 +1,107 @@
+---
+title: Capturing Media With JavaScript
+date: "2020-08-08"
+description: "Every journey in life starts with a step. I've today launched my blog and I hope to enjoy every bit of it."
+featuredImage: "../assets/capturing-media-with-js.jpg"
+tags: ["JavaScript"]
+---
+
+## Introduction
+
+Have you ever wondered how a video chat app like zoom works? Well, it all boils down to capturing video and audio from a device.
+
+Fortunately, JavaScript has an API called MediaDevices which can be used to access and use the media inputs of a device. The MediaDevices can be accessed under the window navigator object using `navigation.mediaDevices`.
+
+Media input in this scenario can includes camera stream, audio track, screen sharing service and others.
+
+## getUserMedia()
+
+To start receiving the stream, we need to call the method `MediaDevices.getUserMedia()`. This method asks the user for permission to use the media input in question. The method resolves to the MediaStream object. If there is an error, the device doesn’t have the requested media, or the user denies the permission, then the promise is rejected.
+
+```js
+const promise = navigator.mediaDevices.getUserMedia(constraints)
+```
+
+**_N.B. For security reasons, the getUserMedia method can only be used on a secure connection (secure includes HTTPS, localhost and file://). HTTP will not work, neither will an iframe._**
+
+## Constraints
+
+The MediaDevices.getUserMedia takes an argument, called the constraints. The constraint describes the media type requested: video, audio or both. The constraint can also be used to specify more requirements on the returned media stream.
+
+The following requests both video and audio.
+
+```js
+const constraints = {
+  video: true,
+}
+```
+
+You can also specify additional requirements for each media type:
+
+```js
+const constraints = {
+  video: {
+    width: 640,
+    heigth: 480,
+  },
+  audio: {
+    noiseSuppression: true,
+  },
+}
+```
+
+You can checkout a [list of other constraints](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia).
+
+As earlier said, the getUserMedia() method returns a stream which you can decide to display on the device or transmit to another device for purposes like WebRTC(more to come on that later).
+
+Here is a code snippet to access the MediaDevices API:
+
+```js
+navigator.mediaDevices
+  .getUserMedia(constraints)
+  .then(function (stream) {
+    // process stream
+  })
+  .catch(function (err) {
+    // catch error
+  })
+```
+
+## Basic example
+
+The code snippet below gives an example of how to use the getUserMedia method. In this example, the stream is passed to the video srcObject property and displayed on the screen.
+
+```html
+<html>
+  <head>
+    <title>Capturing media with JavaScript </head>
+  </head>
+  <body>
+    <video autoplay controls />
+
+    <script>
+      const constraint = {
+        video: true,
+        audio: false,
+      }
+      const video = document.querySelector("video")
+
+      navigation.mediaDevices
+        .getUserMedia(constraint)
+        .then(stream => {
+          video.srcObject = streams
+        })
+        .catch(() => {
+          console.log("error")
+        })
+    </script>
+  </body>
+</html>
+```
+
+## What next?
+
+This post is just the tip of what you can do with the MediaDevices API. In a future post, I will:
+
+- Record the captured media using the MediaRecorder API
+- Stream the captured stream on another device via Web RTC

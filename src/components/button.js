@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { FaChevronRight } from "react-icons/fa"
+import { FaChevronRight, FaCircleNotch } from "react-icons/fa"
 import { Link } from "gatsby"
 
 const Button = styled.button`
@@ -27,6 +27,38 @@ const Button = styled.button`
 const CenterWrapper = styled.div`
   text-align: center;
 `
+
+const Spin = styled.div`
+  @keyframes fa-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+  & > * {
+    display: inline-block;
+    -webkit-animation: fa-spin 2s linear infinite;
+    animation: fa-spin 2s linear infinite;
+  }
+`
+
+export const LoadingButton = ({ text, loading, type = "button" }) => {
+  return (
+    <Button type={type} disabled={loading ? true : false}>
+      {loading ? (
+        <Spin>
+          <FaCircleNotch />
+        </Spin>
+      ) : (
+        text
+      )}
+    </Button>
+  )
+}
 
 export const CenterLink = ({ children, to }) => {
   return (

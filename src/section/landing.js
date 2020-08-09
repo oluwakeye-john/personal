@@ -107,12 +107,15 @@ const Landing = () => {
           <Link to="/about"> More about me.</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>
+          <Link to="/projects">
+            <Button>My works</Button>
+          </Link>
           <Link to="/about">
             <Button>About Me</Button>
           </Link>
-          <a href="/resume.pdf" target="_black">
+          {/* <a href="/resume.pdf" target="_black">
             <Button>View CV</Button>
-          </a>
+          </a> */}
         </div>
       </LandingText>
     </LandingContainer>

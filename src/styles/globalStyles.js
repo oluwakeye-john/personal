@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+// import "./syntheticPrism.css"
 
 export const GlobalStyles = createGlobalStyle`
     body{
@@ -84,5 +85,37 @@ export const GlobalStyles = createGlobalStyle`
     .smooth-scroll {
         scroll-behavior: smooth;
     }
+
+   
+    .gatsby-highlight pre[class*="language-"] {
+        background-color: #292D3E;
+        border-radius: 8px;
+    }
+
+    code[class*="language-"]{
+        background-color: #292D3E !important; 
+        border-radius: 3px !important;
+        
+        padding: .2em !important;
+    }
+
+    .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding-left: 2.8em;
+    }
+
+    .gatsby-highlight {
+        background-color: #292D3E;
+        border-radius: 0.3em;
+        margin: 0.5em 0;
+        padding: 1em;
+        overflow: auto;
+    }
+
+    .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding: 0;
+        padding-left: 2.8em;
+        overflow: initial;
+    }
+    
 
 `

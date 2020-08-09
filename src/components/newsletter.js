@@ -1,6 +1,9 @@
 import React, { useState } from "react"
-import { Input, InputBox, InputLabel, InputGroup } from "./inputBox"
+import { Input, InputBox } from "./inputBox"
 import styled from "styled-components"
+
+import { FaTimesCircle, FaCheckCircle } from "react-icons/fa"
+import Button from "./button"
 
 const FormURL = "https://app.convertkit.com/forms/1581601/subscriptions"
 
@@ -18,25 +21,13 @@ const NewsletterContainer = styled.div`
 `
 //Please go confirm your subscription!
 
-const SubscribeButton = styled.button`
-  padding: 0.4rem 1.6rem;
-  height: auto;
+const SubscribeButton = styled(Button)`
   margin-left: 1rem;
-  border: 2px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  border-radius: 8px;
-  background: transparent;
-  transition: 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ theme }) => theme.primary};
-    color: #fff;
-  }
+  /* border-radius: 8px; */
 `
 
 const Newsletter = () => {
-  const [status, setStatus] = useState("")
+  const [status, setStatus] = useState({ status: false, msg: "" })
   const handleSubmit = e => {
     e.preventDefault()
 
@@ -45,6 +36,7 @@ const Newsletter = () => {
     }
 
     console.log(data)
+    e.target.reset()
 
     fetch(FormURL, {
       method: "POST",
@@ -57,11 +49,24 @@ const Newsletter = () => {
       .then(resp => resp.json())
       .then(resp => {
         if (resp.status === "success") {
-          setStatus("Great. Now confirm your subscription in your mail")
+          setStatus({
+            status: true,
+            msg: "Great. Now confirm your subscription in your mail",
+          })
         } else {
-          setStatus("An error occured. Please try again")
+          setStatus({
+            status: false,
+            msg: "An error occured. Please try again",
+          })
         }
         console.log(resp)
+      })
+      .catch(error => {
+        console.log(error)
+        setStatus({
+          status: false,
+          msg: "An error occured. Please try again",
+        })
       })
   }
   return (
@@ -70,7 +75,11 @@ const Newsletter = () => {
         <h2>Join My Newsletter</h2>
         <p>Subscribe to get our latest content by email.</p>
 
-        <p>{status}</p>
+        {status.msg && (
+          <p>
+            {status.status ? <FaCheckCircle /> : <FaTimesCircle />} {status.msg}
+          </p>
+        )}
 
         <Input style={{ display: "inline-block" }}>
           <InputBox

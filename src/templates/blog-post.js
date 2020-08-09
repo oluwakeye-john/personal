@@ -149,7 +149,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
       </RelatedBlog>
 
-      <Newsletter />
+      {/* <Newsletter /> */}
     </Layout>
   )
 }
