@@ -92,6 +92,7 @@ const Contact = ({ data, location }) => {
           action="/"
           method="POST"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <SectionHeading>Contact Me</SectionHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.
