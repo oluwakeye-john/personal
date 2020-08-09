@@ -86,7 +86,7 @@ const Contact = ({ data, location }) => {
       <SEO title="Contact Me" />
       <ContactContainer>
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           data-netlify="true"
           name="contact"
           action="/"
