@@ -85,7 +85,13 @@ const Contact = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Contact Me" />
       <ContactContainer>
-        <form onSubmit={handleSubmit} data-netlify="true">
+        <form
+          // onSubmit={handleSubmit}
+          data-netlify="true"
+          name="contact"
+          action="/"
+          method="POST"
+        >
           <SectionHeading>Contact Me</SectionHeading>
           <ContactText>
             Contact me job offers, collaboration and hmm ... Just anything.
