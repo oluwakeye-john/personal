@@ -49,35 +49,36 @@ const Contact = ({ data, location }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const name = e.target.name.value
-    const email = e.target.email.value
-    const message = e.target.message.value
+    const name = e.target.name
+    const email = e.target.email
+    const message = e.target.message
+
+    console.log(name.value, email.value, message.value)
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "Contact",
-        name,
-        email,
-        message,
+        name: name.value,
+        email: email.value,
+        message: message.value,
       }),
     })
       .then(resp => {
-        console.log(resp.ok, resp.json())
+        console.log(resp.ok, resp)
         setMsg({
           status: true,
           text: "Thanks for filling this form. I will get back to you soon",
         })
-        e.target.reset()
       })
       .catch(() => {
         setMsg({
           status: false,
           text: "Error submitting form. Please try again",
         })
-        e.target.reset()
       })
+    e.target.reset()
   }
 
   return (
