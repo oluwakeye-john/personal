@@ -53,8 +53,6 @@ const Contact = ({ data, location }) => {
     const email = e.target.email.value
     const message = e.target.message.value
 
-    e.target.reset()
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -66,17 +64,19 @@ const Contact = ({ data, location }) => {
       }),
     })
       .then(resp => {
-        console.log(resp.ok)
+        console.log(resp.ok, resp.json())
         setMsg({
           status: true,
           text: "Thanks for filling this form. I will get back to you soon",
         })
+        e.target.reset()
       })
       .catch(() => {
         setMsg({
           status: false,
           text: "Error submitting form. Please try again",
         })
+        e.target.reset()
       })
   }
 
