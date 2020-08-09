@@ -59,7 +59,7 @@ const Contact = ({ data, location }) => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "Contact",
+        "form-name": "contact",
         name: name.value,
         email: email.value,
         message: message.value,
