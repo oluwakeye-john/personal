@@ -21,13 +21,17 @@ export default function HTML(props) {
                   var mode = localStorage.getItem('theme');
                   var supportDarkMode =
                     window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-                  if (!mode && supportDarkMode)
+                  if(mode){
+                    document.body.classList.add('theme-' + mode);
+                  }
+                  else if(supportDarkMode){
                     document.body.classList.add('theme-dark');
-                  if (!mode) {
+                  }
+                  else{
                     document.body.classList.add('theme-light');
-                  };
-                  document.body.classList.add('theme-' + mode);
+                  }
                 } catch (e) {
+                  document.body.classList.add('theme-light');
                   console.log(e)
                 }
               })();`,
