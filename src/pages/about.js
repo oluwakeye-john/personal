@@ -90,7 +90,7 @@ const About = ({ data, location }) => {
         <p>
           I love learning new skills, especially those that make development
           faster and better. I also love teaming with fellow developers to build
-          amazing stuffs.
+          amazing stuff.
         </p>
         <p>
           If you have any web development needs, feel free to{" "}
@@ -100,7 +100,7 @@ const About = ({ data, location }) => {
             target="_blank"
             rel="noreferrer"
           >
-            Twitter
+            @oluwakeyejohn
           </a>
         </p>
         <p>
