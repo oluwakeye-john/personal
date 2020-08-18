@@ -109,7 +109,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         // theme_color: `rgb(21, 32, 43)`,
-        theme_color: `#fff`,
+        // theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `content/assets/icon1.png`,
       },

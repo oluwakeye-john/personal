@@ -37,7 +37,8 @@ const projects = [
   },
   {
     name: "Eaveswall",
-    description: "Eaveswall is a univeristy blogging platform. ",
+    description:
+      "A society and campus blog built with Gatsby deployed on Netlify and has dynamism built-in",
     live: "https://eaveswall.com",
   },
   {
@@ -54,7 +55,7 @@ const projects = [
   {
     name: "Chat app",
     description:
-      "A real time application chat platform built with nodejs and socket io",
+      "A collaborative project that debut a chat application built with NodeJs and WebSockets",
     live: "https://oluwakeye-chat.herokuapp.com",
   },
   {

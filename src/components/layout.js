@@ -39,6 +39,13 @@ const Layout = ({ location, title, children }) => {
   return (
     <ThemeProvider theme={theme === "light" ? light : dark}>
       <Helmet>
+        <meta
+          name="theme-color"
+          // content={theme === "light" ? "rgba(169,3,41,1)" : "#FD6363"}
+          content="#121212"
+          // content={theme === "light" ? "rgba(169,3,41,1)" : "#000"}
+          // content="rgba(169,3,41,1)"
+        />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
