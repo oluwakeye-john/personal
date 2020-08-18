@@ -127,7 +127,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           me
         </p>
         <div style={{ marginBottom: "2rem" }} />
-        <StyledLine style={{ marginBottom: "1rem" }} />
+        {/* <StyledLine style={{ marginBottom: "1rem" }} /> */}
         <Share postUrl={postUrl} desc={description} />
         <Bio />
       </BlogContainer>

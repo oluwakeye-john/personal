@@ -58,12 +58,6 @@ const projects = [
       "A collaborative project that debut a chat application built with NodeJs and WebSockets",
     live: "https://oluwakeye-chat.herokuapp.com",
   },
-  {
-    name: "Scheme",
-    description:
-      "Scheme is a basic todo webapp which can be completely used offline. Built with react",
-    live: "https://oluwakeye-todo.netlify.app",
-  },
 ]
 // 🤐😷🤕🤒🤮🤢🤧🥵🥶😴💤😈👿👹👺💩👻💀☠👽🤖🎃😺😸😹😻😼😽🙀😿😾👐🤲🙌👏🙏🤝👍👎👊✊🤛🤜🤞✌🤘🤟👌🤏👈👉👆👇☝✋🤚🖐🖖👋🤙💪🦾🖕✍🤳💅🦵🦿🦶👄🦷👅👂🦻👃👁👀🧠🦴👤👥🗣👶👧🧒👦👩🧑👨👩‍🦱🧑‍🦱👨‍
 const ProjectList = ({ number }) => {

@@ -117,18 +117,18 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-page-progress",
-      options: {
-        // includePaths: ["/", { regex: "^/blog" }],
-        includePaths: [{ regex: "^/blog" }],
-        excludePaths: ["/blog"],
-        height: 4,
-        prependToBody: false,
-        color: `#6e3a6c`,
-        footerHeight: 50,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-page-progress",
+    //   options: {
+    //     // includePaths: ["/", { regex: "^/blog" }],
+    //     includePaths: [{ regex: "^/blog" }],
+    //     excludePaths: ["/blog"],
+    //     height: 4,
+    //     prependToBody: false,
+    //     color: `#6e3a6c`,
+    //     footerHeight: 50,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
