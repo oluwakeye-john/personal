@@ -61,6 +61,7 @@ const ItemLabel = styled.label`
 
 const SkillInfo = styled.p`
   text-align: center;
+  font-weight: 600;
 
   @media (max-width: 768px) {
     &::before {
