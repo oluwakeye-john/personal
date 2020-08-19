@@ -25,7 +25,8 @@ export const InputBox = styled.input`
   width: 100%;
   &:focus {
     outline: 0;
-    border: 1.5px solid ${({ theme }) => theme.primary};
+    /* border: 1.5px solid ${({ theme }) => theme.primary}; */
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.primary};
   }
   &:focus + label {
     transform: translateY(-20px);
@@ -37,7 +38,7 @@ export const InputBox = styled.input`
   }
   border-radius: 5px;
 
-  border: 1.5px solid
+  border: 1px solid
     ${({ theme }) =>
       theme.mode.includes("light")
         ? "rgba(0, 0, 0, 0.1)"

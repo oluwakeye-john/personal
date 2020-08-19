@@ -7,6 +7,7 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaGithub,
+  FaCodepen,
 } from "react-icons/fa"
 
 import { useStaticQuery, graphql } from "gatsby"
@@ -45,6 +46,7 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
     dev,
     github,
     email,
+    codepen,
   } = data.site.siteMetadata.social
 
   const links = [
@@ -57,6 +59,11 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
       name: "Gmail",
       icon: FaEnvelope,
       url: `mailto:${email}`,
+    },
+    {
+      name: "Codepen",
+      icon: FaCodepen,
+      url: `https://codepen.io/${codepen}/`,
     },
     {
       name: "github",

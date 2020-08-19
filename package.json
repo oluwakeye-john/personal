@@ -21,7 +21,6 @@
     "gatsby-plugin-mdx": "^1.2.26",
     "gatsby-plugin-netlify-cms": "^4.3.11",
     "gatsby-plugin-offline": "^3.2.9",
-    "gatsby-plugin-page-progress": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.11",
     "gatsby-plugin-sitemap": "^2.4.11",
@@ -63,7 +62,7 @@
   },
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "dev": "netlify dev",
+    "dev": "npm run develop",
     "develop": "gatsby develop --host 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

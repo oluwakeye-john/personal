@@ -11,12 +11,6 @@ import Share from "../components/share"
 import ColoredTags from "../components/coloredTags"
 import StyledLine from "../components/styledLine"
 
-import {
-  FaRegCalendarAlt as Calendar,
-  FaRegClock as Clock,
-} from "react-icons/fa"
-import Newsletter from "../components/newsletter"
-
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
@@ -105,13 +99,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <BlogContainer>
         <BlogPostHeading>{post.frontmatter.title}</BlogPostHeading>
         <BlogDetails>
-          <Calendar /> {post.frontmatter.date}
-          {` `}&nbsp;{` `}
-          <Clock /> {ttr} min read
-          {` `}&nbsp;{` `}
-          <Link to="/about">By Oluwakeye John</Link>
+          <Bio>
+            {post.frontmatter.date}
+            {` `}
+            <span>·</span>
+            {` `}
+            {ttr} min read
+            {` `}
+          </Bio>
+          {/* <Link to="/about">By Oluwakeye John</Link> */}
         </BlogDetails>
-        {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />}
+
         {featuredImage && (
           <FeaturedImage
             fluid={featuredImage.childImageSharp.fluid}
@@ -129,7 +127,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div style={{ marginBottom: "2rem" }} />
         {/* <StyledLine style={{ marginBottom: "1rem" }} /> */}
         <Share postUrl={postUrl} desc={description} />
-        <Bio />
+        {/* <Bio /> */}
+        {/* {tags && tags.length !== 0 && <ColoredTags icon tags={tags} />} */}
       </BlogContainer>
 
       <RelatedBlog>

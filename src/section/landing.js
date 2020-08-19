@@ -47,6 +47,14 @@ const Rot = styled.div`
   } */
 `
 
+const LandingImageBorder = styled.div`
+  display: inline-block;
+  padding: 4px;
+  border: 2px solid ${({ theme }) => theme.primary};
+  line-height: 0;
+  border-radius: 50%;
+`
+
 const LandingImage = styled.div`
   flex-basis: 30%;
   @media (max-width: 768px) {
@@ -83,13 +91,15 @@ const Landing = () => {
   return (
     <LandingContainer>
       <LandingImage>
-        <Rot>
-          <Image
-            fixed={data.avatar.childImageSharp.fixed}
-            alt="Oluwakeye John"
-            style={{ width: "150px", height: "150px" }}
-          />
-        </Rot>
+        <div>
+          <LandingImageBorder>
+            <Image
+              fixed={data.avatar.childImageSharp.fixed}
+              alt="Oluwakeye John"
+              style={{ width: "150px", height: "150px" }}
+            />
+          </LandingImageBorder>
+        </div>
       </LandingImage>
 
       <LandingText>

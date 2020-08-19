@@ -30,10 +30,10 @@ const ProjectButton = styled(Button)`
 
 const projects = [
   {
-    name: "Viz Movies",
+    name: "Lens Chat",
     description:
-      "A movie website, similar to netflix... Without the download button",
-    live: "https://vizmovies.netlify.app",
+      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
+    live: "https://lens-chat.netlify.app",
   },
   {
     name: "Eaveswall",
@@ -42,10 +42,10 @@ const projects = [
     live: "https://eaveswall.com",
   },
   {
-    name: "Lens Chat",
+    name: "Viz Movies",
     description:
-      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
-    live: "https://lens-chat.netlify.app",
+      "A movie website, similar to netflix... Without the download button",
+    live: "https://vizmovies.netlify.app",
   },
   {
     name: "Ecommerce App",

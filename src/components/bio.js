@@ -5,15 +5,26 @@ import styled from "styled-components"
 
 const BioContainer = styled.div`
   margin-bottom: 1rem;
+  display: flex;
+`
+const BioImageContainer = styled.div`
+  padding: 2px;
+  border: 2px solid ${({ theme }) => theme.primary};
+  margin-right: 20px;
+  border-radius: 50%;
 `
 
 const BioImage = styled(Image)`
   border-radius: 50%;
   float: left;
-  margin-right: 20px;
 `
 
-const Bio = () => {
+const RightText = styled.div`
+  font-size: 15px;
+  font-weight: 500;
+`
+
+const Bio = ({ children }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/john2.jpeg/" }) {
@@ -36,19 +47,29 @@ const Bio = () => {
   const { author } = data.site.siteMetadata
   return (
     <BioContainer>
-      <BioImage
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          width: "50px",
-          height: "50px",
-        }}
-      />
-      <p>
-        Written by <strong>{author.name}</strong>
+      <BioImageContainer>
+        <Link to="/about">
+          <BioImage
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author.name}
+            style={{
+              width: "50px",
+              height: "50px",
+            }}
+          />
+        </Link>
+      </BioImageContainer>
+      <RightText>
+        <Link to="/about" style={{ color: "inherit" }}>
+          <strong>{author.name}</strong>
+        </Link>
         <br />
-        <Link to="/contact">Contact Me</Link>
-      </p>
+        {children ? (
+          <div style={{ fontSize: "15px" }}>{children}</div>
+        ) : (
+          <Link to="/contact">Contact Me</Link>
+        )}
+      </RightText>
     </BioContainer>
   )
 }
