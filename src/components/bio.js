@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
+import Button from "./button"
 
 const BioContainer = styled.div`
   margin-bottom: 1rem;
@@ -22,6 +23,14 @@ const BioImage = styled(Image)`
 const RightText = styled.div`
   font-size: 15px;
   font-weight: 500;
+`
+
+const BioContactButton = styled(Button)`
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  margin-left: 10px;
+  font-size: 15px;
+  border-radius: 5px;
 `
 
 const Bio = ({ children }) => {
@@ -63,6 +72,7 @@ const Bio = ({ children }) => {
         <Link to="/about" style={{ color: "inherit" }}>
           <strong>{author.name}</strong>
         </Link>
+        {/* <BioContactButton>Contact</BioContactButton> */}
         <br />
         {children ? (
           <div style={{ fontSize: "15px" }}>{children}</div>

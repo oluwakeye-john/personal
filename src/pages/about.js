@@ -67,7 +67,7 @@ const About = ({ data, location }) => {
             <p>
               I'm a <strong>Full Stack developer</strong> and I currently reside
               in Ibadan, Nigeria. My prime expertise is{" "}
-              <strong>Javascript</strong> but I also like to work with{" "}
+              <strong>JavaScript</strong> but I also like to work with{" "}
               <strong>Python</strong>.
             </p>
             <div style={{ textAlign: "center", margin: "2rem 0" }}>

@@ -55,11 +55,11 @@ const SocialButtons = ({ border, small, color, darkenOnHover }) => {
       icon: FaTwitter,
       url: `https://twitter.com/${twitter}`,
     },
-    {
-      name: "Gmail",
-      icon: FaEnvelope,
-      url: `mailto:${email}`,
-    },
+    // {
+    //   name: "Gmail",
+    //   icon: FaEnvelope,
+    //   url: `mailto:${email}`,
+    // },
     {
       name: "Codepen",
       icon: FaCodepen,

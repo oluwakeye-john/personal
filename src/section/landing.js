@@ -38,7 +38,7 @@ const Rot = styled.div`
   /* transition: transform 2s; */
 
   animation-duration: 3s;
-  /* animation-name: rot; */
+  animation-name: rot;
   animation-delay: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -91,7 +91,7 @@ const Landing = () => {
   return (
     <LandingContainer>
       <LandingImage>
-        <div>
+        <Rot>
           <LandingImageBorder>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
@@ -99,7 +99,7 @@ const Landing = () => {
               style={{ width: "150px", height: "150px" }}
             />
           </LandingImageBorder>
-        </div>
+        </Rot>
       </LandingImage>
 
       <LandingText>

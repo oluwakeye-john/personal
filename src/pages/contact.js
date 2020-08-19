@@ -115,7 +115,7 @@ const Contact = ({ data, location }) => {
           <TextArea>
             <InputBox
               as="textarea"
-              rows="8"
+              rows="6"
               placeholder=" "
               required
               name="message"
