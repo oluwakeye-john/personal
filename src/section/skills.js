@@ -124,6 +124,9 @@ const Skill = () => {
       git: file(relativePath: { eq: "skills/git2.png" }) {
         ...squareImage
       }
+      redux: file(relativePath: { eq: "skills/Redux.png" }) {
+        ...squareImage
+      }
     }
   `)
   return (
@@ -190,6 +193,14 @@ const Skill = () => {
             alt="Logo for Gatsby"
           />
           <ItemLabel>Gatsby JS</ItemLabel>
+        </Item>
+        <Item>
+          <ItemImage
+            fixed={data.redux.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for Redux"
+          />
+          <ItemLabel>Redux</ItemLabel>
         </Item>
         <Item>
           <ItemImage
