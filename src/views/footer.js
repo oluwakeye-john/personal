@@ -30,9 +30,11 @@ const Footer = () => {
         by Oluwakeye John
       </p>
       <Quote>
-        How do you comfort a javascript bug? Console it
+        {/* How do you comfort a javascript bug? Console it */}
+        What are bugs? They are unknown features
         {` `}
-        <FaSmile />
+        {/* <FaSmile /> */}
+        😄
       </Quote>
       <p>© Oluwakeye John {new Date().getFullYear()}</p>
       <SocialButtons small color="#8A858B" />

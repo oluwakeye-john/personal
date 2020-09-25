@@ -64,11 +64,16 @@ const About = ({ data, location }) => {
           />
           <AboutText>
             <h2>Who Am I?</h2>
-            <p>
-              I'm a <strong>Full Stack developer</strong> and I currently reside
-              in Ibadan, Nigeria. My prime expertise is{" "}
+            {/* <p>
+              I'm a <strong>Web and Mobile app developer</strong>. I currently
+              reside in Ibadan, Nigeria. My prime expertise is{" "}
               <strong>JavaScript</strong> but I also like to work with{" "}
               <strong>Python</strong>.
+            </p> */}
+            <p>
+              I am a Full Stack Web Developer and Mobile App Developer who is
+              passionate about building fast, intuitive and performance-driven
+              applications.
             </p>
             <div style={{ textAlign: "center", margin: "2rem 0" }}>
               <Link to="/contact">

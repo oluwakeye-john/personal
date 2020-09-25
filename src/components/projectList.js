@@ -30,6 +30,12 @@ const ProjectButton = styled(Button)`
 
 const projects = [
   {
+    name: "Legendary Empire Ltd",
+    description:
+      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
+    live: "https://legendaryempireltd.com",
+  },
+  {
     name: "Lens Chat",
     description:
       "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",

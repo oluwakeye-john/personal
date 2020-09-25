@@ -109,6 +109,21 @@ const Skill = () => {
       mongo: file(relativePath: { eq: "skills/mongodb.jpg" }) {
         ...squareImage
       }
+      typescript: file(relativePath: { eq: "skills/typescript.png" }) {
+        ...squareImage
+      }
+      scss: file(relativePath: { eq: "skills/sass.png" }) {
+        ...squareImage
+      }
+      next: file(relativePath: { eq: "skills/next.png" }) {
+        ...squareImage
+      }
+      native: file(relativePath: { eq: "skills/native.png" }) {
+        ...squareImage
+      }
+      git: file(relativePath: { eq: "skills/git2.png" }) {
+        ...squareImage
+      }
     }
   `)
   return (
@@ -124,15 +139,41 @@ const Skill = () => {
             style={{ width: "100px", height: "100px" }}
             alt="Logo for react"
           />
-          <ItemLabel>React</ItemLabel>
+          <ItemLabel>React Native</ItemLabel>
+        </Item>
+
+        <Item>
+          <ItemImage
+            fixed={data.scss.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for SCSS"
+          />
+          <ItemLabel>SCSS</ItemLabel>
         </Item>
         <Item>
           <ItemImage
-            fixed={data.html.childImageSharp.fixed}
+            fixed={data.next.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
-            alt="Logo for HTML"
+            alt="Logo for Nextjs"
           />
-          <ItemLabel>HTML</ItemLabel>
+          <ItemLabel>Next JS</ItemLabel>
+        </Item>
+        <Item>
+          <ItemImage
+            fixed={data.git.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for Git"
+          />
+          <ItemLabel>Git</ItemLabel>
+        </Item>
+
+        <Item>
+          <ItemImage
+            fixed={data.typescript.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for Typescript"
+          />
+          <ItemLabel>Typescript</ItemLabel>
         </Item>
         <Item>
           <ItemImage
@@ -152,36 +193,20 @@ const Skill = () => {
         </Item>
         <Item>
           <ItemImage
-            fixed={data.javascript.childImageSharp.fixed}
-            style={{ width: "100px", height: "100px" }}
-            alt="Logo for JavaScript"
-          />
-          <ItemLabel>JavaScript</ItemLabel>
-        </Item>
-        <Item>
-          <ItemImage
-            fixed={data.css.childImageSharp.fixed}
-            style={{ width: "100px", height: "100px" }}
-            alt="Logo for CSS"
-          />
-          <ItemLabel>CSS</ItemLabel>
-        </Item>
-        <Item>
-          <ItemImage
             fixed={data.mongo.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
             alt="Logo for mongo db"
           />
           <ItemLabel>Mongo DB</ItemLabel>
         </Item>
-        <Item>
+        {/* <Item>
           <ItemImage
             fixed={data.express.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
             alt="Logo for express js"
           />
           <ItemLabel>Express JS</ItemLabel>
-        </Item>
+        </Item> */}
       </SkillList>
     </SkillContainer>
   )
