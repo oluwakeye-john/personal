@@ -32,7 +32,7 @@ const projects = [
   {
     name: "Legendary Empire Ltd",
     description:
-      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
+      "Legendary Empire Ltd is a Nigeria company that provides services in different areas of life.",
     live: "https://legendaryempireltd.com",
   },
   {
