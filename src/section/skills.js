@@ -29,23 +29,25 @@ const SkillList = styled.div`
 const Item = styled.div`
   position: relative;
   margin: 1.2rem 1.2rem;
-`
 
-const ItemImage = styled(Img)`
-  border-radius: 50%;
-  transition: 0.3s;
-  z-index: 2;
-
-  &:hover {
+  &:hover > div {
     transform: translateY(-40px);
     border: 0;
     outline: 0;
     opacity: 0.5;
   }
 
-  &:hover + label {
+  &:hover > label {
     opacity: 1;
   }
+`
+
+const II = styled.div``
+
+const ItemImage = styled(Img)`
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 2;
 `
 
 const ItemLabel = styled.label`
@@ -142,7 +144,7 @@ const Skill = () => {
             style={{ width: "100px", height: "100px" }}
             alt="Logo for react"
           />
-          <ItemLabel>React Native</ItemLabel>
+          <ItemLabel>React | Native</ItemLabel>
         </Item>
 
         <Item>

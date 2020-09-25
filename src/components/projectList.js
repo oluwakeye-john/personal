@@ -36,27 +36,27 @@ const projects = [
     live: "https://legendaryempireltd.com",
   },
   {
-    name: "Lens Chat",
-    description:
-      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
-    live: "https://lens-chat.netlify.app",
-  },
-  {
     name: "Eaveswall",
     description:
       "A society and campus blog built with Gatsby, Netlify and Firebase",
     live: "https://eaveswall.com",
   },
   {
+    name: "Ecommerce App",
+    description: "An ecommerce website built with gatsby and snipcart.",
+    live: "https://oluwakeye-ecommerce.netlify.app",
+  },
+  {
+    name: "Lens Chat",
+    description:
+      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
+    live: "https://lens-chat.netlify.app",
+  },
+  {
     name: "Viz Movies",
     description:
       "A movie website, similar to netflix... Without the download button",
     live: "https://vizmovies.netlify.app",
-  },
-  {
-    name: "Ecommerce App",
-    description: "An ecommerce website built with gatsby and snipcart.",
-    live: "https://oluwakeye-ecommerce.netlify.app",
   },
   {
     name: "Chat app",
