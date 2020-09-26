@@ -111,7 +111,7 @@ const Landing = () => {
           <TypeWriter texts={texts} />
         </h2>
         <p>
-          Heyy... I'm <strong>Oluwakeye John</strong>, a Software Engineer{" "}
+          Heyy... I'm <strong>Oluwakeye John</strong>, a Software Developer{" "}
           <span aria-hidden>💻</span> based in Nigeria.
           <br />
           <Link to="/about"> More about me.</Link>

@@ -80,7 +80,7 @@ const About = ({ data, location }) => {
                 <Button>Contact me</Button>
               </Link>
 
-              <a href="/resume.pdf" target="_black">
+              <a href="/resume1.pdf" target="_black">
                 <Button>View CV</Button>
               </a>
             </div>
