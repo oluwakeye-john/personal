@@ -33,8 +33,8 @@ const AboutContainer = styled.div`
 `
 
 const Image = styled(Img)`
-  /* border-radius: 10px; */
-  max-height: 300px;
+  border-radius: 5px;
+  max-height: 280px;
   width: 35%;
   @media (max-width: 768px) {
     width: 270px;
@@ -93,12 +93,11 @@ const About = ({ data, location }) => {
           can find some of my projects <Link to="/projects">here</Link>.
         </p>
         <p>
-          I love learning new skills, especially those that make development
-          faster and better. I also love teaming with fellow developers to build
+          I love learning new skills and teaming with fellow developers to build
           amazing stuff.
         </p>
         <p>
-          If you have any web development needs, feel free to{" "}
+          If you have any web or mobile development needs, feel free to{" "}
           <Link to="/contact">contact</Link> me. You can also find me on{" "}
           <a
             href="https://twitter.com/oluwakeyejohn"
@@ -127,7 +126,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    avatar: file(absolutePath: { regex: "/john0.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/john1.jpeg/" }) {
       childImageSharp {
         fluid(quality: 100) {
           # ...GatsbyImageSharpFluid_tracedSVG

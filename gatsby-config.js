@@ -5,7 +5,7 @@ module.exports = {
       name: `Oluwakeye John`,
       summary: `just a guy.`,
     },
-    description: `Oluwakeye John, Web Developer based in Nigeria`,
+    description: `Oluwakeye John, Software Developer based in Nigeria`,
     siteUrl: `https://johnkeye.com`,
     social: {
       twitter: `oluwakeyejohn`,

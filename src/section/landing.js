@@ -112,8 +112,8 @@ const Landing = () => {
         </h2>
         <p>
           Heyy... I'm <strong>Oluwakeye John</strong>, a Software Engineer{" "}
-          <span aria-hidden>💻</span> based in Nigeria. I specialize in
-          JavaScript and I also code Python.
+          <span aria-hidden>💻</span> based in Nigeria.
+          <br />
           <Link to="/about"> More about me.</Link>
         </p>
         <div style={{ textAlign: "center", margin: "2rem 0" }}>

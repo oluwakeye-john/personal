@@ -28,7 +28,8 @@ const BlogPostHeading = styled.h1`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: "Nunito Sans", sans-serif;
 `
 
 const BlogSection = styled.section`

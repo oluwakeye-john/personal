@@ -40,17 +40,9 @@ const ToggleButton = styled.div`
 
 const NavigationContainer = styled.div`
   width: 100%;
-  & + div {
-    @media (max-width: 768px) {
-      /* filter: ${({ sidebarOpen }) => (sidebarOpen ? "blur(1px)" : "")}; */
-      /* position: ${({ sidebarOpen }) => (sidebarOpen ? "fixed" : "")}; */
-    }
-  }
-
   /* background: transparent; */
   background: ${({ theme }) => theme.bg};
   box-shadow: ${({ theme }) => theme.boxShadow};
-  
 
   margin-bottom: 4rem;
   padding: 0.7rem 5rem;
@@ -66,7 +58,7 @@ const NavigationContainer = styled.div`
     padding: 0.7rem 1.5rem;
   }
 
-  transition: background 0.2s ;
+  transition: background 0.2s;
 
   position: sticky;
   top: 0;
@@ -150,10 +142,8 @@ const NavbarToggler = styled.div`
     transform: ${({ sidebarOpen }) => (sidebarOpen ? "rotateX(180deg)" : "")};
     cursor: pointer;
 
-    @media (max-width: 768px) {
-      color: ${({ sidebarOpen }) =>
-        sidebarOpen ? "rgba(255, 255, 255, 0.5)" : "inherit"};
-    }
+    color: ${({ sidebarOpen }) =>
+      sidebarOpen ? "rgba(255, 255, 255, 0.5)" : "inherit"};
   }
 `
 

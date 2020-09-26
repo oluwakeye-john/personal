@@ -55,7 +55,7 @@ const Layout = ({ location, title, children }) => {
           rel="preload"
           crossorigin="anonymous"
           as="style"
-          href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Nunito+Sans&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
         ></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"

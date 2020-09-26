@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
         ${"" /* transition: background-color .3s, color .3s; */}
         ${"" /* font-family: 'Open Sans', sans-serif; */}
         font-family: 'Roboto', sans-serif;
+        /* font-family: 'Nunito Sans', sans-serif; */
         min-height: 100vh;
         line-height: 1.8;
         letter-spacing: 0.2dpx;

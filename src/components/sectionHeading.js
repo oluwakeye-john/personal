@@ -7,12 +7,21 @@ const SkillHeading = styled.h2`
   padding: 0;
   margin-bottom: 2rem;
   font-size: 2rem;
+  position: relative;
+`
+
+const Underline = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.primary};
+  width: 40px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 `
 
 const SectionHeading = ({ children }) => {
   return (
     <SkillHeading>
       <>{children}</>
+      {/* <Underline /> */}
     </SkillHeading>
   )
 }
