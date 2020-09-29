@@ -18,4 +18,4 @@ Website: https://johnkeye.com
 
 ## A simple treat for you 😉
 
-What to understand about recursion? click [Here](https://github.com/oluwakeye-john)
+Want to understand recursion? click [Here](https://github.com/oluwakeye-john)
