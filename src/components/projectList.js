@@ -48,6 +48,12 @@ const projects = [
     // live: "https://eaveswall.com",
   },
   {
+    name: "Learnit",
+    description:
+      "Learnit is a cross-platform mobile app which generates quiz questions for users and rate them based on their performance",
+    // live: "https://eaveswall.com",
+  },
+  {
     name: "Ecommerce App",
     description: "An ecommerce website built with gatsby and snipcart.",
     live: "https://oluwakeye-ecommerce.netlify.app",

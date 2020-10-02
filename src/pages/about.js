@@ -88,8 +88,8 @@ const About = ({ data, location }) => {
         </IntroSection>
         <h2>More about me</h2>
         <p>
-          I am passionate about web development. I like building fast, intuitive
-          and responsive websites. I have worked on a number of projects and you
+          I am passionate about coding. I like building fast, intuitive and
+          responsive applications. I have worked on a number of projects and you
           can find some of my projects <Link to="/projects">here</Link>.
         </p>
         <p>
