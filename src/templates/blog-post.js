@@ -14,6 +14,7 @@ import StyledLine from "../components/styledLine"
 const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
+  /* max-width: 100%; */
   margin-top: 2rem;
   margin-bottom: 4rem;
 `
