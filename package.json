@@ -62,7 +62,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build",
     "dev": "npm run develop",
     "develop": "gatsby develop --host 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

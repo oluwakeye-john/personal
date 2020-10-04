@@ -18,7 +18,7 @@ const LayoutComponent = styled.div`
   max-width: 750px;
   margin: 0 auto;
   min-height: 80vh;
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 0 15px;
   }
   @media (min-width: 768px) {
