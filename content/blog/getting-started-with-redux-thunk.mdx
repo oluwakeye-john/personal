@@ -10,7 +10,7 @@ tags: ["redux", "react"]
 
 ## What is Redux Thunk?
 
-Redux is a great library which allows us to maintain state better in out applications. By using middlewares, we are also able to extend redux with additional functionalities. According to the documentation, **_it provides a third-party extension point between dispatching an action, and the moment it reaches the reducer_**.
+Redux is a great library which allows us to maintain state better in out applications. By using middlewares, we are also able to extend redux with additional functionalities. According to the [documentation](https://redux.js.org/advanced/middleware), **_it provides a third-party extension point between dispatching an action, and the moment it reaches the reducer_**.
 One of these middlewares is Redux Thunk.
 
 <div style="text-align: center; margin: 2rem 0;">
@@ -44,12 +44,12 @@ yarn add redux-thunk
 To add a middleware to redux, you can import `applyMiddlware` from redux and pass it as a second parameter into createStore:
 
 ```js
-import { createStore, applyMiddlewares } from "redux"
+import { createStore, applyMiddleware } from "redux"
 import myReducer from "./myreducer"
+import thunk from "redux-thunk"
 
-let middlewares = [thunk]
-
-export let store = createStore(myReducer, applyMiddlewares(...middlewares))
+let store = createStore(myReducer, applyMiddleware(...thunk))
+export { store }
 ```
 
 With this, you have added support for redux thunk.
@@ -59,6 +59,9 @@ With this, you have added support for redux thunk.
 Take a look at the example below which uses redux-thunk:
 
 ```jsx
+import React from "react"
+import { useDispatch } from "react-redux"
+
 // app component
 const App = () => {
   const dispatch = useDispatch()
@@ -75,11 +78,14 @@ const App = () => {
 
 // our action, using redux thunk
 const updateContent = value => {
+  //async function
+
   return async dispatch => {
-    const resp = await fetch("https://google.com")
+    const resp = await fetch(`https://api-endpoint.domain/${value}`)
     const respJson = await resp.json()
-    dispatch()
-    // dispatch any action here
+    dispatch({
+      // your action
+    })
   }
 }
 ```
@@ -88,7 +94,7 @@ const updateContent = value => {
 
 Using redux thunk has a lot of advantages:
 
-- Reusability of actions
+- Reusability of actions across components
 - It allows asynchronous and conditional dispatching
-- Components are independent of state login
+- Components are independent of state logic
 - Actions can be nested in one another
