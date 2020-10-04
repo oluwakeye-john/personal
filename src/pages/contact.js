@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -14,7 +14,9 @@ import {
 import SocialButtons from "../components/socialButtons"
 import SectionHeading from "../components/sectionHeading"
 
-import { FaPaperPlane, FaCheckCircle, FaTimesCircle } from "react-icons/fa"
+import { FaPaperPlane } from "react-icons/fa"
+
+import swal from "sweetalert"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -38,7 +40,6 @@ const ContactExtra = styled.p`
 `
 
 const Contact = ({ data, location }) => {
-  const [msg, setMsg] = useState({ status: false, text: "" })
   const siteTitle = data.site.siteMetadata.title
 
   const encode = data => {
@@ -67,17 +68,20 @@ const Contact = ({ data, location }) => {
     })
       .then(resp => {
         console.log(resp.ok, resp)
-        setMsg({
-          status: true,
+        swal({
+          title: "Success",
           text: "Thanks for filling this form. I will get back to you soon",
+          icon: "success",
         })
       })
       .catch(() => {
-        setMsg({
-          status: false,
+        swal({
+          title: "Failed",
           text: "Error submitting form. Please try again",
+          icon: "warning",
         })
       })
+
     e.target.reset()
   }
 
@@ -126,9 +130,6 @@ const Contact = ({ data, location }) => {
             <Button type="submit">
               <FaPaperPlane /> Send message
             </Button>
-
-            {msg.text && (msg.status ? <FaCheckCircle /> : <FaTimesCircle />)}
-            <ContactExtra>{msg.text}</ContactExtra>
           </ButtonWrapper>
         </form>
       </ContactContainer>
