@@ -30,12 +30,6 @@ const ProjectButton = styled(Button)`
 
 const projects = [
   {
-    name: "Legendary Empire Ltd",
-    description:
-      "Legendary Empire Ltd is a Nigeria company that provides services in different areas of life.",
-    live: "https://legendaryempireltd.com",
-  },
-  {
     name: "Eaveswall",
     description:
       "A society and campus blog built with Gatsby, Netlify and Firebase",
@@ -46,6 +40,12 @@ const projects = [
     description:
       "Foxygreen is an Agro-investment platform based in Nigeria. It was built with React Native.",
     // live: "https://eaveswall.com",
+  },
+  {
+    name: "Legendary Empire Ltd",
+    description:
+      "Legendary Empire Ltd is a Nigeria company that provides services in different areas of life.",
+    live: "https://legendaryempireltd.com",
   },
   {
     name: "Learnit",
@@ -64,12 +64,12 @@ const projects = [
       "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
     live: "https://lens-chat.netlify.app",
   },
-  {
-    name: "Viz Movies",
-    description:
-      "A movie website, similar to netflix... Without the download button",
-    live: "https://vizmovies.netlify.app",
-  },
+  // {
+  //   name: "Viz Movies",
+  //   description:
+  //     "A movie website, similar to netflix... Without the download button",
+  //   live: "https://vizmovies.netlify.app",
+  // },
   {
     name: "Chat app",
     description:

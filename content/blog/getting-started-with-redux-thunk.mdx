@@ -11,7 +11,7 @@ tags: ["redux", "react"]
 ## What is Redux Thunk?
 
 Redux is a great library which allows us to maintain state better in out applications. By using middlewares, we are also able to extend redux with additional functionalities. According to the [documentation](https://redux.js.org/advanced/middleware), **_it provides a third-party extension point between dispatching an action, and the moment it reaches the reducer_**.
-One of these middlewares is Redux Thunk.
+One of these middlewares is [Redux Thunk](https://github.com/reduxjs/redux-thunk).
 
 <div style="text-align: center; margin: 2rem 0;">
   <h3>
@@ -66,7 +66,7 @@ import { useDispatch } from "react-redux"
 const App = () => {
   const dispatch = useDispatch()
   const handleClick = () => {
-    dispatch(updateContent(12))
+    dispatch(updateContent())
   }
 
   return (
@@ -77,11 +77,11 @@ const App = () => {
 }
 
 // our action, using redux thunk
-const updateContent = value => {
+const updateContent = () => {
   //async function
 
   return async dispatch => {
-    const resp = await fetch(`https://api-endpoint.domain/${value}`)
+    const resp = await fetch(`https://api-endpoint.domain`)
     const respJson = await resp.json()
     dispatch({
       // your action
@@ -97,4 +97,4 @@ Using redux thunk has a lot of advantages:
 - Reusability of actions across components
 - It allows asynchronous and conditional dispatching
 - Components are independent of state logic
-- Actions can be nested in one another
+- Actions can be nested into one another
