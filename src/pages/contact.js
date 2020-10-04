@@ -16,7 +16,7 @@ import SectionHeading from "../components/sectionHeading"
 
 import { FaPaperPlane } from "react-icons/fa"
 
-import swal from "sweetalert"
+import swal from "sweetalert2"
 
 const ContactContainer = styled.div`
   margin: 2rem 0;
@@ -68,14 +68,14 @@ const Contact = ({ data, location }) => {
     })
       .then(resp => {
         console.log(resp.ok, resp)
-        swal({
+        swal.fire({
           title: "Success",
           text: "Thanks for filling this form. I will get back to you soon",
           icon: "success",
         })
       })
       .catch(() => {
-        swal({
+        swal.fire({
           title: "Failed",
           text: "Error submitting form. Please try again",
           icon: "warning",
