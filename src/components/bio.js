@@ -7,6 +7,7 @@ import Button from "./button"
 const BioContainer = styled.div`
   margin-bottom: 1rem;
   display: flex;
+  align-items: center;
 `
 const BioImageContainer = styled.div`
   padding: 2px;

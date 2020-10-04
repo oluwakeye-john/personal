@@ -15,7 +15,7 @@ const FeaturedImage = styled(Img)`
   border-radius: 10px;
   max-height: 350px;
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 `
 
 const BlogContainer = styled.div`
@@ -23,11 +23,12 @@ const BlogContainer = styled.div`
 `
 
 const BlogPostHeading = styled.h1`
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   font-size: 3rem;
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+  line-height: 1.5;
   /* font-family: sans-serif; */
   /* font-family: "Nunito Sans", sans-serif; */
   font-family: Convergence;
@@ -55,7 +56,7 @@ const BlogSection = styled.section`
   }
 `
 
-const BlogDetails = styled.p`
+const BlogDetails = styled.div`
   opacity: 0.8;
 `
 
