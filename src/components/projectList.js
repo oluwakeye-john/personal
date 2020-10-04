@@ -50,7 +50,7 @@ const projects = [
   {
     name: "Learnit",
     description:
-      "Learnit is a Cross Platform Mobile App which generates quiz questions for users and rate them based on their performance",
+      "Learnit is a Cross Platform Mobile App which generates quiz questions for users and rate them.",
     // live: "https://eaveswall.com",
   },
   {
