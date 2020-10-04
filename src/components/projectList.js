@@ -44,7 +44,7 @@ const projects = [
   {
     name: "FoxyGreen",
     description:
-      "A society and campus blog built with Gatsby, Netlify and Firebase",
+      "Foxygreen is an Agro-investment platform based in Nigeria. It was built with React Native.",
     // live: "https://eaveswall.com",
   },
   {

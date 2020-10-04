@@ -18,7 +18,7 @@ const LayoutComponent = styled.div`
   max-width: 750px;
   margin: 0 auto;
   min-height: 80vh;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 0 15px;
   }
   @media (min-width: 768px) {
@@ -58,7 +58,7 @@ const Layout = ({ location, title, children }) => {
           href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Nunito+Sans&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
         ></link>
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies&family=Convergence&family=Waiting+for+the+Sunrise&family=Prompt&display=swap"
           rel="stylesheet"
           crossorigin="anonymous"
         ></link>

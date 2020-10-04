@@ -18,9 +18,10 @@ const CardImage = styled(Img)`
 
 const CardTitle = styled.h3`
   color: ${({ theme }) => theme.textNormal};
-  font-family: sans-serif;
-  line-height: 1;
-  font-size: 1.5rem;
+  font-family: "Convergence";
+  line-height: 1.3;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
 `
 
 const CardExtra = styled.div`

@@ -1,0 +1,94 @@
+---
+title: Getting started with Redux Thunk
+date: "2020-10-03"
+description:
+  "Redux Thunk is a middleware that allows us to write action creators that
+  return a function instead of an action object."
+featuredImage: "../assets/redux-thunk.jpg"
+tags: ["redux", "react"]
+---
+
+## What is Redux Thunk?
+
+Redux is a great library which allows us to maintain state better in out applications. By using middlewares, we are also able to extend redux with additional functionalities. According to the documentation, **_it provides a third-party extension point between dispatching an action, and the moment it reaches the reducer_**.
+One of these middlewares is Redux Thunk.
+
+<div style="text-align: center; margin: 2rem 0;">
+  <h3>
+    “Redux Thunk is a middleware that allows us to write action creators that
+    return a function instead of an action object.”
+  </h3>
+</div>
+
+To recap, **actions** are JavaScript objects which carries information to update while **action creators** are are merely functions that returns an action object.
+
+To update state in redux, we dispatch an action and these actions are plain objects. According to the docs, **_Without middleware, Redux store only supports synchronous data flow_**, which means by default, redux action creators doesn’t support asynchronous actions like fetching
+data from a remote API or DB.
+
+Redux Thunk allows Redux to dispatch actions that are functions. That ability to dispatch functions gives us the ability to embed logic operations in out actions. The function can be asynchronous, can contain logic, or anything.
+
+That function can be of any form, be it synchronous or asynchronous. When an action creator returns a function, that function will get executed by the Redux Thunk middleware. This function doesn't need to be pure; it is thus allowed to have side effects, including executing asynchronous API calls.
+
+This way, state and store logic can be abstracted out of your components. It also promotes reusablity of actions across components.
+
+## Installation
+
+To use redux thunk, you can install it via yarn or npm.
+
+```shell
+npm install redux-thunk
+# or
+yarn add redux-thunk
+```
+
+To add a middleware to redux, you can import `applyMiddlware` from redux and pass it as a second parameter into createStore:
+
+```js
+import { createStore, applyMiddlewares } from "redux"
+import myReducer from "./myreducer"
+
+let middlewares = [thunk]
+
+export let store = createStore(myReducer, applyMiddlewares(...middlewares))
+```
+
+With this, you have added support for redux thunk.
+
+## Usage
+
+Take a look at the example below which uses redux-thunk:
+
+```jsx
+// app component
+const App = () => {
+  const dispatch = useDispatch()
+  const handleClick = () => {
+    dispatch(updateContent(12))
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click to login</button>
+    </div>
+  )
+}
+
+// our action, using redux thunk
+const updateContent = value => {
+  return async dispatch => {
+    const resp = await fetch("https://google.com")
+    const respJson = await resp.json()
+    dispatch()
+    // dispatch any action here
+  }
+}
+```
+
+## Summary
+
+Using redux thunk has a lot of advantages:
+
+- Reusability of actions
+- It allows asynchronous and conditional dispatching
+- Components are independent of state login
+- Actions can be nested in one another

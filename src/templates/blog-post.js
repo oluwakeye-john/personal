@@ -29,7 +29,8 @@ const BlogPostHeading = styled.h1`
     font-size: 2rem;
   }
   /* font-family: sans-serif; */
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: Convergence;
 `
 
 const BlogSection = styled.section`

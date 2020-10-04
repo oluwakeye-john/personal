@@ -17,6 +17,10 @@ const Quote = styled.p`
 const LoveBubble = styled(Bubble)`
   color: ${({ theme }) => theme.primary};
 `
+const StyledHeart = styled(Heart)`
+  color: ${({ theme }) => theme.primary};
+  display: inline;
+`
 
 const Footer = () => {
   return (
@@ -24,7 +28,7 @@ const Footer = () => {
       <p>
         <FaCode /> with{" "}
         <LoveBubble>
-          <Heart style={{ display: "inline", color: "red" }} />
+          <StyledHeart />
         </LoveBubble>
         {` `}
         by Oluwakeye John
