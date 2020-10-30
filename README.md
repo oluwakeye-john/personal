@@ -1,6 +1,6 @@
 # 💻Oluwakeye John
 
-Hey there, I am a Web and Mobile App Developer who is passionate about building fast, intuitive and performance-driven applications.
+Hey there, I am a Web and Mobile App Developer who loves building fast, intuitive and performance-driven applications.
 
 I love learning new skills and teaming with fellow developers to build amazing stuff.
 
