@@ -45,7 +45,7 @@ const Item = styled.div`
 const II = styled.div``
 
 const ItemImage = styled(Img)`
-  border-radius: 50%;
+  border-radius: 10px;
   transition: 0.3s;
   z-index: 2;
 `
@@ -90,6 +90,12 @@ const Skill = () => {
       react: file(relativePath: { eq: "skills/react.png" }) {
         ...squareImage
       }
+      vue: file(relativePath: { eq: "skills/vue.png" }) {
+        ...squareImage
+      }
+      nuxt: file(relativePath: { eq: "skills/nuxt.png" }) {
+        ...squareImage
+      }
       html: file(relativePath: { eq: "skills/html.png" }) {
         ...squareImage
       }
@@ -126,7 +132,7 @@ const Skill = () => {
       git: file(relativePath: { eq: "skills/git2.png" }) {
         ...squareImage
       }
-      redux: file(relativePath: { eq: "skills/Redux.png" }) {
+      redux: file(relativePath: { eq: "skills/redux.png" }) {
         ...squareImage
       }
     }
@@ -145,6 +151,24 @@ const Skill = () => {
             alt="Logo for react"
           />
           <ItemLabel>React | Native</ItemLabel>
+        </Item>
+
+        <Item>
+          <ItemImage
+            fixed={data.vue.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for Nuxt"
+          />
+          <ItemLabel>Vue JS</ItemLabel>
+        </Item>
+
+        <Item>
+          <ItemImage
+            fixed={data.nuxt.childImageSharp.fixed}
+            style={{ width: "100px", height: "100px" }}
+            alt="Logo for nuxt"
+          />
+          <ItemLabel>Nuxt JS</ItemLabel>
         </Item>
 
         <Item>
@@ -196,22 +220,15 @@ const Skill = () => {
           />
           <ItemLabel>Gatsby JS</ItemLabel>
         </Item>
-        <Item>
-          <ItemImage
-            fixed={data.redux.childImageSharp.fixed}
-            style={{ width: "100px", height: "100px" }}
-            alt="Logo for Redux"
-          />
-          <ItemLabel>Redux</ItemLabel>
-        </Item>
-        <Item>
+
+        {/* <Item>
           <ItemImage
             fixed={data.mongo.childImageSharp.fixed}
             style={{ width: "100px", height: "100px" }}
             alt="Logo for mongo db"
           />
           <ItemLabel>Mongo DB</ItemLabel>
-        </Item>
+        </Item> */}
         {/* <Item>
           <ItemImage
             fixed={data.express.childImageSharp.fixed}

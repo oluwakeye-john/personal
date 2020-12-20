@@ -36,16 +36,16 @@ const projects = [
     live: "https://eaveswall.com",
   },
   {
-    name: "FoxyGreen",
+    name: "Akinator Game",
     description:
-      "Foxygreen is an Agro-investment platform based in Nigeria. It was built with React Native.",
-    // live: "https://eaveswall.com",
+      "A game built with nuxtjs and tailwind-css that, well, reads your mind",
+    live: "https://akinator.netlify.app",
   },
   {
-    name: "Legendary Empire Ltd",
+    name: "Movie Catalog",
     description:
-      "Legendary Empire Ltd is a Nigeria company that provides services in different areas of life.",
-    live: "https://legendaryempireltd.com",
+      "Discover your movies and TV shows, past, present and upcoming",
+    live: "https://quizzical-johnson-77e2c7.netlify.app/",
   },
   {
     name: "Learnit",
@@ -53,22 +53,29 @@ const projects = [
       "Learnit is a Cross Platform Mobile App which generates quiz questions for users and rate them.",
     // live: "https://eaveswall.com",
   },
-  {
-    name: "Ecommerce App",
-    description: "An ecommerce website built with gatsby and snipcart.",
-    live: "https://oluwakeye-ecommerce.netlify.app",
-  },
-  {
-    name: "Lens Chat",
-    description:
-      "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
-    live: "https://lens-chat.netlify.app",
-  },
   // {
-  //   name: "Viz Movies",
+  //   name: "FoxyGreen",
   //   description:
-  //     "A movie website, similar to netflix... Without the download button",
-  //   live: "https://vizmovies.netlify.app",
+  //     "Foxygreen is an Agro-investment platform based in Nigeria. It was built with React Native.",
+  //   // live: "https://eaveswall.com",
+  // },
+  // {
+  //   name: "Legendary Empire Ltd",
+  //   description:
+  //     "Legendary Empire Ltd is a Nigeria company that provides services in different areas of life.",
+  //   live: "https://legendaryempireltd.com",
+  // },
+
+  // {
+  //   name: "Ecommerce App",
+  //   description: "An ecommerce website built with gatsby and snipcart.",
+  //   live: "https://oluwakeye-ecommerce.netlify.app",
+  // },
+  // {
+  //   name: "Lens Chat",
+  //   description:
+  //     "Lens Chat is a video chat application built with webRTC, socket.io and nodejs",
+  //   live: "https://lens-chat.netlify.app",
   // },
   {
     name: "Chat app",
