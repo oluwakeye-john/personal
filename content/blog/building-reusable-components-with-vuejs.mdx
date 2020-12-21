@@ -1,0 +1,139 @@
+---
+title: Building Reusable Components with Vue
+date: "2020-12-21"
+description: "Let's take a look at how we can create reusable components with VueJS using props and slots."
+featuredImage: "../assets/building-reusable-components-vue.jpg"
+tags: ["Vue", "JavaScript"]
+---
+
+## Introduction
+
+Vue.js is a progressive framework for JavaScript used to build web interfaces and one-page applications. It has become really popular these days because of its simplicity compared to other UI libraries.
+
+Components are the building blocks of many frontend libraries and frameworks like react and vue. Everything in an modern application can (and should) be broken down into components. Also, by convention a component should do just ONE thing
+
+Here is an example of a component in vue
+
+```html
+<template>
+  <div class="alert">Click me</div>
+</template>
+
+<script>
+  export default {
+      name: “Component”
+  }
+</script>
+
+<script>
+  .alert{
+  	background-color: orange
+  }
+</script>
+```
+
+The above components is a simple div that displays the text enclosed.
+
+This works fine. However, if we want to use our Alert component in multiple places with this approach, we will have to duplicate our Alert component multiple times which isn't clean and does not stick to the DRY(Don't Repeat Yourself) approach.
+
+That's where reusability comes into play. In a typical application, there are a lot of cases where we need to reuse components which includes headers, footers, alerts amidst others. Vue provides us with a lot of ways to achieve this. In this article, we are going to examine two of them:
+
+## 1. Passing Props
+
+The first approach is to use props.
+According to the [vue docs](https://vuejs.org/v2/guide/components.html#Passing-Data-to-Child-Components-with-Props), props (short for properties), are custom attributes you can register on a component.
+
+Props are the way that we pass data from a parent component down to it's child components.
+
+To pass a text to our component, we can include it in the list of props this component accepts, using a props option. We can also specify the type for the prop we are expecting, be it a string, number or object. An optional default value can also be provided.
+
+```html
+<template>
+  <div class="alert">{{ text }}</div>
+</template>
+
+<script>
+  export default {
+    name: "Alert",
+    props: {
+      text: {
+        type: String,
+        required: true,
+      },
+    },
+  }
+</script>
+```
+
+We can then use out Alert component in multiple instance, by passing our text prop into our Alert component
+
+```html
+<div>
+  <Alert text="An error jsut occurred" />
+  <Alert text="Scam alert" />
+  <Alert text="Something has gone verrry wrong" />
+</div>
+```
+
+With this approach, we are able to reuse our Alert component multiple times by passing different prop values into it.
+
+## 2. Using Slots
+
+Other than using props, Vue also allows us to use slots to make reusable components.
+
+According to the [vue docs](https://vuejs.org/v2/guide/components-slots.html), slot elements serve as distribution outlets for content.
+If you are familiar with react, then slot work just like react `children`, but a little more flexible. Slots allow us to wrap our components around other elements to create fully flexible reusable components.
+
+To convert out above element to use slots, we do the following:
+
+```html
+<template>
+  <div class="alert">
+    <slot />
+  </div>
+</template>
+```
+
+We are basically creating a normal component, but note that the slot that has been added. When the component renders, the <strong> slot</strong> will be replaced by out text.
+
+```html
+<div>
+  <Alert>An error occurred</Alert>
+  <Alert>An error occurred</Alert>
+</div>
+```
+
+Also, note that the slot can be anything, including template code and HTML. It can also contain other components.
+
+```html
+<Alert>
+  <div>
+    <h1>This is HTML</h1>
+  </div>
+</Alert>
+```
+
+### Setting Fallback
+
+We can also provide a fallback content for our slots. The fallback content will only be rendered when no content is provided. To provide a fallback content for our slots, we place it in between out slot tags:
+
+```html
+<template>
+  <div class="alert">
+    <slot>Here is the default value</slot>
+  </div>
+</template>
+```
+
+If the slot default value is provided, then it slot falls back to this default if no value is provided when using out Alert component
+
+```html
+<div>
+  <!-- the fallback content is used below -->
+  <Alert />
+</div>
+```
+
+## Summary
+
+That's it. We have looked at creating resuable using both the props and the slots approach. You can find more details and advanced usage of both approaches on the [vue docs](https://vuejs.org/v2/guide/components.html).

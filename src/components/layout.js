@@ -32,9 +32,9 @@ const Layout = ({ location, title, children }) => {
   light.theme = "light"
   dark.theme = "dark"
 
-  useEffect(() => {
-    typeof window !== "undefined" && document.body.classList.add("animate")
-  }, [])
+  // useEffect(() => {
+  //   typeof window !== "undefined" && document.body.classList.add("animate")
+  // }, [])
 
   return (
     <ThemeProvider theme={theme === "light" ? light : dark}>

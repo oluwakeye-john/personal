@@ -20,10 +20,6 @@ const ScrollContainer = styled.div`
 
   transform: ${({ isVisible }) =>
     isVisible ? "translateX(0)" : "translateY(10rem)"};
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `
 
 const ScrollUp = () => {
