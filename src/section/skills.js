@@ -45,7 +45,7 @@ const Item = styled.div`
 const II = styled.div``
 
 const ItemImage = styled(Img)`
-  border-radius: 10px;
+  border-radius: 50%;
   transition: 0.3s;
   z-index: 2;
 `
@@ -90,7 +90,7 @@ const Skill = () => {
       react: file(relativePath: { eq: "skills/react.png" }) {
         ...squareImage
       }
-      vue: file(relativePath: { eq: "skills/vue.png" }) {
+      vue: file(relativePath: { eq: "skills/vue3.png" }) {
         ...squareImage
       }
       nuxt: file(relativePath: { eq: "skills/nuxt.png" }) {
