@@ -19,7 +19,7 @@ const ScrollContainer = styled.div`
   transition: transform 0.4s, background-color 0.4s;
 
   transform: ${({ isVisible }) =>
-    isVisible ? "translateX(0)" : "translateX(10rem)"};
+    isVisible ? "translateX(0)" : "translateY(10rem)"};
 
   &:hover {
     transform: scale(1.05);
@@ -49,7 +49,7 @@ const ScrollUp = () => {
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
   }
 
   return (

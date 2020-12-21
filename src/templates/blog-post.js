@@ -84,13 +84,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const postImage = featuredImage ? featuredImage.childImageSharp.fluid : ""
 
-  useEffect(() => {
-    document.querySelector("html").classList.add("smooth-scroll")
-    return () => {
-      document.querySelector("html").classList.remove("smooth-scroll")
-    }
-  }, [])
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
