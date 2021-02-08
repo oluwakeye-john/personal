@@ -1,6 +1,4 @@
-# 💻Oluwakeye John
-
-### Stuck in an infinite loop ➰ of building products.
+### 💻 I'm a dev, stuck in an infinite loop ➰ of building products.
 
 Hey there, I am a Web and Mobile App Developer who loves building fast, intuitive and performance-driven applications.
 
@@ -10,7 +8,7 @@ I love learning new skills and teaming with fellow developers to build amazing s
 
 ## 📫 Get in touch
 
-Get in touch on [twitter](https://twitter.com/oluwakeyejohn), [linkedIn](https://www.linkedin.com/in/oluwakeye-john-1706/), or my [portfolio](https://johnkeye.com)
+Get in touch on [twitter](https://twitter.com/oluwakeyejohn), [linkedIn](https://www.linkedin.com/in/oluwakeye-john-1706/), and my [website](https://johnkeye.com)
 
 ---
 
