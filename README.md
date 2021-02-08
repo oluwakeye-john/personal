@@ -1,4 +1,4 @@
-### A dev 💻, stuck in the infinite loop ➰ of building products 🏆.
+## A dev 💻, stuck in the infinite loop ➰ of building products 🏆.
 
 Hey there, I am a 🕸️ Web ➕ Mobile App Developer who loves building fast, intuitive and performance-driven applications.  
 <br />
