@@ -10,11 +10,7 @@ I love learning new skills and teaming with fellow developers to build amazing s
 
 ## 📫 Get in touch
 
-Twitter: [@oluwakeyejohn](https://twitter.com/oluwakeyejohn)
-
-LinkedIn: [oluwakeye-john-1706](https://www.linkedin.com/in/oluwakeye-john-1706/)
-
-Website: https://johnkeye.com
+Get in touch on [twitter](https://twitter.com/oluwakeyejohn), [linkedIn](https://www.linkedin.com/in/oluwakeye-john-1706/), or my [portfolio](https://johnkeye.com)
 
 ---
 
