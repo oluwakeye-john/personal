@@ -1,6 +1,8 @@
-### 💻 I'm a dev, stuck in an infinite loop ➰ of building products.
+# 💻Oluwakeye John
 
-Hey there, I am a Web and Mobile App Developer who loves building fast, intuitive and performance-driven applications.
+### A dev, stuck in an infinite loop ➰ of building products 🏆.
+
+Hey there, I am a Web ➕ Mobile App Developer who loves building fast, intuitive and performance-driven applications.
 
 I love learning new skills and teaming with fellow developers to build amazing stuff.
 
