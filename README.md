@@ -2,7 +2,7 @@
 
 Hey there, I am a 🕸️ Web ➕ Mobile App Developer who loves building fast, intuitive and performance-driven applications.  
 
-I'm currently big on React, Vue and Flutter.
+I'm currently big on React, Vue and Flutter💙.
 
 I love learning new skills and teaming with fellow developers to build amazing stuff.  
 
