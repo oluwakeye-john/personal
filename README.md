@@ -1,6 +1,7 @@
-## A dev 💻, stuck in the infinite loop ➰ of building products 🏆.
+<!-- ## A dev 💻, stuck in the infinite loop ➰ of building products 🏆. -->
 
-🕸️ Web ➕ Mobile App Developer who loves building fast, intuitive and performance-driven applications.  
+🕸️ Web ➕ Mobile App Developer
+<!-- who loves building fast, intuitive and performance-driven applications.   -->
 
 <!-- I'm currently big on React, Vue and Flutter💙. -->
 
